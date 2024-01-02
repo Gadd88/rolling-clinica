@@ -1,0 +1,14 @@
+footer img {
+    width: auto;
+    height: 80px;
+    border-radius: 10%;
+  }
+
+  footer a {
+    text-decoration: none;
+    margin: 10px;
+  }
+
+  footer{
+    background-color: #87ceeb;
+  }

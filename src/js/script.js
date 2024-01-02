@@ -11,12 +11,12 @@ inputTurno.addEventListener('keypress',(event)=>{
 });
 
 function llenaTabla(){
-    let body ="";
+    let cuerpo ="";
     for( var i = 0; i < pacientes.length ; i++){
         let btnEliminar='<button data-indice="'+i+'" class="btn btn-danger btnEl">Eliminar</button>';
-        body += "<tr><td>"+(i+1)+"</td><td>"+pacientes[i]+"</td><td>"+pacientes.fecha[i]+"</td><td>"+btnEliminar+"</td></tr>";
+        cuerpo += "<tr><td>"+(i+1)+"</td><td>"+pacientes[i]+"</td><td>"+pacientes.fecha[i]+"</td><td>"+btnEliminar+"</td></tr>";
     }
-    document.querySelector("#datos").innerHTML = body;
+    document.querySelector("#datos").innerHTML = cuerpo;
 };
 
 function btnEliminar(){

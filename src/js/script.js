@@ -1,33 +1,86 @@
 
-let pacientes = [];
 
-const inputTurno = document.querySelector("idPaciente");
-inputTurno.addEventListener('keypress',(event)=>{
-    if(event.keyCode == 13){
-        pacientes.push(inputTurno.value);
-        inputTurno.value ='';
-        llenaTabla();
+
+// const inputTurno = document.querySelector("idPaciente");
+// inputTurno.addEventListener('keypress',(event)=>{
+//     if(event.keyCode == 13){
+//         pacientes.push(inputTurno.value);
+//         inputTurno.value ='';
+//         llenaTabla();
+//     }
+// });
+
+
+const idPaciente = document.getElementById('inputNombre').value;
+const nombre = document.getElementById('inputNombre').value;
+const fechaHora = document.getElementById('inputNombre').value;
+
+function leerData{
+        let listaPacientes;
+
+        if (localStorage.getItem('listaPacientes')== null){
+            listaPacientes = [];
+        } else {
+            listaPacientes = JSON.parse(localStorage.getItem('listaPacientes'))
+        }
+
+        let cuerpo = "";
+
+        listaPacientes.forEach(paciente,index => {
+            
+            cuerpo += "<tr>"
+            cuerpo += "<td>"+listaPacientes.idPaciente+"</td>";
+            cuerpo += "<td>"+listaPacientes.nombre+"</td>";
+            cuerpo += "<td>"+listaPacientes.fechaHora+"</td>";
+            cuerpo += '<td><button onclick="deleteData('+ index +')" class="btn btn-danger">Eliminar</button></td>';
+            cuerpo += "</tr>"
+            
+        });
+
+        document.querySelector('#tablaTurnos').innerHTML = cuerpo;
+       
     }
-});
 
-function llenaTabla(){
-    let cuerpo ="";
-    for( var i = 0; i < pacientes.length ; i++){
-        let btnEliminar='<button data-indice="'+i+'" class="btn btn-danger btnEl">Eliminar</button>';
-        cuerpo += "<tr><td>"+(i+1)+"</td><td>"+pacientes[i]+"</td><td>"+pacientes.fecha[i]+"</td><td>"+btnEliminar+"</td></tr>";
+    function agregarPaciente (){
+       leerData();
+       listaPacientes.push([
+        idPaciente = idPaciente,
+        nombre = nombre,
+        fechaHora = fechaHora
+       ]);
+
+       localStorage.setItem('listaPacientes', JSON.stringify(listaPacientes))
+
+       document.getElementById('idPaciente').value="";
+       document.getElementById('nombre').value="";
+       document.getElementById('fechaHora').value="";
     }
-    document.querySelector("#datos").innerHTML = cuerpo;
-};
 
-function btnEliminar(){
-    document.querySelectorAll(".btnEl");
-    btnEliminar.forEach(elem => elem.addEventListener('click',event =>{
-        let indice = event.target.getAttribute('data-indice');
-        eliminar(indice);
-    }));
-}
 
-function eliminar(indice){
-    pacientes.splice(indice,1);
-    llenaTabla();
-}
+
+
+// let pacientes = storage.obtener('pacientes');
+// llenaTabla();
+
+
+// function llenaTabla(){
+//     let cuerpo ="";
+//     for( var i = 0; i < pacientes.length ; i++){
+//         let btnEliminar='<button data-indice="'+i+'" class="btn btn-danger btnEl">Eliminar</button>';
+//         cuerpo += "<tr><td>"+listaPacientes.idPaciente+"</td><td>"+listaPacientes.nombrePaciente+"</td><td>"+listaPacientes.fechaHora+"</td><td>"+btnEliminar+"</td></tr>";
+//     }
+//     document.querySelector("#datos").innerHTML = cuerpo;
+// };
+
+// function btnEliminar(){
+//     document.querySelectorAll(".btnEl");
+//     btnEliminar.forEach(elem => elem.addEventListener('click',event =>{
+//         let indice = event.target.getAttribute('data-indice');
+//         eliminar(indice);
+//     }));
+// }
+
+// function eliminar(indice){
+//     pacientes.splice(indice,1);
+//     llenaTabla();
+// }

@@ -1,0 +1,64 @@
+{
+  "medicos": [
+    {
+      "nombre": "Dr. Juan Pérez",
+      "especialidad": "Cardiología",
+      "telefono": "555-1234",
+      "correo": "juan.perez@example.com"
+    },
+    {
+      "nombre": "Dra. María García",
+      "especialidad": "Dermatología",
+      "telefono": "555-5678",
+      "correo": "maria.garcia@example.com"
+    },
+    {
+      "nombre": "Dr. Carlos Rodríguez",
+      "especialidad": "Pediatría",
+      "telefono": "555-9012",
+      "correo": "carlos.rodriguez@example.com"
+    },
+    {
+      "nombre": "Dra. Laura Fernández",
+      "especialidad": "Oftalmología",
+      "telefono": "555-3456",
+      "correo": "laura.fernandez@example.com"
+    },
+    {
+      "nombre": "Dr. Andrés Martínez",
+      "especialidad": "Ortopedia",
+      "telefono": "555-7890",
+      "correo": "andres.martinez@example.com"
+    },
+    {
+      "nombre": "Dra. Ana Sánchez",
+      "especialidad": "Ginecología",
+      "telefono": "555-2345",
+      "correo": "ana.sanchez@example.com"
+    },
+    {
+      "nombre": "Dr. Jorge Ramírez",
+      "especialidad": "Neurología",
+      "telefono": "555-6789",
+      "correo": "jorge.ramirez@example.com"
+    },
+    {
+      "nombre": "Dra. Patricia Vargas",
+      "especialidad": "Endocrinología",
+      "telefono": "555-0123",
+      "correo": "patricia.vargas@example.com"
+    },
+    {
+      "nombre": "Dr. Roberto González",
+      "especialidad": "Urología",
+      "telefono": "555-4567",
+      "correo": "roberto.gonzalez@example.com"
+    },
+    {
+      "nombre": "Dra. Julia Torres",
+      "especialidad": "Psiquiatría",
+      "telefono": "555-8901",
+      "correo": "julia.torres@example.com"
+    }
+  ]
+}

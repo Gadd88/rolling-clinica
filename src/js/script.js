@@ -11,7 +11,7 @@
 // });
 
 
-const idPaciente = document.getElementById('inputNombre').value;
+const ID = document.getElementById('inputNombre').value;
 const nombre = document.getElementById('inputNombre').value;
 const fechaHora = document.getElementById('inputNombre').value;
 

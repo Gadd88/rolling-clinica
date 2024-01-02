@@ -7,9 +7,9 @@
 //     }
 // });
 
-const ID = document.getElementById("ID");
-const nombre = document.getElementById("nombre");
-const fechaHora = document.getElementById("fechaHora");
+const ID = document.getElementById("listaPacientes.ID");
+const nombre = document.getElementById("listaPacientes.nombre");
+const fechaHora = document.getElementById("listaPacientes.fechaHora");
 
 import listaPacientes from "../prueba/turnosPrueba.json" assert { type: "json" };
 
@@ -23,7 +23,7 @@ function leerData() {
 
   let cuerpo = "";
 
-  listaPacientes.forEach(function (paciente, index) {
+  listaPacientes.forEach(function (element, index) {
     cuerpo += "<tr>";
     cuerpo += "<td>" + listaPacientes.ID + "</td>";
     cuerpo += "<td>" + listaPacientes.nombre + "</td>";
@@ -41,9 +41,9 @@ function leerData() {
 document.onload = leerData();
 
 function agregarPaciente() {
-  let ID = document.getElementById("ID");
-  let nombre = document.getElementById("nombre");
-  let fechaHora = document.getElementById("fechaHora");
+  let ID = document.getElementById("listaPacientes.ID");
+  let nombre = document.getElementById("listaPacientes.nombre");
+  let fechaHora = document.getElementById("listaPacientes.fechaHora");
 
   let listaPacientes;
 
@@ -53,9 +53,10 @@ function agregarPaciente() {
 
   localStorage.setItem("listaPacientes", JSON.stringify(listaPacientes));
 
- document.getElementById('ID')="";
- document.getElementById('nombre')="";
-document.getElementById('fechaHora')="";
+leerData();
+ document.getElementById('listaPacientes.ID')="";
+ document.getElementById('listaPacientes.nombre')="";
+document.getElementById('listaPacientes.fechaHora')="";
 }
 
 leerData();

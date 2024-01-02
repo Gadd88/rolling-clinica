@@ -1,0 +1,43 @@
+[
+    {
+      "id": "A123",
+      "nombre": "Ana",
+      "apellido": "Gómez",
+      "fecha_nacimiento": "1980-05-15",
+      "dni": "1234567890",
+      "especialidad": "Clinica",
+      "motivo_consulta": "Dolor abdominal y fatiga",
+      "medico_solicitado": "Dr. Rodriguez"
+    },
+    {
+      "id": "B456",
+      "nombre": "Carlos",
+      "apellido": "Fernández",
+      "fecha_nacimiento": "1975-10-20",
+      "dni": "9876543210",
+      "especialidad": "Cardiologia",
+      "motivo_consulta": "Presión arterial alta y palpitaciones",
+      "medico_solicitado": "Dra. Martínez"
+    },
+    {
+      "id": "C789",
+      "nombre": "Luisa",
+      "apellido": "Martínez",
+      "fecha_nacimiento": "1992-02-08",
+      "dni": "5678901234",
+      "especialidad": "Traumatologia",
+      "motivo_consulta": "Fractura en la pierna izquierda",
+      "medico_solicitado": "Dr. García"
+    },
+    {
+      "id": "D012",
+      "nombre": "Elena",
+      "apellido": "Ruíz",
+      "fecha_nacimiento": "1988-12-03",
+      "dni": "3456789012",
+      "especialidad": "Ginecologia",
+      "motivo_consulta": "Control prenatal y preguntas sobre el parto",
+      "medico_solicitado": "Dra. López"
+    }
+  ]
+  

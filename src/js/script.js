@@ -1,6 +1,3 @@
-
-
-
 // const inputTurno = document.querySelector("idPaciente");
 // inputTurno.addEventListener('keypress',(event)=>{
 //     if(event.keyCode == 13){
@@ -10,64 +7,62 @@
 //     }
 // });
 
+const ID = document.getElementById("ID");
+const nombre = document.getElementById("nombre");
+const fechaHora = document.getElementById("fechaHora");
 
-const ID = document.getElementById('inputNombre').value;
-const nombre = document.getElementById('inputNombre').value;
-const fechaHora = document.getElementById('inputNombre').value;
+import listaPacientes from "../prueba/turnosPrueba.json" assert { type: "json" };
 
-import listaPacientes from '../prueba/turnosPrueba.json' assert {type: 'json'};
+window.addEventListener("DOMContentLoaded", () => {
+  localStorage.setItem("pacientes", JSON.stringify(listaPacientes));
+});
 
-window.addEventListener('DOMContentLoaded', ()=>{
-    localStorage.setItem('pacientes',JSON.stringify(listaPacientes))
-})
+function leerData() {
+  let listaPacientes = [];
+  listaPacientes = JSON.parse(localStorage.getItem("listaPacientes"));
 
+  let cuerpo = "";
 
-function leerData(){
-        let listaPacientes;
+  listaPacientes.forEach(function (paciente, index) {
+    cuerpo += "<tr>";
+    cuerpo += "<td>" + listaPacientes.ID + "</td>";
+    cuerpo += "<td>" + listaPacientes.nombre + "</td>";
+    cuerpo += "<td>" + listaPacientes.fechaHora + "</td>";
+    cuerpo +=
+      '<td><button onclick="deleteData(' +
+      index +
+      ')" class="btn btn-danger">Eliminar</button></td>';
+    cuerpo += "</tr>";
+  });
 
-        if (localStorage.getItem('listaPacientes')== null){
-            listaPacientes = [];
-        } else {
-            listaPacientes = JSON.parse(localStorage.getItem('listaPacientes'))
-        }
+  document.querySelector("#tablaTurnos").innerHTML = cuerpo;
+}
 
-        let cuerpo = "";
+document.onload = leerData();
 
-        listaPacientes.forEach(paciente,index => {
-            
-            cuerpo += "<tr>"
-            cuerpo += "<td>"+listaPacientes.ID+"</td>";
-            cuerpo += "<td>"+listaPacientes.nombre+"</td>";
-            cuerpo += "<td>"+listaPacientes.fechaHora+"</td>";
-            cuerpo += '<td><button onclick="deleteData('+ index +')" class="btn btn-danger">Eliminar</button></td>';
-            cuerpo += "</tr>"
-            
-        });
+function agregarPaciente() {
+  let ID = document.getElementById("ID");
+  let nombre = document.getElementById("nombre");
+  let fechaHora = document.getElementById("fechaHora");
 
-        document.querySelector('#tablaTurnos').innerHTML = cuerpo;
-    }
+  let listaPacientes;
 
-    function agregarPaciente (){
-       leerData();
-       listaPacientes.push([
-        ID = ID,
-        nombre = nombre,
-        fechaHora = fechaHora
-       ]);
+  listaPacientes = JSON.parse(localStorage.getItem("listaPacientes"));
 
-       localStorage.setItem('listaPacientes', JSON.stringify(listaPacientes))
+  listaPacientes.push([(ID = ID), (nombre = nombre), (fechaHora = fechaHora)]);
 
-       document.getElementById('ID').value="";
-       document.getElementById('nombre').value="";
-       document.getElementById('fechaHora').value="";
-    }
+  localStorage.setItem("listaPacientes", JSON.stringify(listaPacientes));
 
+ document.getElementById('ID')="";
+ document.getElementById('nombre')="";
+document.getElementById('fechaHora')="";
+}
 
-
+leerData();
+agregarPaciente();
 
 // let pacientes = storage.obtener('pacientes');
 // llenaTabla();
-
 
 // function llenaTabla(){
 //     let cuerpo ="";

@@ -22,10 +22,14 @@ const mostrarTurnos = () => {
       ')" class="btn btn-danger">Eliminar</button></td>';
     cuerpo += '</tr>';
   });
-
-  tablaTurnos.innerHTML = cuerpo;
+  document.querySelector('#tablaTurnos').innerHTML = cuerpo;
+//   tablaTurnos.innerHTML = cuerpo;
 };
+document.onload = mostrarTurnos();
 
-document.addEventListener('DOMContentLoaded', () => {
-  mostrarTurnos();
-});
+
+ document.addEventListener('DOMContentLoaded', () => {
+   mostrarTurnos();
+ });
+
+// document.querySelector('#tablaTurnos').innerHTML = cuerpo;

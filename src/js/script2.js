@@ -88,3 +88,9 @@ listaTurnos.addEventListener('click', (e) => {
         mostrarTurnos()
     }
 })
+
+document.addEventListener('DOMContentLoaded', () => {
+    turnos = turnosStorage
+    mostrarTurnos()
+}
+)

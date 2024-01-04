@@ -1,4 +1,8 @@
 #banner {
     background-color: #2f4149;
-    color: #87ceeb;
+    color: #daeff8;
+}
+
+#textoBanner h2{
+    margin-bottom: 25px;
 }

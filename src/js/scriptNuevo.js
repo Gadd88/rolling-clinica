@@ -52,7 +52,16 @@ const borrarTurno = (event) => {
             filaTurno.remove();
           Swal.fire('Eliminado', '', 'success')
 
-//Aca tengo que agregar la logica para eliminar del localstorage
+          listaPacientes.addEventListener('click', (e) => {
+            if(e.target.classList.contains('borrar') || e.target.parentElement.classList.contains('borrar')){
+                const turnoId = e.target.closest('tr').ID
+                let newItem = item.filter(item => item.ID != turnoId) 
+                item = newItem 
+                cargarTabla();
+                
+            }
+        })
+        
 
 
         } else if (result.isDenied) {

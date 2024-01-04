@@ -1,1 +1,27 @@
-{ "listaPacientes": [ { "ID": 1, "nombrePaciente": "Juan Perez", "fechaHora": "2022-10-15 09:00", "especialidad": "Cardiología" }, { "ID": 2, "nombrePaciente": "María García", "fechaHora": "2022-10-16 10:30", "especialidad": "Dermatología" }, { "ID": 3, "nombrePaciente": "Carlos López", "fechaHora": "2022-10-17 11:15", "especialidad": "Pediatría" }, { "ID": 4, "nombrePaciente": "Ana Martínez", "fechaHora": "2022-10-18 14:00", "especialidad": "Oftalmología" }, { "ID": 5, "nombrePaciente": "Luis Rodríguez", "fechaHora": "2022-10-19 15:45", "especialidad": "Ginecología" } ] }
+[
+    {
+      "ID": 1,
+      "nombrePaciente": "Juan",
+      "fechaHora": "2022-10-15T10:30"
+    },
+    {
+      "ID": 2,
+      "nombrePaciente": "María",
+      "fechaHora": "2022-10-16T11:00"
+    },
+    {
+      "ID": 3,
+      "nombrePaciente": "Pedro",
+      "fechaHora": "2022-10-17T09:45"
+    },
+    {
+      "ID": 4,
+      "nombrePaciente": "Luisa",
+      "fechaHora": "2022-10-18T14:20"
+    },
+    {
+      "ID": 5,
+      "nombrePaciente": "Ana",
+      "fechaHora": "2022-10-19T15:10"
+    }
+  ]

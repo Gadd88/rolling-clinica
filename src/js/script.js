@@ -1,3 +1,4 @@
+import listaPacientes from '../prueba/turnosPrueba.json' assert{type:"json"};
 const turnosStorage = JSON.parse(localStorage.getItem('listaPacientes'));
 
 const mostrarTurnos = () => {

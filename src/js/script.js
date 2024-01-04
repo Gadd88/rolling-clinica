@@ -5,9 +5,8 @@ const mostrarTurnos = () => {
   tablaTurnos.innerHTML = '';
 
   if (turnosStorage.length < 1) {
-    tablaTurnos.innerHTML = '<h3>No hay turnos agendados</h3>';
-    return;
-  }
+    return tablaTurnos.innerHTML = '<h3>No hay turnos agendados</h3>';
+  } else{
 
   let cuerpo = '';
   turnosStorage.forEach((turno, index) => {
@@ -30,6 +29,7 @@ document.onload = mostrarTurnos();
 
  document.addEventListener('DOMContentLoaded', () => {
    mostrarTurnos();
- });
+ 
+ });}
 
 // document.querySelector('#tablaTurnos').innerHTML = cuerpo;

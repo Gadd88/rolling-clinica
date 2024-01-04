@@ -65,3 +65,16 @@ const borrarTurno = (event) => {
   document.querySelectorAll('.borrar').forEach(botonBorrar => {
     botonBorrar.addEventListener('click', borrarTurno);
   });
+
+// Para obtener el nombre de usuario y usarlo arriba
+  const obtenerUserLogeado = () =>{
+    const usuario = localStorage.getItem("usuario")
+    if (usuario){
+        document.getElementById("spanUser").innerHTML = usuario;
+    } else{
+        return null;
+    } 
+    }
+    document.addEventListener("DOMContentLoaded",function(){
+        obtenerUserLogeado();
+    })

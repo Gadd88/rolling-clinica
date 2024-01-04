@@ -7,8 +7,19 @@ footer img {
   footer a {
     text-decoration: none;
     margin: 10px;
+    color: #daeff8;
   }
 
   footer{
-    background-color: #87ceeb;
+    /* background-color: #87ceeb; */
+    color: #daeff8;
+  } 
+
+  .bordesFooter{
+    height: 200px;
+    width: 200px;
+    background-color: #1c476c;
+    border-radius: 0.5rem;
+    /* width: 100%;
+    flex-grow: 1; */
   }

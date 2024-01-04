@@ -13,6 +13,7 @@ footer img {
   footer{
     /* background-color: #87ceeb; */
     color: #daeff8;
+    width: 100%;
   } 
 
   .bordesFooter{
@@ -22,4 +23,15 @@ footer img {
     border-radius: 0.5rem;
     /* width: 100%;
     flex-grow: 1; */
+  }
+
+  @media (max-width: 768px){
+    .bordesFooter {
+        height: 100%;
+        width: 100%;
+        border-radius: 0;
+    }
+    #redesSocialesFooter{
+        padding-bottom: 2rem;
+    }
   }

@@ -5,28 +5,49 @@
     --primary-dark: #1c476c;
     --white: #ffffff;
     --dark: #121212;
+    /* MAIN PAGE*************************************** */
+    /*HEADER */
+    --heading-bg:#ffffff;
+    --heading-text: #000000;
+    --button: #135CFE;
+    --button-text: #FFFFFF;
+    /* MAIN */
+    --main-background: #E2EFF7;
+    --main-highlighted-text: #FE483B;
+    --main-highlighted-bg: #FFFFFF;
+    --main-heading: #000000;
+    --main-subheading: #000000;
+    --main-icons: #ffffff;
+    --main-icons-text: #000000;
+    /* BUTTON */
+    --btn-primary-text: #FFFFFF;
+    --btn-primary-bg: #135CFE;
+    --btn-secondary-text: #000000;
+    --btn-secondary-bg: #ffffff;
+    /* ADDS */
+    --adds-bg: #ffffff;
+    --adds-line: #fe483b;
+
+
 }
 *{
     transition: .2s ease;
 }
 /* HEADER */
-/* header *{
-    color: var(--white) !important;
-} */
 header nav{
-    background-color: var(--primary-dark);
+    background-color: var(--heading-bg);
 }
-.navbar-nav *{
-    color: #fff;
+header *{
+    color: var(--heading-text);
     text-decoration: none;
 }
 .nav-link{
     transition: all .2s;
 }
 .nav-link:hover{
-    color: var(--primary-light);
+    font-weight: bold;
     transform: scale(1.1);
-    border: 1px solid var(--primary);
+    border: 1px solid var(--main-highlighted-text);
     border-radius: .5rem;
     padding: .5rem;
 }
@@ -111,8 +132,41 @@ body:has([id=menu-nav]:popover-open) #navbar-toggler{
   }
   --open: 1;
 }
+.body-container{
+    background-color: var(--main-background);
+}
 
 .contenedor{
-    background-color: var(--primary-light);
+    background-color: var(--main-highlighted-bg);
     min-height: 80vh;
+}
+
+.btn-primary{
+    background-color: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+    transition: .3s;
+}
+.btn-primary:hover{
+    background-color: #3173ff;
+    color: var(--btn-primary-text);
+    border: 1px solid var(--btn-primary-bg);
+}
+.btn-secondary{
+    background-color: var(--btn-secondary-bg);
+    color: var(--btn-secondary-text);
+    transition: .3s;
+}
+.btn-secondary:hover{
+    background-color: var(--btn-secondary-text);
+    color: var(--btn-secondary-bg);
+}
+.btn-orange{
+    background-color: var(--main-highlighted-text);
+    color: var(--main-highlighted-bg);
+    transition: .3s;
+}
+.btn-orange:hover{
+    background-color: var(--main-highlighted-bg);
+    color: var(--main-highlighted-text);
+    border: 1px solid var(--main-highlighted-text)
 }

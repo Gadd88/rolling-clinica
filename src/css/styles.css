@@ -59,7 +59,7 @@ header *{
     border-radius: 15px;
     border: none;
     box-shadow: 4px 4px 15px rgba(0,0,0,0.3);
-    background-color: var(--primary-dark);
+    background-color: var(--main-background);
 }
 #form-login{
     display: flex;
@@ -71,13 +71,16 @@ header *{
     padding: 2.5rem;
 }
 #form-login .input-group-text{
-    background-color: var(--primary-dark);
+    background-color: var(--main-highlighted-bg);
+    color: var(--btn-secondary-text);
+    cursor: default;
 }
 #form-login input{
     border-radius: 0 10px 10px 0;
-    border: 1px solid #aaa;
+    border: 1px solid none;
     padding: 5px 10px;
-    color: var(--primary-dark) !important;
+    background-color: var(--main-highlighted-bg) !important;
+    color: var(--btn-secondary-text);
 }
 #btn-close-login{
     position: absolute;

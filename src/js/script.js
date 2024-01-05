@@ -36,7 +36,7 @@ btnLoginIngresar.addEventListener('click', (e) =>{
     //podemos comparar pasando los objetos a string con JSON.stringify o con lodash usando _.isEqual(usuarioLoggeado, paciente)
     if(JSON.stringify(usuarioLoggeado) === JSON.stringify(paciente) || JSON.stringify(usuarioLoggeado) === JSON.stringify(doctor)){
         btnRegLogSection.innerHTML = `
-        <h4 class="text-light">Bienvenido ${usuarioLoggeado.usuario}</h4>
+        <h4 class="">Bienvenido ${usuarioLoggeado.usuario}</h4>
         <div id="btn-salir" class="btn btn-danger p-1">
             <img src="../iconos/logout.svg" alt="logout">
         </div>

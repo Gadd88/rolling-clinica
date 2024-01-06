@@ -5,6 +5,7 @@ const cuerpoTabla = document.querySelector('#tablaTurnos');
 // En esta seccion esta la funcion para cargar los turnos de la pagina que vienen de PACIENTES a una tabla. 
 
 const cargarTabla = () => {
+    cargarTabla.innerHTML="";
     listaPacientes.forEach((item) => {
     const fila = document.createElement('tr');
     const celdas = `
@@ -22,16 +23,9 @@ const cargarTabla = () => {
 };
 
 cargarTabla();
+console.log(listaPacientes)
 
 // En esta seccion esta la funcion para el boton eliminar cada turno seleccionado. 
-
-// const borrarTurno = (ID)=> {
-//     let index=listaPacientes.findIndex((item)=>. ID==ID)
-//     let validar= confirm('Estas seguro que quieres eliminar este turno?')
-//     if(validar){
-//         listaPacientes.splice(index,1)
-//     }
-// }
 
 const borrarTurno = (event) => {
     const filaTurno = event.target.closest('tr'); 
@@ -55,8 +49,8 @@ const borrarTurno = (event) => {
           listaPacientes.addEventListener('click', (e) => {
             if(e.target.classList.contains('borrar') || e.target.parentElement.classList.contains('borrar')){
                 const turnoId = e.target.closest('tr').ID
-                let newItem = item.filter(item => item.ID != turnoId) 
-                item = newItem 
+                let newItem = listaPacientes.filter(item => item.ID != turnoId) 
+                listaPacientes = newItem; 
                 cargarTabla();
                 
             }
@@ -77,7 +71,7 @@ const borrarTurno = (event) => {
 
 // Para obtener el nombre de usuario y usarlo arriba
   const obtenerUserLogeado = () =>{
-    const usuario = localStorage.getItem("usuario")
+    const usuario = localStorage.getItem("nombreMedico")
     if (usuario){
         document.getElementById("spanUser").innerHTML = usuario;
     } else{

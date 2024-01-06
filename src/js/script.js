@@ -34,3 +34,8 @@ document.onload = mostrarTurnos();
  });}
 
 // document.querySelector('#tablaTurnos').innerHTML = cuerpo;
+
+let validar=confirm('Estas seguro que deseas eliminar este turno?')
+    if (validar){
+    filaTurno.remove(); 
+    }

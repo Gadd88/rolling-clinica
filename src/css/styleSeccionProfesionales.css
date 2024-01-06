@@ -1,0 +1,81 @@
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.swiper {
+  width: 100%;
+  display: flex;
+}
+
+.swiper-slide {
+  width: 220px;
+}
+
+.swiper-button-prev, .swiper-button-next {
+  --swiper-navigation-size: 25px;
+  padding: 1.5rem;
+  --swiper-navigation-color: var(--swiper-theme-color);
+  --swiper-navigation-top-offset: 45%;
+  --swiper-navigation-sides-offset: 0px;
+  transition: all 0.3s;
+  border-radius: 0px 50px 50px 0px;
+}
+
+.swiper-button-next {
+  border-radius: 50px 0px 0px 50px;
+}
+
+.swiper-button-prev:hover, .swiper-button-next:hover {
+  background-color: var(--swiper-theme-color);;
+  color: white;
+  transition: all 0.3s;
+}
+
+.cardProfesionales {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  width: 240px;
+}
+
+.imgProfesionales {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+@media (max-width: 800px) {
+  .swiper-slide {
+    width: 140px;
+  }
+  .cardProfesionales {
+    height: 200px;
+    width: 180px;
+  }
+  .imgProfesionales {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+  }
+  .card-body {
+    padding: 0.5rem;
+  }
+  .card-title {
+    font-size: 1rem;
+  }
+  .card-text {
+    font-size: 1rem;
+    margin: 0.5rem;
+  }
+  .btn {
+    font-size: 0.8rem;
+    margin-bottom: 0.25rem;
+  }
+  .swiper-button-prev, .swiper-button-next {
+    --swiper-navigation-size: 15px;
+    padding: 1rem;
+  }
+}

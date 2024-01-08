@@ -36,12 +36,16 @@
                         </select>
                     </div>
                     <div class="mb-3 col-12 d-flex flex-column">
-                      <label for="inputSintomas" class="form-label">Sintomas:</label>
-                      <textarea class="p-2 rounded-3 border border-1 form-control" name="inputSintomas" id="inputSintomas" cols="30" rows="5"></textarea>
+                      <label for="inputMotivo" class="form-label">Motivo de consulta:</label>
+                      <textarea class="p-2 rounded-3 border border-1 form-control" name="inputMotivo" id="inputMotivo" cols="30" rows="5"></textarea>
                     </div>
                     <div class="mb-3 col-12">
                       <label for="inputFecha" class="form-label">Fecha Turno</label>
                       <input type="date" class="form-control" id="inputFecha" required>
+                    </div>
+                    <div class="mb-3 col-12">
+                      <label for="inputHora" class="form-label">Hora Turno</label>
+                      <input type="time" class="form-control" id="inputHora" required>
                     </div>
                     <button type="submit" class="btn btn-primary" id="btnAgendar">Agendar Turno</button>
                 </form>
@@ -62,6 +66,6 @@
         </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="../js/script2.js" type="module"></script>
+    <script src="../js/scriptPaciente.js" type="module"></script>
 </body>
 </html>

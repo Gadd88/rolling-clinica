@@ -1,10 +1,10 @@
 //VARIABLES Y CONSTANTES
 const modalLogin = document.getElementById('modal-login');
-const btnLogin = document.getElementById('btn-login');
 const btnCloseLogin = document.getElementById('btn-close-login');
 const formLogin = document.getElementById('form-login');
 const btnLoginIngresar = document.getElementById('btn-login-ingresar');
-const btnRegLogSection = document.getElementById('btn-reg-log');
+const btnRegLogSection = document.querySelectorAll('.btn-reg-log');
+const btnLogin = document.querySelectorAll('.btn-login')
 
 const paciente = {
     usuario: 'paciente',
@@ -15,9 +15,11 @@ const doctor = {
     password: 'doctor',
 }
 //FUNCIONES
-btnLogin.addEventListener('click', () =>{
-    console.log('click')
-    modalLogin.showModal();
+btnLogin.forEach(btn => {
+    //tenemos 2 botones login, 1 en vista desktop y otro en vista mobile. Aplico forEach para dar funcionalidad a ambos botones
+    btn.addEventListener('click', () =>{
+        modalLogin.showModal();
+    })
 })
 
 btnCloseLogin.addEventListener('click', () =>{
@@ -35,19 +37,22 @@ btnLoginIngresar.addEventListener('click', (e) =>{
     }
     //podemos comparar pasando los objetos a string con JSON.stringify o con lodash usando _.isEqual(usuarioLoggeado, paciente)
     if(JSON.stringify(usuarioLoggeado) === JSON.stringify(paciente) || JSON.stringify(usuarioLoggeado) === JSON.stringify(doctor)){
-        btnRegLogSection.innerHTML = `
-        <h4 class="">Bienvenido ${usuarioLoggeado.usuario}</h4>
-        <div id="btn-salir" class="btn btn-danger p-1">
-            <img src="../iconos/logout.svg" alt="logout">
-        </div>
-        `
-        const btnSalir = document.getElementById('btn-salir');
-        btnSalir.addEventListener('click', () =>{
-           location.reload();
+        btnRegLogSection.forEach(regLogSection => {
+            regLogSection.innerHTML = `
+            <h4 class="">Bienvenido ${usuarioLoggeado.usuario}</h4>
+            <div class="btn btn-danger p-1 btn-salir">
+            
+            </div>
+            `
+            const btnSalir = document.querySelectorAll('.btn-salir');
+            btnSalir.forEach(btnSalir => {
+                btnSalir.addEventListener('click', () =>{
+                location.reload();
+                })
+            })
         })
     }else{
         return
     }
     modalLogin.close()
-
-});
+})

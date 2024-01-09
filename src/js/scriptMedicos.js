@@ -5,18 +5,19 @@ let listaPacientes = JSON.parse(localStorage.getItem('turnos'))
 
 // En esta seccion esta la funcion para cargar los turnos de la pagina que vienen de PACIENTES a una tabla. 
 
-const cargarTabla = (array) => {
+
+const cargarTabla = () => {
     cargarTabla.innerHTML="";
-    array.forEach(item => {
+    listaPacientes.forEach(item => {
       const fila = document.createElement('tr');
-      fila.id = crypto.randomUUID().slice(0,4)
+      fila.id = item.id/* crypto.randomUUID().slice(0,4) */
       const celdas = `
         <th>${item.id}</th>
         <td>${item.paciente}</td>
         <td>${item.fecha}</td>
         <td>${item.hora}</td>
         <td> <div class="d-flex gap-2">
-        <button class="btn btn-outline-warning editar" data-bs-toggle="modal" data-bs-target="#editarTurno"><i class="fa-solid fa-pen-to-square"></i></button>
+        <button class="btn btn-outline-warning editar" id=${item.id} data-bs-toggle="modal" data-bs-target="#editarTurno" ><i class="fa-solid fa-pen-to-square" id=${item.id}></i></button>
         <button class="btn btn-outline-danger borrar"><i class="fa-solid fa-trash"></i></button>
         </div></td>
       `;
@@ -24,7 +25,7 @@ const cargarTabla = (array) => {
       cuerpoTabla.appendChild(fila); 
     });
 };
-cargarTabla(listaPacientes)
+cargarTabla()
 
 // En esta seccion esta la funcion para el boton eliminar cada turno seleccionado. 
 const borrarTurno = (event) => {
@@ -50,7 +51,7 @@ const borrarTurno = (event) => {
                 const turnoId = e.target.closest('th').value
                 let newItem = listaPacientes.filter(item => item.id != turnoId) 
                 listaPacientes = newItem; 
-                cargarTabla(listaPacientes);
+                cargarTabla();
             }
         })
 
@@ -66,22 +67,33 @@ document.querySelectorAll('.borrar').forEach(botonBorrar => {
 
 
 // BOTON EDITAR **********************************
-const editarTurno = (event) => {
-  // const filaTurno = event.target.closest('tr')
-  cuerpoTabla.addEventListener('click', editarClick)
-}
-const editarClick = (e) => {
-  if(e.target.classList.contains('editar') || e.target.parentElement.classList.contains('editar')){
-    const filaId = e.target.closest('tr').cells[0].textContent;
-    const turnoSeleccionado = listaPacientes.find(turno => turno.id == filaId);
-    mostrarFormularioModificar(turnoSeleccionado.id)
-  }
-}
+// const editarTurno = (event) => {
+//   // const filaTurno = event.target.closest('tr')
+//   cuerpoTabla.addEventListener('click', editarClick)
+// }
+// const editarClick = (e) => {
+  //     const turnoSeleccionado = listaPacientes.find(turno => turno.id == filaId);
+  //     mostrarFormularioModificar(turnoSeleccionado.id)
+  //   }
+  // }
+  document.querySelectorAll('.editar').forEach(botonEditar => {
+    botonEditar.addEventListener('click', (e) => {
+      console.log(e.target.id)
+      const turno = listaPacientes.find(turno => turno.id === e.target.id)
+      mostrarFormularioModificar(turno)
+      // if(e.target.classList.contains('editar') || e.target.parentElement.classList.contains('editar')){
+      //   let filaId = e.target.closest('tr').id;
+      //   console.log(filaId)
+      //   const turnoSeleccionado = listaPacientes.find(turno => turno.id === filaId)
+      //   mostrarFormularioModificar(turnoSeleccionado)
+      // }
+      
+  });
+})
+
 const modalTitle = document.getElementById('modal-title')
-const mostrarFormularioModificar = (id) => {
-  let turno = {}
+const mostrarFormularioModificar = (turno) => {
   //buscamos el producto que queremos modificar usando el metodo find y el id
-  turno = listaPacientes.find(turno => turno.id == id);
   //form para modificacion:
   const formEdicion = document.getElementById('form-edicion');
   formEdicion.innerHTML = `
@@ -97,27 +109,19 @@ const mostrarFormularioModificar = (id) => {
       modalTitle.textContent = `Paciente: ${turno.paciente}`
   // funcion para guardar los cambios
   const guardarEdicion = document.getElementById('btn-guardar')
-  const editarTurno = (turno) => {
+  const editarTurno = () => {
+    cuerpoTabla.innerHTML = ''
     // cambiamos los datos originales por los agregados en el form de arriba
     turno.fecha = document.getElementById('nuevo-fechaTurno').value;
     turno.hora = document.getElementById('nuevo-horaTurno').value;
     // Mostrar nuevamente listado de productos
-    cuerpoTabla.innerHTML = ''
     localStorage.setItem('turnos', JSON.stringify(listaPacientes))
-    const nuevaLista = JSON.parse(localStorage.getItem('turnos'))
-    cargarTabla(nuevaLista)
   }
   guardarEdicion.addEventListener('click', ()=> {
-    editarTurno(turno)      
-    console.log(listaPacientes)
+    editarTurno()      
     Swal.fire('Turno Editado', '', 'success')
   })
 }
-document.querySelectorAll('.editar').forEach(botonEditar => {
-  botonEditar.addEventListener('click', editarTurno);
-})
-
-
 // Para obtener el nombre de usuario y usarlo arriba
 const obtenerUserLogeado = () =>{
   const usuario = localStorage.getItem("nombreMedico")

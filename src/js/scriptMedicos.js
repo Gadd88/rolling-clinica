@@ -25,7 +25,13 @@ const cargarTabla = () => {
       cuerpoTabla.appendChild(fila); 
     });
 };
-cargarTabla()
+console.log(listaPacientes)
+if(listaPacientes == null){
+  cuerpoTabla.innerHTML = 
+    `<h3 class="text-center m-auto">No hay pacientes agendados</h3>`
+}else{
+  cargarTabla()
+}
 
 // En esta seccion esta la funcion para el boton eliminar cada turno seleccionado. 
 const borrarTurno = (event) => {
@@ -92,21 +98,26 @@ document.querySelectorAll('.borrar').forEach(botonBorrar => {
 })
 
 const modalTitle = document.getElementById('modal-title')
+const modalBody = document.getElementById('modal-body')
 const mostrarFormularioModificar = (turno) => {
   //buscamos el producto que queremos modificar usando el metodo find y el id
   //form para modificacion:
   const formEdicion = document.getElementById('form-edicion');
   formEdicion.innerHTML = `
       <div class="d-flex align-items-start gap-2 col-12 justify-content-between">
-      <span class="input-group-text col-3" for="nuevo-fechaTurno">Fecha Turno:</span>
+          <span class="input-group-text col-3" for="motivoTurno">Motivo turno:</span>
+          <input class="form-control" role='button' type="text" id="motivoTurno" value="${turno.motivo}" readonly>
+      </div>
+      <div class="d-flex align-items-start gap-2 col-12 justify-content-between">
+          <span class="input-group-text col-3" for="nuevo-fechaTurno">Fecha Turno:</span>
           <input class="form-control" type="date" id="nuevo-fechaTurno" value="${turno.fecha}">
       </div>
       <div class="d-flex align-items-start gap-2 col-12 justify-content-between">
           <span class="input-group-text col-3" for="nuevo-horaTurno">Hora Turno:</span>
           <input class="form-control" type="time" id="nuevo-horaTurno" value="${turno.hora}">
-          </div>
+      </div>
       `
-      modalTitle.textContent = `Paciente: ${turno.paciente}`
+  modalTitle.textContent = `Paciente: ${turno.paciente}`
   // funcion para guardar los cambios
   const guardarEdicion = document.getElementById('btn-guardar')
   const editarTurno = () => {
@@ -116,6 +127,10 @@ const mostrarFormularioModificar = (turno) => {
     turno.hora = document.getElementById('nuevo-horaTurno').value;
     // Mostrar nuevamente listado de productos
     localStorage.setItem('turnos', JSON.stringify(listaPacientes))
+    cargarTabla()
+    setTimeout(() => {
+      location.reload()
+    }, 1000);
   }
   guardarEdicion.addEventListener('click', ()=> {
     editarTurno()      

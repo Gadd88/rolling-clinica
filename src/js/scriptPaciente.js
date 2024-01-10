@@ -24,8 +24,8 @@ let turnos = [
         id: 'aaa1',
         paciente: "Juan",
         fecha: "2022-10-15",
-        especialidad: 'cardiologia',
-        motivo: 'sueño',
+        especialidad: 'clinica general',
+        motivo: 'sueño excesivo',
         hora: "10:30"
     },
     {

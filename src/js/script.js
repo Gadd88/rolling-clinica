@@ -1,0 +1,1 @@
+import turnos from './turnos.json' assert { type: json }

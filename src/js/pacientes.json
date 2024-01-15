@@ -7,7 +7,7 @@
       "especialidad": "Cardiologia",
       "motivo_consulta": "Presión arterial alta y palpitaciones",
       "medico_solicitado": "Dra. Martínez",
-      "horaTurno": "00:50",
+      "horaTurno": "09:50",
       "fechaTurno": "2024-02-28"
     },
     {
@@ -17,8 +17,8 @@
       "especialidad": "Traumatologia",
       "motivo_consulta": "Fractura en la pierna izquierda",
       "medico_solicitado": "Dr. García",
-      "horaTurno": "16:38",
-      "fechaTurno": "2024-01-08"
+      "horaTurno": "15:20",
+      "fechaTurno": "2024-01-22"
     },
     {
       "id": "D012",
@@ -31,13 +31,13 @@
       "fechaTurno": "2024-02-01"
     },
     {
-      "id": "7aae",
+      "id": "8008",
       "paciente": "pepito perez",
-      "paciente_dni": "323232323",
-      "especialidad": "ginecologia",
-      "motivo": "323232",
-      "fechaTurno": "2024-01-10",
-      "horaTurno": "13:20"
+      "paciente_dni": "32323232",
+      "especialidad": "cardiologia",
+      "motivo_consulta": "Palpitaciones y pulso elevado",
+      "fechaTurno": "2024-02-28",
+      "horaTurno": "09:50"
     }
   ]
 }

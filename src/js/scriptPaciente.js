@@ -46,6 +46,7 @@ const agregarStorage = () => {
     localStorage.setItem('turnos', JSON.stringify(turnos));
 }
 
+//AGREGAR TURNO AL ARRAY
 const agregarTurno = () => {
     if(inputNombre.value == '' || inputFecha.value == '' || inputDni.value == '' || inputMotivo.value == '' || inputEspecialidad.value == '' || inputHora.value == ''){
         errorText.classList.add('p-3','rounded-3')
@@ -61,7 +62,7 @@ const agregarTurno = () => {
         paciente: inputNombre.value,
         paciente_dni: inputDni.value,
         especialidad: inputEspecialidad.value,
-        motivo: inputMotivo.value,
+        motivo_consulta: inputMotivo.value,
         fechaTurno: inputFecha.value,
         horaTurno: inputHora.value,
     }

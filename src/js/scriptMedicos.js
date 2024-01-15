@@ -12,8 +12,8 @@ const consultaApi = async () => {
 let listaPacientes = JSON.parse(localStorage.getItem('turnos'))
 
 const cargarTabla = () => {
-    cuerpoTabla.innerHTML = ''
     consultaApi()
+    cuerpoTabla.innerHTML = ''
     if(listaPacientes == null || listaPacientes.length < 1) return cuerpoTabla.innerHTML = `<h3 class="text-center m-auto">No hay pacientes agendados</h3>`
     listaPacientes.forEach( item => {
       const {id, paciente, fechaTurno, horaTurno} = item
@@ -22,7 +22,7 @@ const cargarTabla = () => {
       const celdas = `
         <th>${id}</th>
         <td>${paciente}</td>
-        <td>${new Date(fechaTurno).toLocaleDateString('es-AR')}</td>
+        <td>${fechaTurno.split('-').reverse().join('/')}</td>
         <td>${horaTurno}</td>
         <td> <div class="d-flex gap-2">
         <button class="btn btn-outline-warning editar" id=${id} data-bs-toggle="modal" data-bs-target="#editarTurno" ><i class="fa-solid fa-pen-to-square" id=${id}></i></button>

@@ -7,7 +7,6 @@ const inputFecha = document.getElementById('inputFecha')
 const inputHora = document.getElementById('inputHora')
 const btnAgendar = document.getElementById('btnAgendar')
 const formTurno = document.getElementById('formTurno')
-const turnosStorage = JSON.parse(localStorage.getItem('turnos'))
 const errorText = document.getElementById('errorText')
 
 // window.addEventListener('DOMContentLoaded', () => {
@@ -19,25 +18,21 @@ const errorText = document.getElementById('errorText')
 
 // let pacientesCardio = pacientesStorage.filter(paciente => paciente.especialidad.toLowerCase() == 'cardiologia')
 // console.log(pacientesCardio) 
-let turnos = [
-    {
-        id: 'aaa1',
-        paciente: "Juan",
-        fecha: "2022-10-15",
-        especialidad: 'clinica general',
-        motivo: 'sueño excesivo',
-        hora: "10:30"
-    },
-    {
-        id: 'aaa2',
-        paciente: "María",
-        fecha: "2022-10-16",
-        especialidad: "ginecologia",
-        motivo: 'control natal',
-        hora: '09:30',
-    },
-]
 
+const consultaApi = async () => {
+    try {
+        let data;
+        const response = await fetch('http://localhost:3000/pacientes')
+        const result = await response.json()
+        data = result
+        localStorage.setItem('turnos', JSON.stringify(data))
+        return data
+    } catch (error) {
+        console.log(error.message)
+    }
+}
+
+//AGREGAR UN TURNO
 const resetInputs = () => {
     inputNombre.value = '';
     inputDni.value = '';
@@ -46,9 +41,11 @@ const resetInputs = () => {
     inputHora.value = '';
     inputMotivo.value = '';
 }
+//AGREGAR A STORAGE SI NO SE USA API
 const agregarStorage = () => {
     localStorage.setItem('turnos', JSON.stringify(turnos));
 }
+
 const agregarTurno = () => {
     if(inputNombre.value == '' || inputFecha.value == '' || inputDni.value == '' || inputMotivo.value == '' || inputEspecialidad.value == '' || inputHora.value == ''){
         errorText.classList.add('p-3','rounded-3')
@@ -65,56 +62,71 @@ const agregarTurno = () => {
         paciente_dni: inputDni.value,
         especialidad: inputEspecialidad.value,
         motivo: inputMotivo.value,
-        fecha: inputFecha.value,
-        hora: inputHora.value,
+        fechaTurno: inputFecha.value,
+        horaTurno: inputHora.value,
     }
-    turnos.push(turno)
+    fetch('http://localhost:3000/pacientes', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(turno)
+    })
 }
-
 btnAgendar.addEventListener('click', (e) => {
     e.preventDefault()
     agregarTurno()
     resetInputs()
-    agregarStorage()
+    // agregarStorage()
     mostrarTurnos()
 })
 
+//MOSTRAR LOS TURNOS EN PANTALLA
 const mostrarTurnos = () => {
+    consultaApi()
+    let turnos = JSON.parse(localStorage.getItem('turnos'))
+    // OPCION DE FECHA SIN new DATE ${fechaTurno.split('-').reverse().join('/')}
     const listaTurnos = document.getElementById('listaTurnos')
     listaTurnos.innerHTML = ''
     if(turnos.length<1) return listaTurnos.innerHTML = '<h3>No hay turnos agendados</h3>' 
     turnos.forEach(turno => {
-        const { paciente, especialidad, fecha, hora, id } = turno
+        const { paciente, especialidad, fechaTurno, horaTurno, id } = turno
         listaTurnos.innerHTML +=
         `<li class="card" style="width: 18rem;" id=${id}>
             <div class="card-body">
-                <h4 class="card-title">${especialidad}</h4>
-                <h5 class="card-subtitle mb-2 text-body-secondary">Fecha: ${fecha.toLocaleString()} </h5>
-                <h6 class="card-subtitle mb-2 text-body-secondary">Hora: ${hora.toLocaleString()} </h6>
-                <p class="card-text"> ${paciente} </p>
+                <p class="card-text">Turno ID: <strong>${id}</strong> </p>
+                <h4 class="card-text"> ${paciente} </h4>
+                <p class="card-title">Especialidad: ${especialidad}</p>
+                <h5 class="card-subtitle mb-2 text-body-secondary">Fecha: ${new Date(fechaTurno).toLocaleDateString('es-AR')} </h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">Hora: ${horaTurno.toLocaleString()} </h6>
+                <br/>
                 <button class="btn btn-outline-danger eliminarTurno">Eliminar</button>
             </div>
         </li>`
     })
 }
 
+//ELIMINAR UN TURNO A TRAVES DE FILTRADO
 listaTurnos.addEventListener('click', (e) => {
     if(e.target.classList.contains('eliminarTurno') || e.target.parentElement.classList.contains('eliminarTurno')){
         const turnoId = e.target.closest('li').id
-        let newTurnos = turnos.filter(turno => turno.id != turnoId)
-        turnos = newTurnos
-        agregarStorage()
-        mostrarTurnos()
+        // let newTurnos = turnos.filter(turno => turno.id != turnoId)
+        // turnos = newTurnos
+        fetch(`http://localhost:3000/pacientes/${turnoId}`, {
+            method: 'DELETE',
+        })
+        // agregarStorage()
     }
+    mostrarTurnos()
 })
 
 document.addEventListener('DOMContentLoaded', () => {
-    localStorage.setItem('turnos', JSON.stringify(turnos))
-    const turnosStorage = JSON.parse(localStorage.getItem('turnos'))
-    if(!turnosStorage || turnosStorage.length < 1 || turnosStorage == null || turnosStorage == undefined){
-        turnos = []
-    } else {
-        turnos = turnosStorage
-    }
+    // localStorage.setItem('turnos', JSON.stringify(turnos))
+    // const turnosStorage = JSON.parse(localStorage.getItem('turnos'))
+    // if(!turnosStorage || turnosStorage.length < 1 || turnosStorage == null || turnosStorage == undefined){
+    //     turnos = []
+    // } else {
+    //     turnos = turnosStorage
+    // }
     mostrarTurnos()
 })

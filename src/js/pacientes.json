@@ -1,43 +1,34 @@
-[
-    {
-      "id": "A123",
-      "nombre": "Ana",
-      "apellido": "Gómez",
-      "fecha_nacimiento": "1980-05-15",
-      "dni": "1234567890",
-      "especialidad": "Clinica",
-      "motivo_consulta": "Dolor abdominal y fatiga",
-      "medico_solicitado": "Dr. Rodriguez"
-    },
+{
+  "pacientes": [
     {
       "id": "B456",
-      "nombre": "Carlos",
-      "apellido": "Fernández",
-      "fecha_nacimiento": "1975-10-20",
-      "dni": "9876543210",
+      "paciente": "Carlos Fernández",
+      "paciente_dni": "98765432",
       "especialidad": "Cardiologia",
       "motivo_consulta": "Presión arterial alta y palpitaciones",
-      "medico_solicitado": "Dra. Martínez"
+      "medico_solicitado": "Dra. Martínez",
+      "horaTurno": "12:30",
+      "fechaTurno": "2024-02-16"
     },
     {
       "id": "C789",
-      "nombre": "Luisa",
-      "apellido": "Martínez",
-      "fecha_nacimiento": "1992-02-08",
-      "dni": "5678901234",
+      "paciente": "Luisa Martinez",
+      "paciente_dni": "56789012",
       "especialidad": "Traumatologia",
       "motivo_consulta": "Fractura en la pierna izquierda",
-      "medico_solicitado": "Dr. García"
+      "medico_solicitado": "Dr. García",
+      "horaTurno": "11:30",
+      "fechaTurno": "2024-02-18"
     },
     {
       "id": "D012",
-      "nombre": "Elena",
-      "apellido": "Ruíz",
-      "fecha_nacimiento": "1988-12-03",
-      "dni": "3456789012",
+      "paciente": "Elena Ruiz",
+      "paciente_dni": "34567890",
       "especialidad": "Ginecologia",
       "motivo_consulta": "Control prenatal y preguntas sobre el parto",
-      "medico_solicitado": "Dra. López"
+      "medico_solicitado": "Dra. López",
+      "horaTurno": "09:30",
+      "fechaTurno": "2024-02-01"
     }
   ]
-  
+}

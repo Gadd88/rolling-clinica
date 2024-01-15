@@ -2,13 +2,6 @@
 
 const cuerpoTabla = document.querySelector('#tablaTurnos');
 
-// En esta seccion esta la funcion para cargar los turnos de la pagina que vienen de PACIENTES a una tabla. 
-// const consultaApi = async () => {
-//   const response = await fetch('http://localhost:3000/pacientes')
-//   const result = await response.json()
-//   const data = result
-//   localStorage.setItem('turnos')
-// }
 const consultaApi = async () => {
   const response = await fetch('http://localhost:3000/pacientes')
   const result = await response.json()
@@ -25,7 +18,7 @@ const cargarTabla = () => {
     listaPacientes.forEach( item => {
       const {id, paciente, fechaTurno, horaTurno} = item
       const fila = document.createElement('tr');
-      fila.id = id/* crypto.randomUUID().slice(0,4) */
+      fila.id = id
       const celdas = `
         <th>${id}</th>
         <td>${paciente}</td>
@@ -84,33 +77,18 @@ document.querySelectorAll('.borrar').forEach(botonBorrar => {
 
 
 // BOTON EDITAR **********************************
-// const editarTurno = (event) => {
-//   // const filaTurno = event.target.closest('tr')
-//   cuerpoTabla.addEventListener('click', editarClick)
-// }
-// const editarClick = (e) => {
-  //     const turnoSeleccionado = listaPacientes.find(turno => turno.id == filaId);
-  //     mostrarFormularioModificar(turnoSeleccionado.id)
-  //   }
-  // }
+
 document.querySelectorAll('.editar').forEach(botonEditar => {
   botonEditar.addEventListener('click', (e) => {
     const turnoId = e.target.id
     const turno = listaPacientes.find(turno => turno.id === turnoId)
     mostrarFormularioModificar(turno)
-    // if(e.target.classList.contains('editar') || e.target.parentElement.classList.contains('editar')){
-    //   let filaId = e.target.closest('tr').id;
-    //   console.log(filaId)
-    //   const turnoSeleccionado = listaPacientes.find(turno => turno.id === filaId)
-    //   mostrarFormularioModificar(turnoSeleccionado)
-    // }  
   });
 })
 
 const modalTitle = document.getElementById('modal-title')
 const modalBody = document.getElementById('modal-body')
 const mostrarFormularioModificar = (turno) => {
-  //buscamos el producto que queremos modificar usando el metodo find y el id
   //form para modificacion:
   const formEdicion = document.getElementById('form-edicion');
   formEdicion.innerHTML = `
@@ -135,20 +113,17 @@ const mostrarFormularioModificar = (turno) => {
     // cambiamos los datos originales por los agregados en el form de arriba
     turno.fechaTurno = document.getElementById('nuevo-fechaTurno').value;
     turno.horaTurno = document.getElementById('nuevo-horaTurno').value;
-    // Mostrar nuevamente listado de productos
-    // setTimeout(() => {
-      //   location.reload()
-      // }, 1000);
     await fetch(`http://localhost:3000/pacientes/${turno.id}`, {
-        method: 'PATCH',
-        headers: new Headers({
+      method: 'PATCH',
+      headers: new Headers({
           'Content-Type': 'application/json'
         }),
         body: JSON.stringify({
           fechaTurno: turno.fechaTurno,
           horaTurno: turno.horaTurno,
         })
-    })
+      })
+    // Mostrar nuevamente listado de productos
     cargarTabla()
   }
   guardarEdicion.addEventListener('click', ()=> {

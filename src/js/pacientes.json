@@ -7,7 +7,7 @@
       "especialidad": "Cardiologia",
       "motivo_consulta": "Presión arterial alta y palpitaciones",
       "medico_solicitado": "Dra. Martínez",
-      "horaTurno": "20:50",
+      "horaTurno": "00:50",
       "fechaTurno": "2024-02-28"
     },
     {
@@ -29,6 +29,15 @@
       "medico_solicitado": "Dra. López",
       "horaTurno": "20:30",
       "fechaTurno": "2024-02-01"
+    },
+    {
+      "id": "7aae",
+      "paciente": "pepito perez",
+      "paciente_dni": "323232323",
+      "especialidad": "ginecologia",
+      "motivo": "323232",
+      "fechaTurno": "2024-01-10",
+      "horaTurno": "13:20"
     }
   ]
 }

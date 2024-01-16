@@ -1,5 +1,3 @@
-import listaTurnos from './turnos.json' assert { type: 'json'}
-
 const formTurnos = document.getElementById('formTurnos')
 
 const fecha = document.getElementById('fecha')
@@ -7,6 +5,8 @@ const hora = document.getElementById('hora')
 const medico = document.getElementById('medico')
 const motivo = document.getElementById('motivo')
 const cuerpoTurnos = document.getElementById('cuerpoTurnos')
+
+let listaTurnos = []
 
 // Evento que crea un objeto llamado turno, y lo carga en un JSON mediante el formulario.
 
@@ -23,6 +23,7 @@ formTurnos.addEventListener('submit', (e) => {
   formTurnos.reset()
   localStorage.setItem('turnos', JSON.stringify(listaTurnos))
   cargarTurnos()
+  console.log(listaTurnos);
 })
 
 // Función que carga los turnos que se van creando mediante el formulario.
@@ -52,7 +53,6 @@ const cargarTurnos = () => {
 // Función que elimina los turnos del DOM y del local storage.
 
 window.borrarTurno = (id) => {
-
   let index = listaTurnos.findIndex((turno) => turno.id == id)
   let validar = confirm(`¿Está seguro/a que desea cancelar su turno del día?`)
 

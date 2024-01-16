@@ -120,7 +120,7 @@ const eliminarConsultaSweetAlert = (consulta) => {
 };
 
 //Obtiene las consultas almacenadas, se encuentra la consulta a eliminar y la elimina del array //
-Actualiza el localStorage con la nueva lista de consultas
+//Actualiza el localStorage con la nueva lista de consultas //
 const borrarConsulta = (consulta) => {
   const consultasGuardadas = JSON.parse(localStorage.getItem('consultas')) || [];
   const indice = consultasGuardadas.findIndex((c) => c.nombre === consulta.nombre && c.telefono === consulta.telefono && c.mail === consulta.mail && c.consulta === consulta.consulta);

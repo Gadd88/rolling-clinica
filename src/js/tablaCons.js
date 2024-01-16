@@ -22,7 +22,7 @@ const tablaCuerpo = document.getElementById('tablaConsultasBody');
         const btnMostrarConsulta = document.createElement('button');
         btnMostrarConsulta.className = 'btn btn-primary btn-sm';
         const iconoMostrarConsulta = document.createElement('img');
-        iconoMostrarConsulta.src = "../src/iconos/eye.svg";
+        iconoMostrarConsulta.text = "./src/iconos/eye.svg";
         iconoMostrarConsulta.style.filter = 'brightness(0) invert(1)';
         btnMostrarConsulta.addEventListener('click', () => {
           mostrarConsultaSweetAlert(consulta);

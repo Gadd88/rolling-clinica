@@ -11,33 +11,13 @@
       "fechaTurno": "2024-02-28"
     },
     {
-      "id": "C789",
-      "paciente": "Luisa Martinez",
-      "paciente_dni": "56789012",
-      "especialidad": "Traumatologia",
-      "motivo_consulta": "Fractura en la pierna izquierda",
-      "medico_solicitado": "Dr. García",
-      "horaTurno": "15:20",
-      "fechaTurno": "2024-01-22"
-    },
-    {
-      "id": "D012",
-      "paciente": "Elena Ruiz",
-      "paciente_dni": "34567890",
-      "especialidad": "Ginecologia",
-      "motivo_consulta": "Control prenatal y preguntas sobre el parto",
-      "medico_solicitado": "Dra. López",
-      "horaTurno": "20:30",
-      "fechaTurno": "2024-02-01"
-    },
-    {
-      "id": "8008",
+      "id": "8df1",
       "paciente": "pepito perez",
       "paciente_dni": "32323232",
-      "especialidad": "cardiologia",
-      "motivo_consulta": "Palpitaciones y pulso elevado",
-      "fechaTurno": "2024-02-28",
-      "horaTurno": "09:50"
+      "especialidad": "clinica",
+      "motivo_consulta": "dolor de rodilla",
+      "fechaTurno": "2024-01-20",
+      "horaTurno": "14:30"
     }
   ]
 }

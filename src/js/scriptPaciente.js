@@ -19,6 +19,7 @@ const errorText = document.getElementById('errorText')
 // let pacientesCardio = pacientesStorage.filter(paciente => paciente.especialidad.toLowerCase() == 'cardiologia')
 // console.log(pacientesCardio) 
 
+
 const consultaApi = async () => {
     try {
         let data;
@@ -57,6 +58,13 @@ const agregarTurno = () => {
         }, 2000)
         return
     }
+    // let fechaElegida = new Date(`${inputFecha.value}`)
+    // let horariosDisponibles = []
+    // for(let hora = 9; hora < 19; i++){
+    //     hora.setMinutes(hora.getMinutes() + 30);
+    //     console.log(fechaElegida.getHours() + ":" + ("00" + fechaElegida.getMinutes()).slice(-2));
+    // }
+
     const turno = {
         id: crypto.randomUUID().slice(0,4),
         paciente: inputNombre.value,
@@ -66,6 +74,7 @@ const agregarTurno = () => {
         fechaTurno: inputFecha.value,
         horaTurno: inputHora.value,
     }
+    
     fetch('http://localhost:3000/pacientes', {
         method: 'POST',
         headers: {

@@ -110,3 +110,66 @@ body:has([id=menu-nav]:popover-open) #navbar-toggler{
   }
   --open: 1;
 }
+
+/* FOOTER */
+footer{
+    background-color: var(--main-background);
+    margin-top: 2rem;
+    width: 100%;
+    color: var(--heading-text);
+}
+footer>article{
+    background-color: var(--main-highlighted-bg);
+    padding: 2rem;
+}
+footer img {
+    width: auto;
+    height: 80px;
+    border-radius: 10%;
+}
+
+.footer-icons > a{
+    text-decoration: none;
+    font-size: 1rem;
+    color: var(--main-heading);
+    border-radius: 10px;
+    width: 100%;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-highlighted-bg);
+    transition: .5s;
+}
+.footer-icons>a:hover .fa-lg{
+    transform: rotateY(180deg);
+    color: var(--main-highlighted-text);
+}
+
+.bordesFooter{
+    height: 200px;
+    width: 250px;
+    background-color: var(--main-background);
+    border-radius: 0.5rem;
+    padding: 0;
+}
+.footer-links{
+    color: var(--heading-text);
+    transition: .3s;
+    text-decoration: none;
+    padding: 10px;
+    width: 100%;
+}
+.footer-links:hover{
+    border-radius: 10px;
+    background-color: var(--main-highlighted-text);
+    color: var(--btn-primary-text);
+}
+
+@media (max-width: 768px){
+    .bordesFooter {
+        height: 100%;
+        width: 100%;
+        border-radius: 0;
+    }
+}

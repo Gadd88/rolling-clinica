@@ -102,11 +102,12 @@ header *{
 #form-login .input-group-text{
     background-color: var(--main-highlighted-bg);
     color: var(--btn-secondary-text);
+    border: 1px solid var(--main-background);
     cursor: default;
 }
 #form-login input{
     border-radius: 0 10px 10px 0;
-    border: 1px solid none;
+    border: 1px solid var(--main-background);
     padding: 5px 10px;
     background-color: var(--main-highlighted-bg);
     color: var(--btn-secondary-text);
@@ -133,8 +134,6 @@ header *{
     transition: display 0.2s, overlay 0.2s, translate 0.2s;
     translate: calc(var(--open, 0) * -100%) 0;
     overflow: hidden;
-}
-#menu-nav{
     background: var(--main-background);
 }
 #menu-nav .navbar-nav{
@@ -147,7 +146,7 @@ header *{
     margin-bottom: 4rem;
 }
 #menu-nav li a{
-    color: #fff;
+    color: var(--heading-text);
 }
 #menu-nav a{
     color: var(--btn-secondary-text);
@@ -191,34 +190,38 @@ body:has([id=menu-nav]:popover-open) #navbar-toggler{
 }
 
 /* MAIN */
-.body-container{
+.main-container{
     background-color: var(--main-background);
     margin: auto;
+    border-radius: 15px;
+    padding: 1rem;
+    min-height: 700px;
 }
-
 .contenedor{
     background-color: var(--main-highlighted-bg);
     max-width: 960px;
 }
 
-.btn-primary{
-    background-color: var(--btn-primary-bg) !important;
+.btn-primario{
+    background-color: var(--btn-primary-bg);
     color: var(--btn-primary-text);
     transition: .3s;
+    min-width: 110px;
+    border: 2px solid var(--btn-primary-bg);
 }
-.btn-primary:hover{
-    background-color: #3173ff !important;
+.btn-primario:hover{
+    background-color: #3173ff;
     color: var(--btn-primary-text);
-    border: 1px solid var(--btn-primary-bg);
 }
-.btn-secondary{
-    background-color: var(--btn-secondary-bg) !important;
+.btn-secundario{
+    background-color: var(--btn-secondary-bg);
     color: var(--btn-secondary-text);
-    border: 2px solid var(--btn-secondary-text) !important;
+    border: 2px solid var(--btn-secondary-text);
     transition: .3s;
+    width: 100px;
 }
-.btn-secondary:hover{
-    background-color: var(--btn-secondary-text) !important;
+.btn-secundario:hover{
+    background-color: var(--btn-secondary-text);
     color: var(--btn-secondary-bg);
 }
 .btn-orange{
@@ -232,12 +235,15 @@ body:has([id=menu-nav]:popover-open) #navbar-toggler{
     color: var(--main-highlighted-text);
     border: 1px solid var(--main-highlighted-text);
 }
+.seccion-servicios, .seccion-consulta, .seccion-gestion, .seccion-profesionales{
+    border: 1px solid red;
+    height: 300px;
+}
 
 /* FOOTER */
 footer{
-    background-color: var(--main-background);
     margin-top: 2rem;
-    width: 100%;
+    min-width: 100%;
     color: var(--heading-text);
 }
 footer>article{

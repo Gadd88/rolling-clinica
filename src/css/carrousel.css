@@ -6,12 +6,6 @@
     --color-texto-blanco: #ffffff;
   }
   
-  /* Reset de estilos */
-  * {
-    margin: 0;
-    box-sizing: border-box;
-  }
-  
   /* Estilos del formulario de consulta */
   .contacto-style {
     padding: 10px 2px 2px 2px;
@@ -52,18 +46,21 @@
   }
   
   /* Estilos del botón */
-  .btn {
+  /* .btn {
     background-color: var(--color-primario);
     border: 2px solid var(--color-texto-blanco);
     font-weight: 500;
-  }
+  } */
   
   /* Estilos de la primera y segunda columna */
   .div-col1, .div-col2 {
     margin-bottom: 5px;
     font-weight: 500;
   }
-
+  /* Estilos del carrusel */
+  #carousel-rolling{
+    min-width: 100%;
+  }
   /* Media Query para dispositivos chicos */
 @media (max-width: 800px) {
     .div-col2 {

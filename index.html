@@ -12,7 +12,7 @@
       crossorigin="anonymous"
     ></script>
 </head>
-<body class="content">
+<body class="">
     <header>
         <nav class="navbar navbar-expand-md ">
             <div class="container-fluid d-flex justify-content-between">
@@ -121,9 +121,12 @@
             <article class="seccion-consulta">
                 <h3>Dejanos tu consulta</h3>
             </article>
-            <article class="seccion-gestion">
-                <button>Gestiona tus Turnos</button>
-                <button>Mis Estudios</button>
+            <article class="seccion-gestion d-flex flex-column text-center align-items-center justify-content-center">
+                <h3 class="">Auto Gestión</h3>
+                <section class="d-flex flex-column align-items-center justify-content-center gap-2 p-2 flex-sm-row">
+                    <button class="d-flex align-items-center justify-content-center btn-orange rounded rounded-sm p-5 col-12 col-sm-6 h-50">Gestiona tus Turnos</button>
+                    <button class="d-flex align-items-center justify-content-center btn-orange rounded rounded-sm p-5 col-12 col-sm-6 h-50">Mis Estudios</button>
+                </section>
             </article>
             <article class="seccion-profesionales">
                 <h3>Nuestros Profesionales</h3>
@@ -134,21 +137,22 @@
     
     
     <!-- FOOTER -->
+    <!-- row d-flex justify-content-center justify-content-md-around align-items-center w-100 m-0 gap-1  -->
     <footer class="container">
-        <article class="row d-flex justify-content-center justify-content-md-around align-items-center w-100">
-            <div class="col-lg-4 d-flex col-6 justify-content-around align-items-center bordesFooter align-self-stretch" >
+        <article class="d-flex flex-column-reverse align-items-center justify-content-center w-100 gap-2 flex-sm-row flex-wrap">
+            <div class="col-lg-4 d-flex col-12 col-sm-3 justify-content-center align-items-center bordesFooter align-self-stretch" >
                 <h3><i class="fa-solid fa-truck-medical fa-fade fa-2xl"> </i>           </h3>    
                 <div class="m-3"><img src="./img/ministerioSalud.jpg" alt="" srcset=""> </div>
-                </div>
-            <div class="col-lg-4 d-flex col-6  align-items-center bordesFooter"> 
-                <ul class="d-flex justify-content-between flex-column align-items-start gap-3 p-3 pt-3 w-100">
+            </div>
+            <div class="col-lg-4 d-flex col-12 col-sm-3 align-items-stretch justify-content-center bordesFooter"> 
+                <ul class="d-flex flex-column justify-content-around align-items-center gap-4 p-3 w-100 h-100 text-center text-sm-start">
                     <li class="list-group-item w-100"><a class="footer-links" href="#" target="_blank">Mis turnos</a></li>
                     <li class="list-group-item w-100"><a class="footer-links" href="#" target="_blank">Contacto</a></li>
                     <li class="list-group-item w-100"><a class="footer-links" href="#" target="_blank">Politicas de Privacidad</a></li>
                     <li class="list-group-item w-100"><a class="footer-links" href="#" target="_blank">Ministerio de salud</a></li>
                 </ul>
             </div>
-            <div class="col-lg-4 d-flex col-12 justify-content-center align-items-stretch bordesFooter p-3" > 
+            <div class="col-lg-4 d-flex col-12 col-sm-6 justify-content-center align-items-stretch bordesFooter p-3" > 
                 <div class="container d-flex justify-content-between flex-column align-items-center" id="redesSocialesFooter">
                     <p class="row">Nuestras redes sociales</p>
                     <div class="d-flex mb-1 justify-content-between w-100 align-items-start flex-column footer-icons gap-2">

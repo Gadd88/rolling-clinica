@@ -27,10 +27,34 @@
     --adds-bg: #ffffff;
     --adds-line: #fe483b;
 }
-
+/* RESET */
 *{
     transition: .2s ease;
+    margin: 0;
+    padding: 0;
+    min-width: 0;
+    font: inherit;
 }
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+img,video,svg{
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+body{
+    margin: 0;
+    min-height: 100dvh;
+}
+h1,h2,h3,h4,h5,h6{
+    text-wrap: balance;
+}
+p{
+    text-wrap: pretty;
+}
+/* FIN RESET */
+
 /* HEADER */
 header{
     margin-bottom: 1rem;
@@ -56,7 +80,11 @@ header *{
     background-color: rgba(0,0,0,.3);
 }
 #modal-login{
-    position: relative;
+    position: absolute;
+    top: 50px;
+    margin: auto;
+    min-height: 250px;
+    min-width: 350px;
     border-radius: 15px;
     border: none;
     box-shadow: 4px 4px 15px rgba(0,0,0,0.3);
@@ -80,7 +108,7 @@ header *{
     border-radius: 0 10px 10px 0;
     border: 1px solid none;
     padding: 5px 10px;
-    background-color: var(--main-highlighted-bg) !important;
+    background-color: var(--main-highlighted-bg);
     color: var(--btn-secondary-text);
 }
 #btn-close-login{
@@ -122,7 +150,7 @@ header *{
     color: #fff;
 }
 #menu-nav a{
-    color: var(--btn-secondary-text) !important;
+    color: var(--btn-secondary-text);
     font-size: 2rem;
 }
 #menu-nav .btn-reg-log{
@@ -154,7 +182,7 @@ body:has([id=menu-nav]:popover-open) #navbar-toggler{
   --open: 1;
 }
 .btn-salir{
-    background-image: url('/src/iconos/logout.svg');
+    background-image: url('../iconos/logout.svg');
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: 2rem;
@@ -170,27 +198,27 @@ body:has([id=menu-nav]:popover-open) #navbar-toggler{
 
 .contenedor{
     background-color: var(--main-highlighted-bg);
-    min-height: 80vh;
     max-width: 960px;
 }
 
 .btn-primary{
-    background-color: var(--btn-primary-bg);
+    background-color: var(--btn-primary-bg) !important;
     color: var(--btn-primary-text);
     transition: .3s;
 }
 .btn-primary:hover{
-    background-color: #3173ff;
+    background-color: #3173ff !important;
     color: var(--btn-primary-text);
     border: 1px solid var(--btn-primary-bg);
 }
 .btn-secondary{
-    background-color: var(--btn-secondary-bg);
+    background-color: var(--btn-secondary-bg) !important;
     color: var(--btn-secondary-text);
+    border: 2px solid var(--btn-secondary-text) !important;
     transition: .3s;
 }
 .btn-secondary:hover{
-    background-color: var(--btn-secondary-text);
+    background-color: var(--btn-secondary-text) !important;
     color: var(--btn-secondary-bg);
 }
 .btn-orange{

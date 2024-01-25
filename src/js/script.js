@@ -1,6 +1,6 @@
 //VARIABLES Y CONSTANTES
 const modalLogin = document.getElementById('modal-login');
-const btnLogin = document.getElementById('btn-login');
+const btnLogin = document.querySelectorAll('.btn-login');
 const btnCloseLogin = document.getElementById('btn-close-login');
 const formLogin = document.getElementById('form-login');
 const btnLoginIngresar = document.getElementById('btn-login-ingresar');
@@ -15,10 +15,10 @@ const doctor = {
     password: 'doctor',
 }
 //FUNCIONES
-btnLogin.addEventListener('click', () =>{
-    modalLogin.showModal();
-})
-
+btnLogin.forEach(boton => {
+    boton.addEventListener('click', () => {
+        modalLogin.showModal();
+})})
 btnCloseLogin.addEventListener('click', () =>{
     modalLogin.close();
 })

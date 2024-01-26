@@ -240,6 +240,33 @@ body:has([id=menu-nav]:popover-open) #navbar-toggler{
     min-height: 300px;
     padding: 1rem;
 }
+/* SECCION CONSULTA */
+.encabezado{
+    background-color: var(--main-highlighted-text);
+}
+.video {
+    border-radius: 10px;
+    width: 800px;
+    height: 440px;
+}
+.formulario {
+    text-align: left;
+    color: var(--main-subheading);
+    font-weight: 500;
+}
+.div-col1, .div-col2 {
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+@media (max-width: 800px) {
+    .div-col2 {
+    display: none;
+    }
+
+    .div-col1 {
+    width: 100%;
+    }
+}
 /* SECCION AUTOGESTION */
 .btn-gestion{
     height: 180px;

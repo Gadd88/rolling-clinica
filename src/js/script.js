@@ -4,8 +4,8 @@ const btnLogin = document.querySelectorAll('.btn-login');
 const btnCloseLogin = document.getElementById('btn-close-login');
 const formLogin = document.getElementById('form-login');
 const btnLoginIngresar = document.getElementById('btn-login-ingresar');
-const btnRegLogSection = document.getElementById('btn-reg-log');
-
+const btnRegLogSection = document.querySelectorAll('.btn-reg-log');
+let userLogged = false;
 const paciente = {
     usuario: 'paciente',
     password: 'paciente',
@@ -32,21 +32,27 @@ btnLoginIngresar.addEventListener('click', (e) =>{
         usuario: inputUsuario,
         password: inputPassword
     }
+    modalLogin.close()
     //podemos comparar pasando los objetos a string con JSON.stringify o con lodash usando _.isEqual(usuarioLoggeado, paciente)
-    if(JSON.stringify(usuarioLoggeado) === JSON.stringify(paciente) || JSON.stringify(usuarioLoggeado) === JSON.stringify(doctor)){
-        btnRegLogSection.innerHTML = `
-        <h4 class="text-light">Bienvenido ${usuarioLoggeado.usuario}</h4>
-        <div id="btn-salir" class="btn btn-danger p-1">
-            <img src="./src/iconos/logout.svg" alt="logout">
+    if(JSON.stringify(usuarioLoggeado) === JSON.stringify(paciente)){
+        userLogged = true
+        alert(`Bienvenido ${paciente.usuario}`)
+        btnRegLogSection.forEach(section => section.innerHTML = `
+        <h4 class="text-dark">Bienvenido ${usuarioLoggeado.usuario}</h4>
+        <div id="btn-salir" class="btn btn-salir btn-danger p-1">
         </div>
-        `
-        const btnSalir = document.getElementById('btn-salir');
-        btnSalir.addEventListener('click', () =>{
-           location.reload();
-        })
+        `)
+        const btnSalir = document.querySelectorAll('.btn-salir');
+        btnSalir.forEach(btnSalir => btnSalir.addEventListener('click', () =>{
+            userLogged = false
+            setTimeout(() => {location.assign('../../index.html')},500)
+        }))
+    }else if(JSON.stringify(usuarioLoggeado) === JSON.stringify(doctor)){
+        userLogged = true
+        alert('Bienvenido Doctor')
+        setTimeout(() => {location.assign('../../index.html')},500)
     }else{
+        alert('Usuario o password incorrectos, intente de nuevo')
         return
     }
-    modalLogin.close()
-
 });

@@ -1,8 +1,8 @@
 :root{
-    --primary: #87ceeb;
+    /* --primary: #87ceeb;
     --primary-light: #daeff8;
     --primary-dark: #1c476c;
-    --white: #ffffff;
+    --white: #ffffff; */
     --dark: #121212;
     /* MAIN PAGE*************************************** */
     /*HEADER */
@@ -154,9 +154,10 @@ header *{
 }
 #menu-nav .btn-reg-log{
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    height: 200px;
 }
 #menu-nav .btn-reg-log button{
     width: 100%;
@@ -228,17 +229,28 @@ body:has([id=menu-nav]:popover-open) #navbar-toggler{
     background-color: var(--main-highlighted-text);
     color: var(--main-highlighted-bg);
     transition: .3s;
+    border: none;
     text-decoration: none;
 }
 .btn-orange:hover{
     background-color: var(--main-highlighted-bg);
-    color: var(--main-highlighted-text);
-    border: 1px solid var(--main-highlighted-text);
+    color: var(--main-highlighted-text);    
 }
 .seccion-servicios, .seccion-consulta, .seccion-gestion, .seccion-profesionales{
-    border: 1px solid red;
-    height: 300px;
+    min-height: 300px;
+    padding: 1rem;
 }
+/* SECCION AUTOGESTION */
+.btn-gestion{
+    height: 180px;
+    width: 280px;
+    min-height: 180px;
+    max-height: 180px;
+    min-width: 280px;
+    max-width: 280px;
+    letter-spacing: 1px;
+}
+
 
 /* FOOTER */
 footer{
@@ -249,6 +261,7 @@ footer{
 footer>article{
     background-color: var(--main-highlighted-bg);
     padding: 2rem;
+    
 }
 footer img {
     width: auto;

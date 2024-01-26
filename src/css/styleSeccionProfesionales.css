@@ -3,42 +3,54 @@ body {
 }
 
 .swiper {
+  width: 98%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide{
   width: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-slide{
+  padding-left: 25px;
 }
 
-.swiper-slide {
-  width: 220px;
+.swiper-controls{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 12px;
+  z-index: 1;
 }
-
 .swiper-button-prev, .swiper-button-next {
-  --swiper-navigation-size: 25px;
+  --swiper-navigation-color: var(--main-highlighted-text);
+  opacity: 0.25;
   padding: 1.5rem;
-  --swiper-navigation-color: var(--swiper-theme-color);
-  --swiper-navigation-top-offset: 45%;
-  --swiper-navigation-sides-offset: 0px;
   transition: all 0.3s;
-  border-radius: 0px 50px 50px 0px;
-}
-
-.swiper-button-next {
-  border-radius: 50px 0px 0px 50px;
 }
 
 .swiper-button-prev:hover, .swiper-button-next:hover {
-  background-color: var(--swiper-theme-color);;
-  color: white;
-  transition: all 0.3s;
+  opacity: 1;
 }
 
 .cardProfesionales {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   text-align: center;
-  width: 245px;
-  max-height: 294px;
-  margin-left: 12.5px;
+  max-width: 230px;
+  height: 330px;
+  overflow: hidden;
+  position: relative;
 }
 
 .imgProfesionales {
@@ -47,48 +59,33 @@ body {
   object-fit: cover;
 }
 
-.btn {
-  font-size: 0.9rem;
-  padding: 0.25rem;
-}
-
-.titleSectionProfesionales {
-  color: #0d6efd;
-  margin-left: 1.2rem;
-  text-decoration: underline;
-  text-align: center;
-  font-weight: bold;
-}
-
 @media (max-width: 800px) {
+  .swiper{
+    width: 100%;
+    height: 300px;
+  }
   .swiper-slide {
-    width: 140px;
+    scroll-snap-align: center;
+    width: 100%;
+    justify-self: center;
+    min-height: 100%;
   }
   .cardProfesionales {
-    height: 200px;
-    width: 180px;
+    height: 100%;
+    width: 100%;
   }
   .imgProfesionales {
-    width: 80px;
-    height: 80px;
+    height: 100%;
     object-fit: cover;
   }
-  .card-body {
-    padding: 0.5rem;
-  }
   .card-title {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
   .card-text {
-    font-size: 1rem;
-    margin: 0.5rem;
-  }
-  .btn {
-    font-size: 0.8rem;
-    margin-bottom: 0.25rem;
+    font-size: .9rem;
   }
   .swiper-button-prev, .swiper-button-next {
-    --swiper-navigation-size: 15px;
+    --swiper-navigation-size: 25px;
     padding: 1rem;
   }
 }

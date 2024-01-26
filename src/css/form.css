@@ -1,0 +1,77 @@
+/* Colores */
+:root {
+    --color-primario: #FD483B;
+    --color-fondo: #E2EFF7;
+    --color-texto: #1c476c;
+    --color-texto-blanco: #ffffff;
+  }
+  
+  /* Reset de estilos */
+  * {
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Estilos del formulario de consulta */
+  .contacto-style {
+    padding: 10px 2px 2px 2px;
+    background-color: var(--color-fondo);
+  }
+  
+  /* Estilos del encabezado */
+  .encabezado{
+    background-color: var(--color-primario);
+  }
+  
+  /* Estilos del título */
+  h5 {
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: var(--color-texto-blanco);
+  }
+  
+  /* Estilos del video */
+  .video {
+    border: 2px solid var(--color-texto);
+    border-radius: 10px;
+    width: 800px;
+    height: 440px;
+  }
+  
+  /* Estilos del formulario */
+  .formulario {
+    border: 2px solid var(--color-texto);
+    text-align: left;
+    color: var(--color-texto);
+    font-weight: 500;
+  }
+  
+  /* Estilos del control de formulario */
+  .form-control {
+    border: 2px solid var(--color-texto);
+  }
+  
+  /* Estilos del botón */
+  .btn {
+    background-color: var(--color-primario);
+    border: 2px solid var(--color-texto-blanco);
+    font-weight: 500;
+  }
+  
+  /* Estilos de la primera y segunda columna */
+  .div-col1, .div-col2 {
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+
+  /* Media Query para dispositivos chicos */
+@media (max-width: 800px) {
+    .div-col2 {
+      display: none;
+    }
+  
+    .div-col1 {
+      width: 100%;
+    }
+  }
+  

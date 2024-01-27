@@ -5,6 +5,8 @@ const btnCloseLogin = document.getElementById('btn-close-login');
 const formLogin = document.getElementById('form-login');
 const btnLoginIngresar = document.getElementById('btn-login-ingresar');
 const btnRegLogSection = document.querySelectorAll('.btn-reg-log');
+const usuarioSession = JSON.parse(sessionStorage.getItem('usuario'))
+
 let userLogged = false;
 const paciente = {
     usuario: 'paciente',
@@ -14,6 +16,10 @@ const doctor = {
     usuario: 'doctor',
     password: 'doctor',
 }
+const admin = {
+    usuario: 'admin',
+    password: 'admin',
+}
 //FUNCIONES
 btnLogin.forEach(boton => {
     boton.addEventListener('click', () => {
@@ -21,6 +27,31 @@ btnLogin.forEach(boton => {
 })})
 btnCloseLogin.addEventListener('click', () =>{
     modalLogin.close();
+})
+
+// const revisarLogin = () => {
+//     const logged = JSON.parse(sessionStorage.getItem('usuario'))
+//     if(!logged) return
+//     console.log(logged)
+// }
+// if(userLogged == true){
+//     revisarLogin()
+// }
+
+document.addEventListener('DOMContentLoaded', () => {
+    if(usuarioSession != null || usuarioSession != undefined){
+        btnRegLogSection.forEach(section => section.innerHTML = `
+            <h4 class="text-dark">Bienvenido ${usuarioSession.usuario}</h4>
+            <div id="btn-salir" class="btn btn-salir btn-danger p-1">
+            </div>
+        `)
+        const btnSalir = document.querySelectorAll('.btn-salir');
+        btnSalir.forEach(btnSalir => btnSalir.addEventListener('click', () =>{
+            userLogged = false
+            sessionStorage.clear()
+            setTimeout(() => {location.assign('../../index.html')},500)
+        }))
+    }
 })
 
 btnLoginIngresar.addEventListener('click', (e) =>{
@@ -34,25 +65,66 @@ btnLoginIngresar.addEventListener('click', (e) =>{
     }
     modalLogin.close()
     //podemos comparar pasando los objetos a string con JSON.stringify o con lodash usando _.isEqual(usuarioLoggeado, paciente)
-    if(JSON.stringify(usuarioLoggeado) === JSON.stringify(paciente)){
+    if(JSON.stringify(usuarioLoggeado) === JSON.stringify(paciente) || JSON.stringify(usuarioLoggeado) === JSON.stringify(doctor) || JSON.stringify(usuarioLoggeado) === JSON.stringify(admin)){
         userLogged = true
-        alert(`Bienvenido ${paciente.usuario}`)
-        btnRegLogSection.forEach(section => section.innerHTML = `
-        <h4 class="text-dark">Bienvenido ${usuarioLoggeado.usuario}</h4>
-        <div id="btn-salir" class="btn btn-salir btn-danger p-1">
-        </div>
-        `)
-        const btnSalir = document.querySelectorAll('.btn-salir');
-        btnSalir.forEach(btnSalir => btnSalir.addEventListener('click', () =>{
-            userLogged = false
-            setTimeout(() => {location.assign('../../index.html')},500)
-        }))
-    }else if(JSON.stringify(usuarioLoggeado) === JSON.stringify(doctor)){
-        userLogged = true
-        alert('Bienvenido Doctor')
-        setTimeout(() => {location.assign('../../index.html')},500)
-    }else{
-        alert('Usuario o password incorrectos, intente de nuevo')
-        return
+        sessionStorage.setItem('usuario', JSON.stringify(usuarioLoggeado))
+        Swal.fire({
+            icon: "success",
+            title: "Bienvenido",
+            text: `${usuarioLoggeado.usuario}`,
+            timer: 1500
+        })
+        // btnRegLogSection.forEach(section => section.innerHTML = `
+        // <h4 class="text-dark">Bienvenido ${usuarioLoggeado.usuario}</h4>
+        // <div id="btn-salir" class="btn btn-salir btn-danger p-1">
+        // </div>
+        // `)
+        // const btnSalir = document.querySelectorAll('.btn-salir');
+        // btnSalir.forEach(btnSalir => btnSalir.addEventListener('click', () =>{
+        //     userLogged = false
+        //     setTimeout(() => {location.assign('../../index.html')},500)
+        // }))
     }
+    if(userLogged == true){
+        if(usuarioLoggeado.usuario == 'admin'){
+            location.assign('../../src/paginas/admin.html')
+            return
+        }else if(usuarioLoggeado.usuario == 'doctor'){
+            location.assign('../../src/paginas/doctor.html')
+            return
+        }else{
+            location.reload()
+            return
+        }
+    }
+    // if(JSON.stringify(usuarioLoggeado) === JSON.stringify(paciente)){
+    //     alert(`Bienvenido ${paciente.usuario}`)
+    //     btnRegLogSection.forEach(section => section.innerHTML = `
+    //     <h4 class="text-dark">Bienvenido ${usuarioLoggeado.usuario}</h4>
+    //     <div id="btn-salir" class="btn btn-salir btn-danger p-1">
+    //     </div>
+    //     `)
+    //     const btnSalir = document.querySelectorAll('.btn-salir');
+    //     btnSalir.forEach(btnSalir => btnSalir.addEventListener('click', () =>{
+    //         userLogged = false
+    //         setTimeout(() => {location.assign('../../index.html')},500)
+    //     }))
+    // }else if(JSON.stringify(usuarioLoggeado) === JSON.stringify(doctor)){
+    //     userLogged = true
+    //     alert('Bienvenido Doctor')
+    //     setTimeout(() => {
+    //         location.assign('../../index.html')
+    //     },500)
+    //     sessionStorage.setItem('usuario', JSON.stringify(usuarioLoggeado))
+    // }else if(JSON.stringify(usuarioLoggeado) === JSON.stringify(admin)){
+    //     userLogged = true
+    //     alert('Bienvenido Administrador')
+    //     setTimeout(() => {
+    //        location.assign('../../src/paginas/admin.html') 
+    //     }, 500);
+    //     sessionStorage.setItem('usuario', JSON.stringify(usuarioLoggeado))
+    // }else{
+    //     alert('Usuario o password incorrectos, intente de nuevo')
+    //     return
+    // }
 });

@@ -1,23 +1,22 @@
 // Función para guardar la consulta en la base de datos
-
 const guardarConsulta = (event) => {
   event.preventDefault();
 
   // Obtener los valores del formulario
   const nombre = document.getElementById('nombre').value;
-  const telefono = document.getElementById('teléfono').value;
+  const telefono = document.getElementById('telefono').value;
   const mail = document.getElementById('mail').value;
   const consulta = document.getElementById('consulta').value;
 
   // Verificar si algún campo está vacío
-  if (nombre.trim() === '' || telefono.trim() === '' || mail.trim() === '' || consulta.trim() === '') {
-     Swal.fire({
-      icon: "error",
-      title: "Atención",
-      text: "Todos los campos del formulario son obligatorios",
-      timer: 1500
-    }); return
-    
+  if(nombre.trim() === '' || telefono.trim() === '' || mail.trim() === '' || consulta.trim() === ''){
+      Swal.fire({
+        icon: "error",
+        title: "Atención",
+        text: "Todos los campos del formulario son obligatorios",
+        timer: 1500
+      }); 
+    return
   }
 
   // Crear un objeto con la información de la consulta
@@ -39,41 +38,49 @@ const guardarConsulta = (event) => {
 
   // Limpiar el formulario después de guardar la consulta
   document.getElementById('nombre').value = '';
-  document.getElementById('teléfono').value = '';
+  document.getElementById('telefono').value = '';
   document.getElementById('mail').value = '';
   document.getElementById('consulta').value = '';
   
   Swal.fire({
-    position: "top-center",
-    icon: "success",
-    title: "La consulta fue enviada con éxito",
-    showConfirmButton: false,
-    timer: 1500
+      position: "center",
+      icon: "success",
+      title: "La consulta fue enviada con éxito",
+      showConfirmButton: false,
+      timer: 1500
   });
 };
 
 document.getElementById('form').addEventListener('submit', guardarConsulta);
 
-  // Función para borrar una consulta de la base de datos
-  const borrarConsulta = (indice) => {
-    // Obtener las consultas almacenadas en localStorage o inicializar un array vacío
-    const consultasGuardadas = JSON.parse(localStorage.getItem('consultas')) || [];
+// Función para borrar una consulta de la base de datos
+// const borrarConsulta = (indice) => {
+//     // Obtener las consultas almacenadas en localStorage o inicializar un array vacío
+//     const consultasGuardadas = JSON.parse(localStorage.getItem('consultas')) || [];
 
-    // Verificar si el índice es válido
-    if (indice >= 0 && indice < consultasGuardadas.length) {
-      // Borrar la consulta del array
-      consultasGuardadas.splice(indice, 1);
-
-      // Guardar el array actualizado en localStorage
-      localStorage.setItem('consultas', JSON.stringify(consultasGuardadas));
-
-      alert('Consulta eliminada con éxito');
-    } else {
-      alert('Índice no válido');
-    }
-  };
+//     // Verificar si el índice es válido
+//     if(indice >= 0 && indice < consultasGuardadas.length) {
+//       // Borrar la consulta del array
+//       consultasGuardadas.splice(indice, 1);
+//       // Guardar el array actualizado en localStorage
+//       localStorage.setItem('consultas', JSON.stringify(consultasGuardadas));
+//       Swal.fire({
+//         position: "center",
+//         icon: "success",
+//         title: "La consulta fue eliminada",
+//         showConfirmButton: false,
+//         timer: 1000
+//       })
+//     }else{
+//       Swal.fire({
+//         position: "center",
+//         icon: "error",
+//         title: "Índice no válido",
+//         showConfirmButton: false,
+//         timer: 1000
+//       });
+//     }
+// };
 
   // Llamada inicial para mostrar los datos almacenados al cargar la página
-  mostrarDatosLocalStorage();
-
- 
+  // mostrarDatosLocalStorage();

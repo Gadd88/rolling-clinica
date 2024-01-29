@@ -1,0 +1,23 @@
+{
+  "turnos": [
+    {
+      "id": "B456",
+      "paciente": "Carlos Fernández",
+      "paciente_dni": "98765432",
+      "especialidad": "Cardiologia",
+      "motivo_consulta": "Presión arterial alta y palpitaciones",
+      "medico_solicitado": "Dra. Martínez",
+      "horaTurno": "09:50",
+      "fechaTurno": "2024-02-28"
+    },
+    {
+      "id": "8df1",
+      "paciente": "pepito perez",
+      "paciente_dni": "32323232",
+      "especialidad": "clinica",
+      "motivo_consulta": "dolor de rodilla",
+      "fechaTurno": "2024-01-20",
+      "horaTurno": "14:30"
+    }
+  ]
+}

@@ -87,10 +87,14 @@ btnLoginIngresar.addEventListener('click', (e) =>{
     }
     if(userLogged == true){
         if(usuarioLoggeado.usuario == 'admin'){
-            location.assign('../../src/paginas/admin.html')
+            setTimeout(() => {
+                location.assign('../../src/paginas/admin.html')
+            },1000)
             return
         }else if(usuarioLoggeado.usuario == 'doctor'){
-            location.assign('../../src/paginas/doctor.html')
+            setTimeout(() => {
+                location.assign('../../src/paginas/medicos.html')
+            }, 1000)
             return
         }else{
             location.reload()

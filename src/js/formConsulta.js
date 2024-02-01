@@ -53,34 +53,3 @@ const guardarConsulta = (event) => {
 
 document.getElementById('form').addEventListener('submit', guardarConsulta);
 
-// Función para borrar una consulta de la base de datos
-// const borrarConsulta = (indice) => {
-//     // Obtener las consultas almacenadas en localStorage o inicializar un array vacío
-//     const consultasGuardadas = JSON.parse(localStorage.getItem('consultas')) || [];
-
-//     // Verificar si el índice es válido
-//     if(indice >= 0 && indice < consultasGuardadas.length) {
-//       // Borrar la consulta del array
-//       consultasGuardadas.splice(indice, 1);
-//       // Guardar el array actualizado en localStorage
-//       localStorage.setItem('consultas', JSON.stringify(consultasGuardadas));
-//       Swal.fire({
-//         position: "center",
-//         icon: "success",
-//         title: "La consulta fue eliminada",
-//         showConfirmButton: false,
-//         timer: 1000
-//       })
-//     }else{
-//       Swal.fire({
-//         position: "center",
-//         icon: "error",
-//         title: "Índice no válido",
-//         showConfirmButton: false,
-//         timer: 1000
-//       });
-//     }
-// };
-
-  // Llamada inicial para mostrar los datos almacenados al cargar la página
-  // mostrarDatosLocalStorage();

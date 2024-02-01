@@ -120,10 +120,7 @@ const mostrarDatosLocalStorage = () => {
       c.mail === consulta.mail && c.consulta === consulta.consulta
     ));
   
-    // if (indice !== -1) {
-    //   consultasGuardadas.splice(indice, 1);
-    //   localStorage.setItem('consultas', JSON.stringify(consultasGuardadas));
-    // }
+   
     if(indice >= 0 && indice < consultasGuardadas.length) {
       // Borrar la consulta del array
       consultasGuardadas.splice(indice, 1);

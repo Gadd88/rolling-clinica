@@ -11,7 +11,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -96,40 +96,43 @@
 
     <main>
 
-        <div class="container">
+        <div class="container-form">
             <h2 class="text-center">Regístrate</h2>
             <form id="registration-form">
                 <div class="form-check form-check-inline" id="userType">
-                    <input class="form-check-input" type="radio" name="userType" id="doctor" value="doctor" required>
-                    <label class="form-check-label" for="doctor">Soy médico</label>
-                
-                    <input class="form-check-input" type="radio" name="userType" id="patient" value="patient" required>
-                    <label class="form-check-label" for="patient">Soy paciente</label>
+                    <div>
+                        <input class="form-check-input" type="radio" name="userType" id="doctor" value="doctor" required>
+                        <label class="form-check-label" for="doctor">Soy médico</label>
+                    </div>
+                    <div>
+                        <input class="form-check-input" type="radio" name="userType" id="patient" value="patient" required>
+                        <label class="form-check-label" for="patient">Soy paciente</label>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="full-name" placeholder="Nombre completo" required>
+                    <input type="text" class="form-control" id="full-name" placeholder="Nombre completo" maxlength="100" required>
                 </div>
                 <div class="form-group">
-                    <input type="email" class="form-control" id="email" placeholder="Correo electrónico" required>
+                    <input type="email" class="form-control" id="email" placeholder="Correo electrónico" maxlength="60" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="dni" placeholder="DNI" required>
+                    <input type="text" class="form-control" id="dni" placeholder="DNI" pattern="[0-9]{8}" maxlength="8" required>
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" id="password" placeholder="Contraseña" required>
+                    <input type="password" class="form-control" id="password" placeholder="Contraseña" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" required>
                 </div>
                 <div class="form-group">
                     <input type="password" class="form-control" id="confirm-password"
                         placeholder="Re-ingreso de contraseña" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="address" placeholder="Domicilio" required>
+                    <input type="text" class="form-control" id="address" placeholder="Domicilio" pattern="^[0-9A-Za-z\s.,#-]+$" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="postal-code" placeholder="Código postal" required>
+                    <input type="text" class="form-control" id="postal-code" placeholder="Código postal" pattern="^\d{5}$" required>
                 </div>
                 <div class="form-group">
-                    <input type="tel" class="form-control" id="phone" placeholder="Teléfono" required>
+                    <input type="tel" class="form-control" id="phone" placeholder="Teléfono" pattern="^[0-9]{10}$" required>
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">Registrar</button>
                 <button type="reset" class="btn btn-secondary btn-block">Reset</button>

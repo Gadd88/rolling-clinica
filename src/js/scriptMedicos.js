@@ -128,15 +128,15 @@ const mostrarFormularioModificar = (turno) => {
     // cambiamos los datos originales por los agregados en el form de arriba
     turno.fechaTurno = document.getElementById('nuevo-fechaTurno').value;
     turno.horaTurno = document.getElementById('nuevo-horaTurno').value;
-    await fetch(`http://localhost:3000/pacientes/${turno.id}`, {
+    await fetch(`http://localhost:3000/turnos/${turno.id}`, {
       method: 'PATCH',
-      headers: new Headers({
+      headers: {
           'Content-Type': 'application/json'
-        }),
-        body: JSON.stringify({
-          fechaTurno: turno.fechaTurno,
-          horaTurno: turno.horaTurno,
-        })
+        },
+      body: JSON.stringify({
+        fechaTurno: turno.fechaTurno,
+        horaTurno: turno.horaTurno,
+      })
       })
     // Mostrar nuevamente listado de turnos
     cargarTabla()
@@ -155,4 +155,3 @@ const obtenerUserLogeado = () =>{
       return null;
   } 
 }
-

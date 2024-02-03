@@ -51,5 +51,4 @@ const guardarConsulta = (event) => {
   });
 };
 
-document.getElementById('form').addEventListener('submit', guardarConsulta);
-
+// document.getElementById('form').addEventListener('submit', guardarConsulta);

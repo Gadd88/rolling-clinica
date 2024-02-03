@@ -30,8 +30,6 @@ const agregarTurno = () => {
         }, 2000)
         return
     }
-    console.log(inputEspecialidad.value)
-
     const turno = {
         id: crypto.randomUUID().slice(0,4),
         paciente: inputNombre.value,

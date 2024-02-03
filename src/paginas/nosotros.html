@@ -1,265 +1,399 @@
 <!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rolling Clínica - Nosotros</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rolling Clinic - Policonsultorios</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/nosotros.css">
-    <link rel="stylesheet" href="../css/global.css">
-  </head>
-  <body>
-    <section id="historia-mision container">
-      <h1 class="line-tittle">Historia y Misión</h1>
-      Durante gran parte del siglo XIX y hasta la década de los años 80, la
-      ciudad de San Miguel de Tucumán sólo poseía dos establecimientos
-      hospitalarios, los cuales resultaban insuficientes ante la creciente
-      demanda y las precarias condiciones higiénicas e insalubres.​ Por estas
-      razones, en 1880, el intendente de la capital Ángel Cruz Padilla planteó
-      la construcción de una nueva clínica mixta de mujeres y hombres. La
-      construcción de la Clínica fue encomendada al arquitecto Federico
-      Stavelius y los ingenieros Carlos Lowenhard y Adolfo Methfessel.​ Así el 9
-      de octubre de 1880 comenzaron las obras del establecimiento sanitario, las
-      cuales fueron concretadas el 28 de noviembre de 1882 e inauguradas el 1 de
-      enero de 1883.​ Este nuevo nosocomio fue denominado Clínica Mixta Nuestra
-      Señora de las Mercedes. La Clínica Mixta poseía distintos pabellones de
-      internación, sanitarios y una sala de operaciones. Posteriormente fueron
-      construidos y agregados al diseño original nuevos baños, pabellones de
-      internados, salas de cirugía, salas de desinfección y departamento de
-      maternidad. En 1913 la denominación de la clínica fue reemplazada,
-      denominándose desde entonces como Rolling Clínica. Trabajamos brindando
-      cuidados asistenciales de excelencia al alcance de toda la población,
-      situando al paciente y a su familia en el eje de nuestra atención.
-      Enfocados en el desarrollo profesional continuo, la investigación en todas
-      sus expresiones y las acciones que promuevan la salud de la comunidad, y
-      contribuyan a mejorar la realidad social en la que estamos inmersos.
-      Nuestra visión institucional es consolidarnos como una organización
-      hospitalaria modelo y referente a nivel regional desde la perspectiva
-      asistencial, de recursos humanos, docencia e investigación.
-    </section>
+   
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Link Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <script
+      src="https://kit.fontawesome.com/3a0c1a8233.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body class="container">
+    <header>
 
-    <section id="instalaciones-tecnologia">
-      <h2 class="line-tittle">Instalaciones y Tecnología</h2>
-      Como institución asistencial referente estamos abocados a ofrecer al mundo
-      una medicina de excelencia. Por eso, contamos con espacios renovados y
-      equipados con aparatología de avanzada, amplias habitaciones con la mayor
-      comodidad y quirófanos y unidades de última generación. A lo largo de los
-      años, nuestra clínica ha evolucionado tanto en la infraestructura como en
-      los recursos que la integran. Innovación, funcionalidad, bienestar y
-      seguridad son los ejes que sustentan cada ampliación y mejora. Así,
-      inauguramos nuevos centros y espacios de cuidados críticos e internación.
-      Las distintas áreas que componen nuestra clinica están atravesadas por una
-      plataforma informática integradora. Este desarrollo, propio de nuestro
-      departamento informático, incluye la Historia Clínica Electrónica, la cual
-      es única por cada paciente y cubre todas las necesidades de registro
-      médico. Así, cada persona que es atendida en nuestra institución posee un
-      registro cronológico que abarca todas las áreas de atención: ambulatoria,
-      quirófanos, internación y especialidades médicas. La conducción de la
-      Clínica Rolling está a cargo del Honorable Directorio y de un Director de
-      quien dependen las áreas Médica, Administrativa y Comercial. Actualmente,
-      rige un sistema de organización médica departamental. De cada uno de ellos
-      dependen Servicios y Secciones que corresponden a las diversas
-      especialidades.
+<!-- NAVBAR -->
 
-      <section id="galeria">
-        <img src="../img/clinica1.jpg" alt="imagen clinica" />
-        <img src="../img/clinica2.jpg" alt="imagen clinica" />
-        <img src="../img/clinica3.jpg" alt="imagen clinica" />
-        <img src="../img/clinica4.jpg" alt="imagen clinica" />
-        <img src="../img/clinica5.jpg" alt="imagen clinica" />
-        <img src="../img/clinica6.jpg" alt="imagen clinica" />
-      </section>
+        <nav class="navbar navbar-expand-md ">
+            <div class="container-fluid d-flex justify-content-between">
+                <div class="navbar-logo col-md-4 d-flex justify-content-between col-12">
+                    <a class="navbar-brand" href="#">
+                        <img src="../iconos/health-icon.svg" alt="Logo" width="50" height="40" class="d-inline-block align-text-center">
+                    Rolling Clínica
+                    </a>
+                    <button class="navbar-toggler border border-2 border-light" data-bs-theme="light" type="button" data-bs-target="#navbarNav" id="navbar-toggler" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" popovertarget="menu-nav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="d-md-flex justify-content-between align-items-center d-none" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contacto</a>
+                        </li>
+                    </ul>
+                    <div class="btn-reg-log d-flex gap-2 align-items-center mt-3 mt-md-0 ms-5">
+                        <button class="btn-secundario rounded rounded-sm p-1">Registro</button>
+                        <button class="btn-primario btn-login rounded rounded-sm p-1">Login</button>
+                    </div>
+                </div>
+
+<!-- MENU POPOVER MOBILE -->
+
+                <div class="menu-nav" id="menu-nav" popover role="menu">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contacto</a>
+                        </li>
+                    </ul>
+                    <div class="btn-reg-log d-flex gap-3 align-items-center mt-3 mt-md-0">
+                        <button class="btn-secundario rounded rounded-sm p-1">Registro</button>
+                        <button class="btn-primario rounded rounded-sm p-1 btn-login">Login</button>
+                    </div>
+                </div>
+                
+<!-- FIN MENU MOBILE -->
+
+<!-- MODAL LOGIN -->
+
+                <dialog id="modal-login">
+                    <form method="dialog" id="form-login">
+                        <button type="button" class="btn-close m-1 border border-2 border-white p-1 bg-light" id="btn-close-login" aria-label="Close"></button>
+                        <div class="input-group">
+                            <span for="usuario" class="input-group-text">Usuario</span>
+                            <input type="text" name="usuario" id="usuario" class="form-control" autofocus>
+                        </div>
+                        <div class="input-group">
+                            <span for="password" class="input-group-text">Password</span>
+                            <input type="password" name="password" id="password" class="form-control">
+                        </div>
+                        <div class="login-buttons">
+                            <button class="btn-primario rounded rounded-sm p-1" id="btn-login-ingresar">Ingresar</button>
+                            <button class="btn-secundario rounded rounded-sm p-1" id="btn-login-cancelar">Cancelar</button>
+                        </div>
+                        <p class="">Aun no tenes cuenta? <a class="btn-orange btn-sm rounded rounded-sm p-2" href="#">Registrarse</a></p>
+                    </form>
+                </dialog>
+
+<!-- FIN MODAL LOGIN -->
+
+            </div>
+        </nav>
+    </header>
+
+<!-- SECCION 1 - HISTORIA DE LA CLINICA-->   
+
+    <main class="container">
+        <section class="main-container">
+            <article class="seccion-servicios">
+                <div class="encabezado rounded rounded-sm">
+                    <h4>Nuestra empresa</h4>
+                </div>
+                <div class="card mb-3">
+                    <img src="../img/Foto General.png" class="card-img-top w-100" alt="fotoFachada">
+                    <div class="card-body">
+                      <p class="card-text">En los años 80, un grupo de recién egresados de la Facultad de Medicina de la UNT funda Rolling Clínica en San Miguel de Tucumán con el objetivo de modernizar la atención médica. Con un enfoque centrado en el paciente, la clínica se destaca por su compromiso con la excelencia desde sus inicios. Con el tiempo, crece y se convierte en líder regional, invirtiendo en tecnología médica avanzada como diagnóstico por imagen y cirugía robótica. Además, se implica en investigación y desarrollo. Hoy en día, es reconocida como una institución médica avanzada y respetada, dedicada a brindar calidad y bienestar a la comunidad, con la visión de ser un referente regional en todos los aspectos de la atención médica.</p>
+                    </div>
+                  </div>
+            </article>
+
+
+
+  
+<!-- SECCION 2 - DIRECTORIO DE LA CLINICA-->
+
+            <article class="seccion-servicios">
+                    <div class="encabezado rounded rounded-sm">
+                        <h4>Directorio de Rolling Clínica</h4>
+                    </div>
       
-    </section>
+                    <article>
+                        <div class="container">
+                          <div class="row">
 
-    <section id="equipo-medico">
-      <h2 class="line-tittle">Equipo Médico</h2>
+                  <!-- CARD 1 -->
 
-      <div class="carousel-container">
+                            <div class="col-md-6 col-lg-3 mb-3">
+                                <div class="card" style="width: 100%;">
+                                  <img src="../img/Director.png" class="card-img-top" alt="...">
+                                  <div class="card-body">
+                                    <h5 class="card-title">Dr. Alberto Casanova</h5>
+                                    <p class="card-text">Director General</p>
+                                   
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1">
+                                      Ver más
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                  <!-- MODAL CARD 1 -->
 
-        <div class="carousel-wrapper">
+                              <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title" id="exampleModalLabel">Dr. Alberto Casanova - Director general</h5>
+                                    </div>
+                                    <div class="modal-body">
 
-        <figure class="carrusel-item">
-            <img src="../img/dr juan perez cardiologia.jpg" alt="imagen1">
-            <figcaption>
-                <h2>Dr. Juan Perez - Jefe de Servicio de Cardiología</h2>
-              Médico. Especialista en Medicina Interna. Especialista en
-              Cardiología. Médico. Universidad Católica de Córdoba. Facultad de
-              Medicina. Córdoba, Argentina. Diciembre, 2002 Residente de
-              Medicina Interna- Hospital Privado Centro Médico de Córdoba,
-              Argentina. 2003- 2007 Residente de Medicina Interna- Hospital of
-              Saint Raphael, Yale University School of Medicine, New Haven CT,
-              EEUU.
-            </figcaption>
-          </figure>
+                                      <p>El Dr. Alberto Casanova, destacado médico cirujano, ha alcanzado reconocimiento internacional por su excelencia y dedicación en el campo de la medicina. Con una destacada trayectoria profesional, ha sido premiado en múltiples ocasiones por su innovación y contribuciones significativas al ámbito médico.
+                                        Graduado con honores de una de las principales facultades de medicina del país,su formación especializándose en cirugía en algunas de las instituciones médicas más prestigiosas del mundo. Su incansable búsqueda de la excelencia lo llevó a Estados Unidos, donde ha sido reconocido como un líder en su campo.       
+                                        Además de sus logros profesionales, el Dr. Casanova es reconocido por su dedicación a la educación médica y su labor humanitaria. Su pasión por compartir conocimientos y brindar atención médica de calidad lo ha convertido en un referente para las generaciones futuras de profesionales de la salud.</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-primary w-100 justify-content-center" data-dismiss="modal">Cerrar</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                    <!-- CARD 2 -->             
+                              <div class="col-md-6 col-lg-3 mb-3">
+                                <div class="card" style="width: 100%;">
+                                  <img src="../img/Vicedirectora.png" class="card-img-top" alt="...">
+                                  <div class="card-body">
+                                    <h5 class="card-title">Dra. Elena Salerno</h5>
+                                    <p class="card-text">Vicedirectora</p>
+                                   
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">
+                                      Ver más
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                    <!-- MODAL CARD 2 -->
+                              <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title" id="exampleModalLabel">Dra. Elena Salerno - Vicedirectora</h5>
+                                    </div>
+                                    <div class="modal-body">
+
+                                      <p>La Dra. Elena Salerno es una destacada médica cardiologa con una impresionante trayectoria internacional y una pasión innegable por la excelencia en la atención médica. Con una sólida formación académica respaldada por numerosos diplomados en cardiología, ha consolidado su reputación como una experta en su campo.
+
+                                        A lo largo de su carrera, la Dra. Salerno ha demostrado un compromiso excepcional con el cuidado de sus pacientes, combinando su profundo conocimiento técnico con una comprensión compasiva de las necesidades individuales de cada uno. Su enfoque centrado en el paciente y su habilidad para establecer conexiones significativas con quienes atiende son cualidades que la distinguen como profesional de la salud.</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-primary w-100 justify-content-center" data-dismiss="modal">Cerrar</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                    <!-- CARD 3 --> 
+
+                            <div class="col-md-6 col-lg-3 mb-3">
+                            <div class="card" style="width: 100%;">
+                            <img src="../img/Gerente Com.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <h5 class="card-title">Lic. Ana Martínez</h5>
+                            <p class="card-text">Gerente Comercial</p>
+                       
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal3">
+                            Ver más
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                  
+                    <!-- MODAL CARD 3 -->
+
+                            <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Lic. Ana Martínez - Gerente comercial</h5>
+                            </div>
+                            <div class="modal-body">
+
+                            <p>Destacada Licenciada en Administración de Empresas, ocupa el rol de Gerenta Comercial en Rolling Clínica, donde su liderazgo y experiencia han dejado una marca significativa en el éxito y crecimiento de la institución. Con una trayectoria profesional notable, Ana ha acumulado experiencia tanto en el ámbito nacional como internacional, colaborando con empresas de renombre como Techint y Bago, entre otras.
+
+                            Su perspicacia empresarial y su capacidad para identificar oportunidades estratégicas han sido pilares fundamentales en el desarrollo de Rolling Clínica como una institución líder en su sector. Gracias a su visión estratégica y su habilidad para establecer relaciones comerciales sólidas, Ana ha contribuido de manera significativa al posicionamiento de la clínica en el mercado, así como a su expansión y crecimiento continuo.
+                            
+                            Además de su destacada carrera profesional, Ana se distingue por su compromiso con la excelencia y la ética en los negocios. Su enfoque orientado al cliente y su capacidad para adaptarse a entornos dinámicos han sido clave en la consecución de resultados exitosos tanto a nivel nacional como internacional.</p>
+                            </div>
+                            <div class="modal-footer">
+                          <button type="button" class="btn btn-primary w-100 justify-content-center" data-dismiss="modal">Cerrar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>            
+
+                  <!-- CARD 4 --> 
+
+                            <div class="col-md-6 col-lg-3 mb-3">
+                            <div class="card" style="width: 100%;">
+                            <img src="../img/GerenteFin.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <h5 class="card-title">CPN Luis Mendoza</h5>
+                            <p class="card-text">Gerente Financiero</p>
        
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal4">
+                            Ver más
+                            </button>
+                            </div>
+                            </div>
+                            </div>
+  
+                  <!-- MODAL CARD 4 -->
+                          <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                          <div class="modal-content">
+                          <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">CPN. Luis Mendoza - Gerente financiero</h5>
+                          </div>
+                          <div class="modal-body">
 
-       
-        <figure class="carrusel-item">
-            <img src="../img/endocrinologa patricia.jpg" alt="imagen2">
-            <figcaption>
-            <h2>Dra. Patricia Vargas - Jefa de Servicio</h2>
-              Medica cirujana. Especialista en Medicina Interna. Especialista en
-              Endocrinología. Becaria “Programa de Intercambio para jóvenes
-              endocrinólogos españoles y argentinos”. FASEN-SEEN. “Cáncer de
-              Tiroides, Tumores Neuroendócrinos y Diabetes”. Hospital
-              Universitario Vall dHebron, Barcelona. 2018. España.
-            </figcaption>
-          </figure>
-    
+                          <p>Luis Mendoza es un Contador Público Nacional reconocido por su destacada labor como financista en el país. Con una sólida formación académica y una amplia experiencia en el campo de las finanzas, se ha consolidado como una figura prominente en el ámbito económico.
+                          Su habilidad para analizar datos financieros, desarrollar estrategias efectivas y tomar decisiones informadas ha sido fundamental en la gestión y dirección de importantes proyectos financieros a nivel nacional. Su enfoque meticuloso y su capacidad para identificar oportunidades de crecimiento y optimización han contribuido significativamente al éxito y la estabilidad económica de diversas organizaciones.
+                          Además de su destacada labor profesional, Luis Mendoza se distingue por su integridad y ética en el ejercicio de su profesión, lo que lo ha convertido en un referente de confianza en el mundo financiero. Su compromiso con la transparencia y la responsabilidad financiera lo ha posicionado como un líder respetado y admirado en su campo.</p>
+                          </div>
+                          <div class="modal-footer">
+                          <button type="button" class="btn btn-primary w-100 justify-content-center" data-dismiss="modal">Cerrar</button>
+                          </div>
+                          </div>
+                          </div>
+                          </div>      
+  <!-- SECCION 3 - NUESTRAS INSTALACIONES (CARROUSEL)-->
 
-    
-        <figure class="carrusel-item">
-            <img src="../img/gastroenterologo marcos.jpg" alt="imagen3">
-            <figcaption>
-            <h2>Dr. Marcos Sanchez - Jefe de Servicio</h2>
-              Servicio de Gastroenterología de la Clínica de la Familia.
-              Sanatorio Alive. Consultorio externo del Centro Mutual. Servicio
-              de Gastroenterología del Sanatorio Parque. Servicio de
-              Gastroenterología del Sanatorio Francés.
-            </figcaption>
-          </figure>
+<article>  
+  <div class="encabezado rounded rounded-sm">
+  <h4>Nuestras instalaciones</h4>
+  </div>
+  </article>
+  <br>
+  <article>
+  <div id="carouselExampleCaptions" class="carousel slide">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="../img/Consultorio1.png" class="img d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="carrousel-text">Consultorios de última generación</h5>
+            <p class="carrousel-text">Tecnología de vanguardia, sistemas de diagnóstico avanzados, equipos médicos de última generación y soluciones digitales.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="../img/Consultorio2.png" class="img d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="carrousel-text" >Salas de operaciones computarizadas</h5>
+            <p class="carrousel-text">Sistemas avanzados de monitoreo, imagenología y navegación quirúrgica, que permiten procedimientos con precisión milimétrica.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="../img/Consultorio3.png" class="img d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="carrousel-text">Diagnóstico por imágenes con IA</h5>
+            <p class="carrousel-text">Permite la precisión diagnóstica, reducción de procedimientos invasivos y optimiza el seguimiento de los pacientes.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </article> 
+  </article>
+  </article> 
+                     
+<!-- SECCION 4 - MAS INFO-->
+
+<article>
+  <div class="encabezado rounded rounded-sm">
+      <h4>+ Info</h4>
+  </div>
+</article>
+<article>
+    <div class="container-info">
+      <div class="container-button justify-content-between align-items-center">
+          <a href="http://127.0.0.1:5501/certificaciones.html" class="button-info">Certificaciones Rolling</a>
+          <a href="http://127.0.0.1:5501/pregFrecuentes.html" class="button-info">Preguntas frecuentes</a>
+      </div>
+  </div>
+</article>
+
+
+
+
+</section>
+</main>
+
+<!-- FOOTER-->
+
+        <footer class="container">
+            <article class="d-flex flex-column-reverse align-items-center justify-content-center w-100 gap-2 flex-sm-row flex-wrap justify-content-sm-between">
+                <div class="col-lg-4 d-flex col-12 col-sm-3 justify-content-center align-items-center bordesFooter align-self-stretch" >
+                    <h3><i class="fa-solid fa-truck-medical fa-fade fa-2xl"> </i>           </h3>    
+                    <div class="m-3"><img src="../img/ministerioSalud.jpg" alt="logo ministerio de salud de la nacion" srcset=""> </div>
+                </div>
+                <div class="col-lg-4 d-flex col-12 col-sm-3 align-items-stretch justify-content-center bordesFooter"> 
+                    <ul class="d-flex flex-column justify-content-around align-items-center gap-4 p-3 w-100 h-100 text-center text-sm-start">
+                        <li class="list-group-item w-100"><a class="footer-links" href="#" target="_blank">Mis turnos</a></li>
+                        <li class="list-group-item w-100"><a class="footer-links" href="#" target="_blank">Contacto</a></li>
+                        <li class="list-group-item w-100"><a class="footer-links" href="#" target="_blank">Politicas de Privacidad</a></li>
+                        <li class="list-group-item w-100"><a class="footer-links" href="#" target="_blank">Ministerio de salud</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 d-flex col-12 col-sm-6 justify-content-center align-items-stretch bordesFooter p-3" > 
+                    <div class="container d-flex justify-content-between flex-column align-items-center" id="redesSocialesFooter">
+                        <p class="row">Nuestras redes sociales</p>
+                        <div class="d-flex mb-1 justify-content-between w-100 align-items-start flex-column footer-icons gap-2">
+                            <a class="d-flex justify-content-start align-items-center ps-2 gap-2" href="#" target="_blank"><i class="fa-brands fa-x-twitter fa-lg"></i> Twitter</a>
+                            <a class="d-flex justify-content-start align-items-center ps-2 gap-2" href="#" target="_blank"><i class="fa-brands fa-facebook fa-lg"></i> Facebook</a>
+                            <a class="d-flex justify-content-start align-items-center ps-2 gap-2" href="#" target="_blank"><i class="fa-brands fa-instagram fa-lg"></i> Instagram</a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </footer>
+  
+        <!-- SCRIPTS -->
+        <script src="../js/nosotros.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <!-- Script bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
       
-
-        <figure class="carrusel-item">
-            <img src="../img/ginecologa ana.jpg" alt="imagen4">
-            <figcaption>
-            <h2>Dra. Ana Sanchez - Jefa de Servicio</h2>
-              Médica cirujana. Especialista en Ginecología y Obstetricia.
-              Especialista en Medicina Maternofetal. The American College of
-              Obstetricians and Gynecologists. Cetificado de reconocimiento por
-              haber participado en el Programa de objetivos Educacionales para
-              Médicos Residentes.
-            </figcaption>
-          </figure>
-       
-        <figure class="carrusel-item">
-            <img src="../img/neurologo jorge.jpg" alt="imagen5">
-            <figcaption>
-            <h2>Dr. Jorge Ramirez - Jefe de Servicio</h2>
-              Doctor en Medicina. Especialista en Neurología. Servicio de
-              Neurofisiología, área Neurofisiología Intraoperatoria, en el
-              Hospital Universitario de Bellvitge, Barcelona. Catalunya. España.
-            </figcaption>
-          
-        
-
-        <figure class="carrusel-item">
-            <img src="../img/oftalmologa laura.jpg" alt="imagen6">
-            <figcaption>
-            <h2>Dra. Laura Fernandez - Jefa de Servicio</h2>
-              Medica Cirujana. Especialista en oftalmologia. Miembro de la
-              Consejo Argentino de Oftalmologia y de la Academia Americana.
-                </figcaption>
-
-        <figure class="carrusel-item">
-            <img src="../img/ortopedia andres.jpg" alt="imagen7">
-            <figcaption>
-            <h2>Dr. Andres Martinez - Jefe de Servicio</h2>
-              Médico. Especialista en Ortopedia y Traumatología. Cirujano
-              acreditado en Pierna, Tobillo y Pie. Cirujano de Trauma
-              Ortopédico. Miembro Titular de la Asociación Argentina de
-              Ortopedia y Traumatología (AAOT). Miembro Acreditado de la
-              Sociedad Argentina de Medicina y Cirugía de la Pierna y el Pie
-              (SAMeCiPP)</figcaption>
-            
-
-        <figure class="carrusel-item">
-            <img src="../img/pediatra carlos rodri.jpg" alt="imagen8">
-            <figcaption>
-            <h2>Dr. Carlos Rodriguez - Jefe de Servicio</h2>
-              Médico, Especialista en Pediatría y Neonatología. Docente
-              Universitario en Ciencias de la Salud. Doctorando en Ciencias
-              Biomédicas IUCBC. Rotación Servicio de Pediatria. Hôpital Timone
-              Enfants. Marsella. Francia.</figcaption>
-         
-
-        <figure class="carrusel-item">
-            <img src="../img/psiquiatria julia.jpg" alt="imagen9">
-            <figcaption>
-            <h2>Dra. Julia Torres - Jefa de Servicio</h2>
-           
-              Médica, especialista en Psiquiatría. Residente del Servicio de
-              Psiquiatría. Hospital Dr. Marcial Quiroga de la Provincia de San
-              Juan. Residente del Servicio de Psiquiatría y Psicología. Hospital
-              Privado Universitario de Córdoba.</figcaption>
+    </body>
     
-
-
-    <section id="testimonios-reconocimientos">
-      <h2 class="line-tittle">Reconocimientos</h2>
-      <h3>Premios institucionales para la Clínica</h3>
-      <ul>
-        <li>
-          Premio Best Spanish Clinnics Awards®, organizado por la consultora
-          Higia Benchmarking, reconocen nuestra excelencia a través de
-          indicadores de eficiencia, adecuación y calidad asistencial.
-        </li>
-        <li>
-          Tres galardones en la XXIV edición de los premios TOP 20 de IQVIA
-          Spain: clínica de referencia regional y nacional, Área del Corazón y
-          Área de Pediatría.
-        </li>
-        <li>
-          Premio EMAS de la Generalitat de Cataluña por la gestión ambiental.
-        </li>
-        <li>
-          Los Servicios de Oftalmología y Reumatología fueron premiados por la
-          Sociedad Argentina de Pediatría por la comunicación “La tomografía de
-          coherencia óptica como herramienta de criba de uveitis anterior en
-          pacientes pediátricos con diagnóstico de artritis idiopática juvenil”.
-        </li>
-        <li>
-          El Servicio de Cirugía Pediátrica fue galardonado como mejor servicio
-          en su ámbito por el Monitor de Reputación Sanitaria.
-        </li>
-      </ul>
-    </section>
-
-    <section id="contacto-preguntas">
-      <h2 class="line-tittle">Preguntas Frecuentes</h2>
-      <ul>
-        <li>¿Cuáles son los servicios médicos que ofrece la clínica?</li>
-        Nuestra clínica ofrece una amplia gama de servicios médicos, que
-        incluyen consultas generales, chequeos médicos, análisis de laboratorio,
-        atención de enfermedades crónicas, vacunación, entre otros.
-
-        <li>¿Cómo puedo solicitar un turno?</li>
-        Puedes solicitar una cita médica llamando a nuestro número telefónico de
-        atención al paciente o utilizando nuestro sistema de turnos en línea.
-
-        <li>¿Aceptan mi obtra social?</li>
-        Aceptamos la mayoría de los seguros médicos. Si tienes alguna pregunta
-        específica sobre tu seguro, no dudes en contactarnos.
-
-        <li>
-          ¿Qué debo hacer en caso de una emergencia médica fuera del horario de
-          atención?
-        </li>
-        En caso de una emergencia médica fuera de nuestro horario regular, te
-        recomendamos que llames al servicio de emergencias local o vayas al
-        hospital más cercano. Para asuntos no urgentes, puedes dejar tu consulta
-        on-line y te contactaremos tan pronto como sea posible.
-
-        <li>¿Cómo puedo obtener mis resultados de laboratorio?</li>
-        Los resultados de laboratorio estarán disponibles a través de nuestro
-        sistema en línea. Te proporcionaremos instrucciones y un código de
-        acceso para acceder a tus resultados de manera segura. También puedes
-        llamar a nuestra clínica para obtener información sobre tus resultados.
-
-        <li>¿Cuál es la política de cancelación de citas?</li>
-        Entendemos que las circunstancias pueden cambiar. Te pedimos que nos
-        avises con al menos 24 horas de antelación si necesitas cancelar o
-        reprogramar tu cita. Esto nos permite optimizar nuestros horarios y
-        brindar un mejor servicio a todos nuestros pacientes.
-      </ul>
-
-      <h3 class="line-tittle">
-        Información de contacto para consultas adicionales
-      </h3>
-
-      TELÉFONOS Central de Turnos (0381) 468-8888 Información general (0381)
-      468-8200 DIRECCIÓN Gral. Paz 576, T4000 San Miguel de Tucumán, Tucumán
-    </section>
-    <script src="app.js/app.js"></script>
-  </body>
-</html>
+    </html>      

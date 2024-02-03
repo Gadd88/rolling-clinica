@@ -3,16 +3,9 @@ const inputDni = document.getElementById('inputDni')
 const inputMotivo = document.getElementById('inputMotivo')
 const inputFecha = document.getElementById('inputFecha')
 const inputHora = document.getElementById('inputHora')
+const inputEspecialidad = document.getElementById('inputEspecialidad')
 const btnAgendar = document.getElementById('btnAgendar')
-
-//const inputs = document.querySelectorAll("input");
-
-//for (const input of inputs) {
-//  const valor = input.value;
-//  if (valor !== "") {
-//    localStorage.setItem(input.id, valor);
-//  }
-//}
+const errorText = document.getElementById('errorText')
 
 const limpiar = () => {
     inputNombre.value = '';
@@ -20,6 +13,7 @@ const limpiar = () => {
     inputFecha.value = '';
     inputHora.value = '';
     inputMotivo.value = '';
+    inputEspecialidad = '';
 }
 
 const agregarStorage = () => {
@@ -28,14 +22,15 @@ const agregarStorage = () => {
 
 const agregarTurno = () => {
     if(inputNombre.value == '' || inputFecha.value == '' || inputDni.value == '' || inputMotivo.value == '' || inputEspecialidad.value == '' || inputHora.value == ''){
-        errorText.classList.add('p-3','rounded-3')
+        errorText.classList.add('p-3','rounded-3', 'border', 'border-2' ,'col-sm-7', 'text-center', 'bg-danger', 'text-white', 'fw-bold')
         errorText.textContent = 'No pueden quedar campos vacios'
         setTimeout(() => {
             errorText.textContent = ''
-            errorText.classList.remove('p-3', 'rounded-3')
+            errorText.classList.remove('p-3','rounded-3', 'border', 'border-2' ,'col-sm-7', 'text-center', 'bg-danger', 'text-white', 'fw-bold')
         }, 2000)
         return
     }
+    console.log(inputEspecialidad.value)
 
     const turno = {
         id: crypto.randomUUID().slice(0,4),
@@ -47,7 +42,7 @@ const agregarTurno = () => {
         horaTurno: inputHora.value,
     }
     
-    fetch('http://localhost:3000/pacientes', {
+    fetch('http://localhost:3000/turnos', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

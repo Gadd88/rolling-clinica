@@ -1,0 +1,57 @@
+[
+    {
+      "id": "CAR1",
+      "titulo": "Cardiología",
+      "descripcion": "Cuidado experto del corazón y sistema vascular para mantener la salud cardiovascular.",
+      "icono": "./src/iconos/cardiologia.png"
+    },
+    {
+      "id": "ENDO",
+      "titulo": "Endocrinología",
+      "descripcion": "Enfoque especializado en trastornos hormonales para equilibrar el bienestar hormonal del paciente.",
+      "icono": "./src/iconos/endocrinologia.png"
+    },
+    {
+      "id": "GAST",
+      "titulo": "Gastroenterología",
+      "descripcion": "Diagnóstico y tratamiento de afecciones digestivas para promover una salud gastrointestinal óptima.",
+      "icono": "./src/iconos/gastroenterologia.png"
+    },
+    {
+      "id": "GINE",
+      "titulo": "Ginecología",
+      "descripcion": "Atención dedicada a la salud reproductiva y bienestar femenino.",
+      "icono": "./src/iconos/ginecologia.png"
+    },
+    {
+      "id": "NEUR",
+      "titulo": "Neurología",
+      "descripcion": "Especialización en el diagnóstico y tratamiento de trastornos neurológicos para mejorar la función cerebral.",
+      "icono": "./src/iconos/neurologia.png"
+    },
+    {
+      "id": "PEDI",
+      "titulo": "Pediatría",
+      "descripcion": "Cuidado integral de la salud infantil, desde la prevención hasta el tratamiento de enfermedades pediátricas.",
+      "icono": "./src/iconos/pediatria.png"
+    },
+    {
+      "id": "OFTA",
+      "titulo": "Oftalmología",
+      "descripcion": "Diagnóstico y manejo de condiciones oculares para mantener una visión saludable.",
+      "icono": "./src/iconos/oftalmologia.png"
+    },
+    {
+      "id": "ORTO",
+      "titulo": "Ortopedia",
+      "descripcion": "Especialización en el sistema musculoesquelético para abordar lesiones y trastornos ortopédicos.",
+      "icono": "./src/iconos/ortopedia.png"
+    },
+    {
+      "id": "PSIQ",
+      "titulo": "Psiquiatría",
+      "descripcion": "Evaluación y tratamiento de trastornos mentales para mejorar la salud mental del paciente.",
+      "icono": "./src/iconos/psiquiatria.png"
+    }
+  ]
+  

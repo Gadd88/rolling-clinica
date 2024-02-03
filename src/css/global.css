@@ -197,6 +197,9 @@ body:has([id=menu-nav]:popover-open) #navbar-toggler{
     border-radius: 15px;
     padding: 1rem;
     min-height: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
 }
 .contenedor{
     background-color: var(--main-highlighted-bg);
@@ -239,7 +242,25 @@ body:has([id=menu-nav]:popover-open) #navbar-toggler{
 .seccion-servicios, .seccion-consulta, .seccion-gestion, .seccion-profesionales{
     min-height: 300px;
     padding: 1rem;
+    padding-bottom: 3rem;
+    position: relative;
 }
+main :is(.seccion-servicios, .seccion-profesionales, .seccion-gestion)::after{
+    content: '';
+    width: 70%;
+    margin: auto;
+    height: 5px;
+    background-color: var(--main-highlighted-bg);
+    margin-top: 50px;
+    border-radius: 15px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+/* SECCION SERVICIOS */
+
+
 /* SECCION CONSULTA */
 .encabezado{
     background-color: var(--main-highlighted-text);
@@ -285,7 +306,7 @@ footer{
     min-width: 100%;
     color: var(--heading-text);
 }
-footer>article{
+footer > article{
     background-color: var(--main-highlighted-bg);
     padding: 2rem;
     
@@ -309,11 +330,10 @@ footer img {
     background-color: var(--main-highlighted-bg);
     transition: .5s;
 }
-.footer-icons>a:hover .fa-lg{
+.footer-icons > a:hover .fa-lg{
     transform: rotateY(180deg);
     color: var(--main-highlighted-text);
 }
-
 .bordesFooter{
     height: 200px;
     width: 250px;
@@ -334,9 +354,18 @@ footer img {
     color: var(--btn-primary-text);
 }
 
-@media (max-width: 568px){
+@media (max-width: 768px){
     .bordesFooter {
         height: 100%;
         width: 100%;
+    }
+}
+
+@media (min-width: 570px) and (max-width: 768px){
+    .btn-gestion{
+        height: 180px;
+        width: 45%;
+        min-width: 45%;
+        letter-spacing: 1px;
     }
 }

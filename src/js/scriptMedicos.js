@@ -8,6 +8,7 @@ const consultaApi = async () => {
   const data = result
   localStorage.setItem('turnos', JSON.stringify(data))
 }
+consultaApi()
 
 let listaPacientes = JSON.parse(localStorage.getItem('turnos'))
 
@@ -20,7 +21,7 @@ document.addEventListener("DOMContentLoaded",function(){
     timer: 1000
   });
   //llamada a la api json-server
-  consultaApi()
+  // cargarTabla()
   //setTimeout para funciones asincronas
   setTimeout(() => {
     cargarTabla()
@@ -37,11 +38,10 @@ document.addEventListener("DOMContentLoaded",function(){
       });
     })
   }, 1000)
-  obtenerUserLogeado();
+  obtenerUserLogeado()
 })
 
 const cargarTabla = () => {
-    consultaApi()
     cuerpoTabla.innerHTML = ''
     if(listaPacientes == null || listaPacientes.length < 1) return cuerpoTabla.innerHTML = `<h3 class="text-center m-auto">No hay pacientes agendados</h3>`
     listaPacientes.forEach( item => {
@@ -86,11 +86,20 @@ const borrarTurno = (event) => {
               // filaTurno.remove()
                   // let newItem = listaPacientes.filter(item => item.id != turnoId) 
                   // listaPacientes = newItem;
-                  fetch(`http://localhost:3000/pacientes/${turnoId}`, {
+                  fetch(`http://localhost:3000/turnos/${turnoId}`, {
                     method: 'DELETE',
-                  }) 
-                  Swal.fire('Eliminado', '', 'success')
-                  cargarTabla();
+                  }).then((response) => {
+                    consultaApi()
+                  }).then((response) => { 
+                    cargarTabla()
+                  })
+                  Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Turno Eliminado",
+                    showConfirmButton: false,
+                    timer: 1000
+                  });
             }else if (result.isDenied) {
               Swal.fire('No eliminaste este turno!', '', 'info')
             }
@@ -138,8 +147,9 @@ const mostrarFormularioModificar = (turno) => {
         horaTurno: turno.horaTurno,
       })
       })
-    // Mostrar nuevamente listado de turnos
-    cargarTabla()
+      // Mostrar nuevamente listado de turnos
+      .then(()=>{consultaApi()})
+      .then(()=>{cargarTabla()})
   }
   guardarEdicion.addEventListener('click', ()=> {
     editarTurno()
@@ -148,9 +158,9 @@ const mostrarFormularioModificar = (turno) => {
 }
 // Para obtener el nombre de usuario y usarlo arriba
 const obtenerUserLogeado = () =>{
-  const usuario = localStorage.getItem("nombreMedico")
+  const usuario = JSON.parse(sessionStorage.getItem("usuario"))
   if (usuario){
-      document.getElementById("spanUser").innerHTML = usuario;
+      document.getElementById("spanUser").innerHTML = `${usuario.usuario}`
   } else{
       return null;
   } 

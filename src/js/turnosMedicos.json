@@ -1,23 +1,40 @@
 {
   "turnos": [
     {
-      "id": "B456",
-      "paciente": "Carlos Fernández",
-      "paciente_dni": "98765432",
-      "especialidad": "Cardiologia",
-      "motivo_consulta": "Presión arterial alta y palpitaciones",
-      "medico_solicitado": "Dra. Martínez",
-      "horaTurno": "17:50",
-      "fechaTurno": "2024-02-29"
+      "id": "3ce3",
+      "paciente": "Martin Gimenez",
+      "paciente_dni": "65656565",
+      "especialidad": "psiquiatria",
+      "motivo_consulta": "Miedo a los aviones",
+      "fechaTurno": "2024-02-07",
+      "horaTurno": "19:15"
     },
     {
-      "id": "8df1",
-      "paciente": "pepito perez",
+      "id": "52ec",
+      "paciente": "Fernando fernando",
+      "paciente_dni": "65656565",
+      "especialidad": "pediatria",
+      "motivo_consulta": "laidoainsdoasid",
+      "fechaTurno": "2024-02-20",
+      "horaTurno": "20:15"
+    },
+    {
+      "id": "642f",
+      "paciente": "popo mr",
       "paciente_dni": "32323232",
-      "especialidad": "clinica",
-      "motivo_consulta": "dolor de rodilla",
-      "fechaTurno": "2024-01-20",
-      "horaTurno": "14:30"
+      "especialidad": "pediatria",
+      "motivo_consulta": "alokinsoaksnaosind",
+      "fechaTurno": "2024-02-15",
+      "horaTurno": "15:15"
+    },
+    {
+      "id": "0be4",
+      "paciente": "german arias",
+      "paciente_dni": "651651651",
+      "especialidad": "pediatria",
+      "motivo_consulta": "alsndaosdif",
+      "fechaTurno": "0005-02-15",
+      "horaTurno": "03:51"
     }
   ]
 }

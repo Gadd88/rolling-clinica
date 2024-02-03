@@ -94,60 +94,71 @@
             </div>
         </nav>
     </header>
-    <main>
-        <section class="container-fluid text-start p-4" id="banner">
-            <div class="row justify-content-center align-items-center">
-                <div class="col-lg-2 col-md-4 d-flex justify-content-lg-end justify-content-center">
-                <img
-                    src="https://picsum.photos/seed/picsum/200/300"
+    <main class="container">
+        <section class="main-container">
+            
+            <section class="container-fluid text-start p-4" id="banner">
+                <div class="row justify-content-center align-items-center">
+                <div
+                    class="col-lg-2 col-md-4 d-flex justify-content-lg-end justify-content-center"
+                >
+                    <img
+                    src="../img/medicos.jpg"
                     class="rounded-4"
                     alt="imagen de un medico"
                     srcset=""
-                />
+                    />
                 </div>
                 <div class="col-lg-10 col-md-8" id="textoBanner">
-                <h2><i class="fa-solid fa-stethoscope"></i> Bienvenido/a <span id="spanUser"></span></h2>
-                <h4>En este panel podras ver todos los turnos que tienes pendientes para esta semana. Tambien puedes editar y cancelar los turnos. </h4>
-                <h5></h5>
+                    <h2>
+                    <i class="fa-solid fa-stethoscope"></i> Bienvenido/a
+                    <span id="spanUser"></span>
+                    </h2>
+                    <h4>
+                    En este panel podras ver todos los turnos que tienes pendientes
+                    para esta semana. Tambien puedes editar y cancelar los turnos.
+                    </h4>
+                    <h5></h5>
                 </div>
-            </div>
-        </section>
-        <section class="container">
-            <h2>Turnos</h2>
-            <table class="table table-hover container" >
-                <thead>
-                    <tr>
-                        <th scope="col"><!-- <i class="fa-solid fa-user"></i> -->Turno ID</th>
-                        <th scope="col">Paciente</th>
-                        <th scope="col"><i class="fa-solid fa-calendar"></i></th>
-                        <th scope="col"><i class="fa-solid fa-clock"></i></th>
-                        <th scope="col">Control</th>
-                    </tr>
-                    </thead>
-                    <tbody id="tablaTurnos" >
-                    
-                    </tbody>
-            </table>
-        <section class="modalEditarTurno">
-            <div class="modal fade" data-bs-backdrop="static" id="editarTurno" tabindex="-1" aria-labelledby="editarTurno" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="modal-title"></h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body" id="modal-body">
-                            <form id="form-edicion" class="d-flex flex-column align-items-start gap-2">
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                            <button type="submit" class="btn btn-primary" id="btn-guardar" data-bs-dismiss="modal">Guardar Edicion</button>
+                </div>
+            </section>
+            <section class="container">
+                <h2>Turnos</h2>
+                <table class="table table-hover container border border-1" >
+                    <thead>
+                        <tr>
+                            <th scope="col"><!-- <i class="fa-solid fa-user"></i> -->Turno ID</th>
+                            <th scope="col">Paciente</th>
+                            <th scope="col"><i class="fa-solid fa-calendar"></i></th>
+                            <th scope="col"><i class="fa-solid fa-clock"></i></th>
+                            <th scope="col">Control</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tablaTurnos" >
+                        
+                        </tbody>
+                </table>
+            <section class="modalEditarTurno">
+                <div class="modal fade" data-bs-backdrop="static" id="editarTurno" tabindex="-1" aria-labelledby="editarTurno" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="modal-title"></h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body" id="modal-body">
+                                <form id="form-edicion" class="d-flex flex-column align-items-start gap-2">
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button type="submit" class="btn btn-primary" id="btn-guardar" data-bs-dismiss="modal">Guardar Edicion</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+            </section>
         </section>
     </main>
     <footer class="container">

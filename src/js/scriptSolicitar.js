@@ -7,27 +7,36 @@ const inputEspecialidad = document.getElementById('inputEspecialidad')
 const btnAgendar = document.getElementById('btnAgendar')
 const errorText = document.getElementById('errorText')
 
-const limpiar = () => {
-    inputNombre.value = '';
-    inputDni.value = '';
-    inputFecha.value = '';
-    inputHora.value = '';
-    inputMotivo.value = '';
-    inputEspecialidad = '';
-}
-
-const agregarStorage = () => {
-    localStorage.setItem('turnos', JSON.stringify(turnos));
+// const limpiar = () => {
+//     inputNombre.value = '';
+//     inputDni.value = '';
+//     inputFecha.value = '';
+//     inputHora.value = '';
+//     inputMotivo.value = '';
+//     inputEspecialidad = '';
+// }
+const consultaApi = async () => {
+    const response = await fetch('http://localhost:3000/turnos')
+    const result = await response.json()
+    const data = result
+    localStorage.setItem('turnos', JSON.stringify(data))
 }
 
 const agregarTurno = () => {
     if(inputNombre.value == '' || inputFecha.value == '' || inputDni.value == '' || inputMotivo.value == '' || inputEspecialidad.value == '' || inputHora.value == ''){
-        errorText.classList.add('p-3','rounded-3', 'border', 'border-2' ,'col-sm-7', 'text-center', 'bg-danger', 'text-white', 'fw-bold')
-        errorText.textContent = 'No pueden quedar campos vacios'
-        setTimeout(() => {
-            errorText.textContent = ''
-            errorText.classList.remove('p-3','rounded-3', 'border', 'border-2' ,'col-sm-7', 'text-center', 'bg-danger', 'text-white', 'fw-bold')
-        }, 2000)
+        // errorText.classList.add('p-3','rounded-3', 'border', 'border-2' ,'col-sm-7', 'text-center', 'bg-danger', 'text-white', 'fw-bold')
+        // errorText.textContent = 'No pueden quedar campos vacios'
+        // setTimeout(() => {
+        //     errorText.textContent = ''
+        //     errorText.classList.remove('p-3','rounded-3', 'border', 'border-2' ,'col-sm-7', 'text-center', 'bg-danger', 'text-white', 'fw-bold')
+        // }, 2000)
+        Swal.fire({
+            position: "center",
+            icon: "error",
+            title: "Todos los campos deben rellenarse",
+            showConfirmButton: false,
+            timer: 1000
+        });
         return
     }
     const turno = {
@@ -39,21 +48,28 @@ const agregarTurno = () => {
         fechaTurno: inputFecha.value,
         horaTurno: inputHora.value,
     }
-    
-    fetch('http://localhost:3000/turnos', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(turno)
-    })
+    setTimeout(()=>{
+        fetch('http://localhost:3000/turnos', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(turno)
+        })
+    },1000)
+    Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Turno Agendado",
+        showConfirmButton: false,
+        timer: 1000
+    });
 }
 btnAgendar.addEventListener('click', (e) => {
     e.preventDefault()
     agregarTurno()
-    limpiar()
-    agregarStorage()
-    mostrarTurnos()
+    // limpiar()
+    // mostrarTurnos()
 })
 
 const mostrarTurnos = () => {

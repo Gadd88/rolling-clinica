@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rolling Clinic - Policonsultorios</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../src/css/certificaciones.css">
+   
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Link Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <script
+      src="https://kit.fontawesome.com/3a0c1a8233.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body class="container">
+    <header>
+        <nav class="navbar navbar-expand-md ">
+            <div class="container-fluid d-flex justify-content-between">
+                <div class="navbar-logo col-md-4 d-flex justify-content-between col-12">
+                    <a class="navbar-brand" href="#">
+                        <img src="../src/iconos/health-icon.svg" alt="Logo" width="50" height="40" class="d-inline-block align-text-center">
+                    Rolling Clínica
+                    </a>
+                    <button class="navbar-toggler border border-2 border-light" data-bs-theme="light" type="button" data-bs-target="#navbarNav" id="navbar-toggler" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" popovertarget="menu-nav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="d-md-flex justify-content-between align-items-center d-none" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contacto</a>
+                        </li>
+                    </ul>
+                    <div class="btn-reg-log d-flex gap-2 align-items-center mt-3 mt-md-0 ms-5">
+                        <button class="btn-secundario rounded rounded-sm p-1">Registro</button>
+                        <button class="btn-primario btn-login rounded rounded-sm p-1">Login</button>
+                    </div>
+                </div>
+                <!-- MENU POPOVER MOBILE -->
+                <div class="menu-nav" id="menu-nav" popover role="menu">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contacto</a>
+                        </li>
+                    </ul>
+                    <div class="btn-reg-log d-flex gap-3 align-items-center mt-3 mt-md-0">
+                        <button class="btn-secundario rounded rounded-sm p-1">Registro</button>
+                        <button class="btn-primario rounded rounded-sm p-1 btn-login">Login</button>
+                    </div>
+                </div>
+                <!-- FIN MENU MOBILE -->
+                <!-- MODAL LOGIN -->
+                <dialog id="modal-login">
+                    <form method="dialog" id="form-login">
+                        <button type="button" class="btn-close m-1 border border-2 border-white p-1 bg-light" id="btn-close-login" aria-label="Close"></button>
+                        <div class="input-group">
+                            <span for="usuario" class="input-group-text">Usuario</span>
+                            <input type="text" name="usuario" id="usuario" class="form-control" autofocus>
+                        </div>
+                        <div class="input-group">
+                            <span for="password" class="input-group-text">Password</span>
+                            <input type="password" name="password" id="password" class="form-control">
+                        </div>
+                        <div class="login-buttons">
+                            <button class="btn-primario rounded rounded-sm p-1" id="btn-login-ingresar">Ingresar</button>
+                            <button class="btn-secundario rounded rounded-sm p-1" id="btn-login-cancelar">Cancelar</button>
+                        </div>
+                        <p class="">Aun no tenes cuenta? <a class="btn-orange btn-sm rounded rounded-sm p-2" href="#">Registrarse</a></p>
+                    </form>
+                </dialog>
+                <!-- FIN MODAL LOGIN -->
+            </div>
+        </nav>
+    </header>
+
+    <body>
+        
+    
+    <main class="container">
+
+        <section class="main-container">
+
+            <article >
+                <div class="encabezado rounded rounded-sm">
+                    <h4>Premios y certificaciones de Rolling Clínica</h4>
+                </div>
+            </article>
+            <article>    
+            
+              <div class="card">
+                <div class="card-body">
+                 
+                  <p class="card-text">Premio Best Spanish Clinnics Awards®, organizado por la consultora
+                    Higia Benchmarking, reconocen nuestra excelencia a través de
+                    indicadores de eficiencia, adecuación y calidad asistencial.</p>
+                <hr>
+                
+                  <p class="card-text">Tres galardones en la XXIV edición de los premios TOP 20 de IQVIA
+                    Spain: clínica de referencia regional y nacional, Área del Corazón y
+                    Área de Pediatría.</p>
+                <hr>
+
+                  <p class="card-text">Premio EMAS de la Generalitat de Cataluña por la gestión ambiental.</p>
+                <hr>
+               
+                  <p class="card-text">Los Servicios de Oftalmología y Reumatología fueron premiados por la
+                    Sociedad Argentina de Pediatría por la comunicación “La tomografía de
+                    coherencia óptica como herramienta de criba de uveitis anterior en
+                    pacientes pediátricos con diagnóstico de artritis idiopática juvenil”.</p>
+                <hr>
+                
+                <p class="card-text"> El Servicio de Cirugía Pediátrica fue galardonado como mejor servicio
+                    en su ámbito por el Monitor de Reputación Sanitaria.</p>
+                </div>
+                
+              <img src="../src/img2/Foto 3 N.png" class="img card-img-bottom" alt="...">
+            </article>
+        </section>
+        </main>
+        
+                <footer class="container">
+                    <article class="d-flex flex-column-reverse align-items-center justify-content-center w-100 gap-2 flex-sm-row flex-wrap justify-content-sm-between">
+                        <div class="col-lg-4 d-flex col-12 col-sm-3 justify-content-center align-items-center bordesFooter align-self-stretch" >
+                            <h3><i class="fa-solid fa-truck-medical fa-fade fa-2xl"> </i>           </h3>    
+                            <div class="m-3"><img src="../src/img2/ministerioSalud.jpg" alt="logo ministerio de salud de la nacion" srcset=""> </div>
+                        </div>
+                        <div class="col-lg-4 d-flex col-12 col-sm-3 align-items-stretch justify-content-center bordesFooter"> 
+                            <ul class="d-flex flex-column justify-content-around align-items-center gap-4 p-3 w-100 h-100 text-center text-sm-start">
+                                <li class="list-group-item w-100"><a class="footer-links" href="#" target="_blank">Mis turnos</a></li>
+                                <li class="list-group-item w-100"><a class="footer-links" href="#" target="_blank">Contacto</a></li>
+                                <li class="list-group-item w-100"><a class="footer-links" href="#" target="_blank">Politicas de Privacidad</a></li>
+                                <li class="list-group-item w-100"><a class="footer-links" href="#" target="_blank">Ministerio de salud</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 d-flex col-12 col-sm-6 justify-content-center align-items-stretch bordesFooter p-3" > 
+                            <div class="container d-flex justify-content-between flex-column align-items-center" id="redesSocialesFooter">
+                                <p class="row">Nuestras redes sociales</p>
+                                <div class="d-flex mb-1 justify-content-between w-100 align-items-start flex-column footer-icons gap-2">
+                                    <a class="d-flex justify-content-start align-items-center ps-2 gap-2" href="#" target="_blank"><i class="fa-brands fa-x-twitter fa-lg"></i> Twitter</a>
+                                    <a class="d-flex justify-content-start align-items-center ps-2 gap-2" href="#" target="_blank"><i class="fa-brands fa-facebook fa-lg"></i> Facebook</a>
+                                    <a class="d-flex justify-content-start align-items-center ps-2 gap-2" href="#" target="_blank"><i class="fa-brands fa-instagram fa-lg"></i> Instagram</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </footer>
+          
+                <!-- SCRIPTS -->
+                <script src="./js/certificaciones.js"></script>
+                
+                <!-- Script bootstrap -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+                <!-- Script Swiper -->
+                <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+            </body>
+            
+            </html>      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/styleRegistro.css">
     <link rel="stylesheet" href="../css/global.css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3a0c1a8233.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body class="container">
     <header>
         <nav class="navbar navbar-expand-md">
             <div class="navbar-logo col-md-4 d-flex justify-content-md-center justify-content-between col-12">
@@ -97,49 +98,62 @@
           </div> -->
         </nav>
     </header>
-    <main>
-        <div class="container-form">
-            <h2 class="text-center">Regístrate</h2>
-            <form id="registration-form">
-                <div class="form-check form-check-inline" id="userType">
-                    <div>
-                        <input class="form-check-input" type="radio" name="userType" id="doctor" value="doctor" required>
-                        <label class="form-check-label" for="doctor">Soy médico</label>
+    <main class="container">
+        <section class="main-container">
+            <div class="container-form">
+                <h2 class="text-center">Regístrate</h2>
+                <form id="registration-form" class="d-flex flex-column justify-content-around gap-4">
+                    <div class="form-check form-check-inline" id="userType">
+                        <div class="d-flex align-items-center gap-2">
+                            <input class="form-check-input border-dark border-2" type="radio" name="userType" id="doctor" value="doctor" required>
+                            <label class="form-check-label" for="doctor">Soy médico</label>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <input class="form-check-input border-dark border-2" type="radio" name="userType" id="patient" value="patient" required>
+                            <label class="form-check-label" for="patient">Soy paciente</label>
+                        </div>
                     </div>
-                    <div>
-                        <input class="form-check-input" type="radio" name="userType" id="patient" value="patient" required>
-                        <label class="form-check-label" for="patient">Soy paciente</label>
+                    <div class="form-group d-flex flex-column flex-sm-row justify-sm-content-around align-sm-items-center col-12">
+                        <label for="full-name" class="form-label col-sm-3 fw-bold">Nombre</label>
+                        <input type="text" class="form-control" id="full-name" placeholder="" maxlength="100" name="full-name" required>
                     </div>
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" id="full-name" placeholder="Nombre completo" maxlength="100" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" class="form-control" id="email" placeholder="Correo electrónico" maxlength="60" required>
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" id="dni" placeholder="DNI" pattern="[0-9]{8}" maxlength="8" required>
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" id="password" placeholder="Contraseña" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" required>
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" id="confirm-password"
-                        placeholder="Re-ingreso de contraseña" required>
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" id="address" placeholder="Domicilio" pattern="^[0-9A-Za-z\s.,#-]+$" required>
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" id="postal-code" placeholder="Código postal" pattern="^\d{5}$" required>
-                </div>
-                <div class="form-group">
-                    <input type="tel" class="form-control" id="phone" placeholder="Teléfono" pattern="^[0-9]{10}$" required>
-                </div>
-                <button type="submit" class="btn btn-primary btn-block">Registrar</button>
-                <button type="reset" class="btn btn-secondary btn-block">Reset</button>
-            </form>
-        </div>
+                    <div class="form-group d-flex flex-column flex-sm-row justify-sm-content-around align-sm-items-center col-12">
+                        <label for="email" class="form-label col-sm-3 fw-bold">Email</label>
+                        <input type="email" name="email" class="form-control" id="email" placeholder="" maxlength="60" required>
+                    </div>
+                    <div class="form-group d-flex flex-column flex-sm-row justify-sm-content-around align-sm-items-center col-12">
+                        <label for="dni" class="form-label col-sm-3 fw-bold">DNI</label>
+                        <input type="text" name="dni" class="form-control" id="dni" placeholder="" pattern="[0-9]{8}" maxlength="8" required>
+                    </div>
+                    <div class="form-group d-flex flex-column flex-sm-row justify-sm-content-around align-sm-items-center col-12">
+                        <label for="password" class="form-label col-sm-3 fw-bold">Contraseña</label>
+                        <input type="password" name="password" class="form-control" id="password" placeholder="" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" required>
+                    </div>
+                    <div class="form-group d-flex flex-column flex-sm-row justify-sm-content-around align-sm-items-center col-12">
+                        <label for="password" class="form-label col-sm-3 fw-bold">Re-Ingrese Contraseña</label>
+                        <input type="password" name="password" class="form-control" id="confirm-password"
+                            placeholder="" required>
+                    </div>
+                    <div class="form-group d-flex flex-column flex-sm-row justify-sm-content-around align-sm-items-center col-12">
+                        <label for="address" class="form-label col-sm-3 fw-bold">Domicilio</label>
+                        <input type="text" name="address"class="form-control" id="address" placeholder="" pattern="^[0-9A-Za-z\s.,#-]+$" required>
+                    </div>
+                    <div class="form-group d-flex flex-column flex-sm-row justify-sm-content-around align-sm-items-center col-12">
+                        <label for="cp" class="form-label col-sm-3 fw-bold">Código Postal</label>
+                        <input type="text" name="cp" class="form-control" id="postal-code" placeholder="" pattern="^\d{5}$" required>
+                    </div>
+                    <div class="form-group d-flex flex-column flex-sm-row justify-sm-content-around align-sm-items-center col-12">
+                        <label for="tel" class="form-label col-sm-3 fw-bold">Teléfono</label>
+                        <input type="tel" name="tel" class="form-control" id="phone" placeholder="" pattern="^[0-9]{10}$" required>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center gap-3 col-12 col-sm-6 m-auto">
+                        <button type="submit" class="btn btn-primario btn-block">Registrar</button>
+                        <button type="reset" class="btn btn-secundario btn-block">Resetear</button>
+                    </div>
+                </form>
+            </div>
+
+        </section>
     </main>
 
     <footer class="container">
@@ -168,11 +182,11 @@
             </div>
         </article>
     </footer>
+    <script src="../js/script.js"></script>
+    <script src="../js/scriptRegistro.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="../js/script.js"></script>
-    <script src="../js/scriptRegistro.js"></script>
 
 </body>
 

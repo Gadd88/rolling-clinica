@@ -1,4 +1,4 @@
-* {
+/* * {
     margin: 0;
     padding: 0;
     border: 0;
@@ -18,25 +18,29 @@ header {
 main{
     display: flex;
     justify-content: center;
-}
+} */
 
 .container-form {
-    width: 60%;
-    margin: 2em;
-    padding: 1.5em;
-    border: 1px solid black;
-    border-radius: 5px;
-    background-color: #daeff8;
+    width: 80%;
+    margin: 5rem auto;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: var(--main-highlighted-bg);
 }
-  
+
 #userType {
     display: flex;
-    flex-direction: row;
     justify-content: space-evenly; 
-    padding: 1em;
-    margin: 0.2em;
+    padding: 1rem;
 }
-/* Estilo del botón de registro */
-.btn-block {
-    margin-top: 20px;
+
+@media(max-width:570px){
+    input{
+        font-size: 10px;
+    }
+}
+@media(max-width: 768px){
+    .container-form{
+        width: 100%;
+    }
 }

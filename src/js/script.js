@@ -7,8 +7,10 @@ const btnLoginIngresar = document.getElementById('btn-login-ingresar');
 const btnRegLogSection = document.querySelectorAll('.btn-reg-log');
 const usuarioSession = JSON.parse(sessionStorage.getItem('usuario'))
 const btnTurnos = document.querySelector('.btn-turnos');
+const btnEstudios = document.getElementsByClassName('btn-estudios')[0];
 
 let userLogged = false;
+
 const paciente = {
     usuario: 'Martin',
     password: 'paciente',
@@ -21,6 +23,7 @@ const admin = {
     usuario: 'admin',
     password: 'admin',
 }
+console.log(usuarioSession)
 //FUNCIONES
 btnLogin.forEach(boton => {
     boton.addEventListener('click', () => {
@@ -30,10 +33,15 @@ btnCloseLogin.addEventListener('click', () =>{
     modalLogin.close();
 })
 
+if(btnEstudios){
+    btnEstudios.addEventListener('click', () => {
+        location.assign('./src/paginas/error404.html')
+    })
+}
 
 if(btnTurnos){
     btnTurnos.addEventListener('click', () => {
-        if(usuarioSession && usuarioSession.usuario == 'Martin'){
+        if(usuarioSession && usuarioSession.usuario != ''){
             location.assign('./src/paginas/solicitarTurno.html')
         }else{
             Swal.fire({
@@ -50,9 +58,11 @@ if(btnTurnos){
 document.addEventListener('DOMContentLoaded', () => {
     if(usuarioSession != null || usuarioSession != undefined){
         btnRegLogSection.forEach(section => section.innerHTML = `
-            <h4 class="text-dark">${usuarioSession.usuario}</h4>
-            <button id="btn-salir" class="btn-salir btn-danger p-1 btn-sm ms-md-5 ms-0">
-            </button>
+            <div class="d-flex flex-column flex-lg-row align-items-center gap-lg-5">
+                <h4 class="text-dark fs-5">${usuarioSession.usuario.split(' ')[0]}</h4>
+                <button id="btn-salir" class="btn-salir btn-danger p-1 btn-sm ms-0 ms-lg-5">
+                </button>
+            </div>
         `)
         const btnSalir = document.querySelectorAll('.btn-salir');
         btnSalir.forEach(btnSalir => btnSalir.addEventListener('click', () =>{

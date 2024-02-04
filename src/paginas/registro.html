@@ -11,8 +11,10 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/3a0c1a8233.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body class="container">
@@ -103,13 +105,13 @@
             <div class="container-form">
                 <h2 class="text-center">Regístrate</h2>
                 <form id="registration-form" class="d-flex flex-column justify-content-around gap-4">
-                    <div class="form-check form-check-inline" id="userType">
+                    <div class="form-check form-check-inline d-flex flex-column flex-sm-row gap-2" id="userType">
                         <div class="d-flex align-items-center gap-2">
                             <input class="form-check-input border-dark border-2" type="radio" name="userType" id="doctor" value="doctor" required>
                             <label class="form-check-label" for="doctor">Soy médico</label>
                         </div>
                         <div class="d-flex align-items-center gap-2">
-                            <input class="form-check-input border-dark border-2" type="radio" name="userType" id="patient" value="patient" required>
+                            <input class="form-check-input border-dark border-2" type="radio" name="userType" id="patient" value="patient" checked>
                             <label class="form-check-label" for="patient">Soy paciente</label>
                         </div>
                     </div>
@@ -126,36 +128,45 @@
                         <input type="text" name="dni" class="form-control" id="dni" placeholder="" pattern="[0-9]{8}" maxlength="8" required>
                     </div>
                     <div class="form-group d-flex flex-column flex-sm-row justify-sm-content-around align-sm-items-center col-12">
-                        <label for="password" class="form-label col-sm-3 fw-bold">Contraseña</label>
-                        <input type="password" name="password" class="form-control" id="password" placeholder="" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" required>
+                        <label for="form-password" class="form-label col-sm-3 fw-bold">Contraseña</label>
+                        <input type="password" name="form-password" class="form-control" id="form-password" placeholder="" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$" required>
+                    </div>
+                    <div class="d-flex flex-column container fs-6 align-items-end pass-info">
+                        <div class="rounded-2 bg-info-subtle p-2 col-12 col-sm-9">
+                            <p>La contraseña debe</p>
+                            <ul class="list-group">
+                                <li class="list-group-item bg-transparent border-0 p-0 pass-items">- Tener al menos 6 caractéres</li>
+                                <li class="list-group-item bg-transparent border-0 p-0 pass-items">- Una mayúscula</li>
+                                <li class="list-group-item bg-transparent border-0 p-0 pass-items">- Una minúscula</li>
+                                <li class="list-group-item bg-transparent border-0 p-0 pass-items">- Un número</li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="form-group d-flex flex-column flex-sm-row justify-sm-content-around align-sm-items-center col-12">
-                        <label for="password" class="form-label col-sm-3 fw-bold">Re-Ingrese Contraseña</label>
-                        <input type="password" name="password" class="form-control" id="confirm-password"
+                        <label for="confirm-password" class="form-label col-sm-3 fw-bold">Re-Ingrese Contraseña</label>
+                        <input type="password" name="confirm-password" class="form-control" id="confirm-password"
                             placeholder="" required>
                     </div>
                     <div class="form-group d-flex flex-column flex-sm-row justify-sm-content-around align-sm-items-center col-12">
                         <label for="address" class="form-label col-sm-3 fw-bold">Domicilio</label>
-                        <input type="text" name="address"class="form-control" id="address" placeholder="" pattern="^[0-9A-Za-z\s.,#-]+$" required>
+                        <input type="text" name="address"class="form-control" id="address" placeholder="" pattern="^[0-9A-Za-z\s.]+$" required>
                     </div>
                     <div class="form-group d-flex flex-column flex-sm-row justify-sm-content-around align-sm-items-center col-12">
-                        <label for="cp" class="form-label col-sm-3 fw-bold">Código Postal</label>
-                        <input type="text" name="cp" class="form-control" id="postal-code" placeholder="" pattern="^\d{5}$" required>
+                        <label for="cod-postal" class="form-label col-sm-3 fw-bold">Código Postal</label>
+                        <input type="text" name="cod-postal" class="form-control" id="postal-code" placeholder="" pattern="^\d{4}$" required>
                     </div>
                     <div class="form-group d-flex flex-column flex-sm-row justify-sm-content-around align-sm-items-center col-12">
-                        <label for="tel" class="form-label col-sm-3 fw-bold">Teléfono</label>
-                        <input type="tel" name="tel" class="form-control" id="phone" placeholder="" pattern="^[0-9]{10}$" required>
+                        <label for="telefono" class="form-label col-sm-3 fw-bold">Teléfono</label>
+                        <input type="tel" name="telefono" class="form-control" id="phone" placeholder="" pattern="^[0-9]{10}$" required>
                     </div>
                     <div class="d-flex flex-column justify-content-center gap-3 col-12 col-sm-6 m-auto">
-                        <button type="submit" class="btn btn-primario btn-block">Registrar</button>
-                        <button type="reset" class="btn btn-secundario btn-block">Resetear</button>
+                        <button type="submit" class="btn btn-primario btn-block btn-submit">Registrar</button>
+                        <button type="reset" class="btn btn-secundario btn-block" id="btn-form-reset">Resetear</button>
                     </div>
                 </form>
             </div>
-
         </section>
     </main>
-
     <footer class="container">
         <article class="d-flex flex-column-reverse align-items-center justify-content-center w-100 gap-2 flex-sm-row flex-wrap justify-content-sm-between">
             <div class="col-lg-4 d-flex col-12 col-sm-3 justify-content-center align-items-center bordesFooter align-self-stretch" >

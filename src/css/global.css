@@ -58,14 +58,40 @@ p{
 /* HEADER */
 header{
     margin-bottom: 1rem;
+    width: 100%;
 }
 header nav{
     background-color: var(--heading-bg);
+    max-width: 100%;
+    width: 100%;
 }
 header *{
     color: var(--heading-text);
     text-decoration: none;
 }
+.navbar-logo{
+}
+@media(min-width:768px){
+    .navbar{
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .navbar-logo{
+        width: 25%;
+    }
+    #navbarNav{
+        width: 75%;
+    }
+}
+/* MENU DESKTOP */
+#navbarNav .navbar-nav{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+}
+
 .nav-link{
     transition: all .2s;
 }
@@ -117,6 +143,7 @@ header *{
     top: 5px;
     right: 5px;
 }
+/* MENU MOBILE */
 #menu-nav{
     margin: 0;
     padding: 1rem;
@@ -159,10 +186,13 @@ header *{
     justify-content: space-between;
     height: 200px;
 }
-#menu-nav .btn-reg-log button{
+#menu-nav .btn-reg-log :is(a,button){
     width: 100%;
     height: 4rem;
     font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #menu-nav::-webkit-backdrop, #menu-nav::backdrop {
     background: hsl(0 0% 15% / 0.5);
@@ -222,7 +252,8 @@ body:has([id=menu-nav]:popover-open) #navbar-toggler{
     color: var(--btn-secondary-text);
     border: 2px solid var(--btn-secondary-text);
     transition: .3s;
-    width: 100px;
+    min-width: 100px;
+    text-align: center;
 }
 .btn-secundario:hover{
     background-color: var(--btn-secondary-text);

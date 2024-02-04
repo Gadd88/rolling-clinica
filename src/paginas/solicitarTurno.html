@@ -123,8 +123,12 @@
                 <div class="row mb-3">
                     <label for="hora" class="col-sm-4 col-form-label">Horario</label>
                     <div class="col-sm-7">
-                        <input type="time" class="form-control" id="inputHora">
-                    </div>
+                        <input type="time" class="form-control" id="inputHora" min="10:00:00" max="18:30:00">
+                    </div> 
+                </div>
+                <div class="row mb-1">
+                    <p class="col-sm-4 col-form-label"></p>
+                    <p class="text-center col-sm-7 p-2 rounded-2 bg-warning-subtle">El rango horario aceptado es entre 10:00HS a 18:00HS</p>
                 </div>
                 <div class="row mb-3">
                     <label for="especialidad" class="col-sm-4 col-form-label">Especialidad</label>

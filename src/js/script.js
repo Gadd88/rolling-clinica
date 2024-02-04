@@ -58,7 +58,7 @@ if(btnTurnos){
 document.addEventListener('DOMContentLoaded', () => {
     if(usuarioSession != null || usuarioSession != undefined){
         btnRegLogSection.forEach(section => section.innerHTML = `
-            <div class="d-flex flex-column flex-lg-row align-items-center gap-lg-5">
+            <div class="d-flex flex-column flex-lg-row align-items-center gap-lg-5 me-5">
                 <h4 class="text-dark fs-5">${usuarioSession.usuario.split(' ')[0]}</h4>
                 <button id="btn-salir" class="btn-salir btn-danger p-1 btn-sm ms-0 ms-lg-5">
                 </button>

@@ -169,22 +169,22 @@
                                 <iframe src= "https://www.youtube.com/embed/YdixxxHMfD8?si=hv3LlW_yR8ZpHfqg"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="video img-fluid img-thumbnail p-0 mb-1 rounded border-0"></iframe>
                             </div>
                         <div class=" col-md-6 div-col1">
-                                <form class="formulario img-fluid img-thumbnail p-4 rounded d-flex flex-column gap-2 align-items-center justify-content-center border-0" id="form">
+                                <form class="formulario img-fluid img-thumbnail p-4 rounded d-flex flex-column gap-2 align-items-center justify-content-center border-0" id="formConsultas">
                                     <div class="col-12">
-                                        <label for="validationCustom01" class="form-label">Nombre y apellido</label>
-                                        <input type="text" class="form-control border-1" id="nombre" maxlength="50" minlength="3" pattern="^[A-Za-z\s]+$" placeholder="Ej: María López">
+                                        <label for="nombre" class="form-label">Nombre y apellido</label>
+                                        <input type="text" class="form-control border-1" id="nombre" name="nombre" maxlength="50" minlength="3" pattern="^[A-Za-z\s]+$" placeholder="Ej: María López">
                                     </div>
                                     <div class="col-12 ">
-                                        <label for="exampleFormControlInput1" class="form-label">Teléfono de contacto</label>
-                                        <input type="telefono" class="form-control border-1" id="telefono" minlength="6" maxlength="15" pattern="^[0-9]+$" placeholder="Ej: 381-1111111">
+                                        <label for="telefono" class="form-label">Teléfono de contacto</label>
+                                        <input type="telefono" class="form-control border-1" id="telefono" name="telefono" minlength="6" maxlength="15" pattern="^[0-9]+$" placeholder="Ej: 381-1111111">
                                     </div>
                                     <div class="col-12">
-                                        <label for="exampleFormControlInput1" class="form-label">Correo electrónico</label>
-                                        <input type="email" class="form-control border-1" id="mail" maxlength="30" minlength="15" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" placeholder="ejemplo@clínica.com">
+                                        <label for="email" class="form-label">Correo electrónico</label>
+                                        <input type="email" name="email" class="form-control border-1" id="mail" maxlength="30" minlength="15" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" placeholder="ejemplo@clínica.com">
                                     </div>
                                     <div class="col-12">
-                                        <label for="exampleFormControlTextarea1" class="form-label">Consulta</label>
-                                        <textarea class="form-control border-1" id="consulta" minlength="4" maxlength="300" rows="2"></textarea>
+                                        <label for="consulta" class="form-label">Consulta</label>
+                                        <textarea class="form-control border-1" id="consulta" name="consulta" minlength="4" maxlength="300" rows="2"></textarea>
                                     </div>
                                     <div class="col-12 container-fluid text-center">
                                         <button type="submit" class="btn btn-primario mt-3" id= btnEnviarConsulta onclick="guardarConsulta"row="2">Enviar consulta</button>

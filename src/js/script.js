@@ -10,11 +10,11 @@ const btnTurnos = document.querySelector('.btn-turnos');
 
 let userLogged = false;
 const paciente = {
-    usuario: 'paciente',
+    usuario: 'Martin',
     password: 'paciente',
 }
 const doctor = {
-    usuario: 'doctor',
+    usuario: 'Dr.Rossi',
     password: 'doctor',
 }
 const admin = {
@@ -30,19 +30,18 @@ btnCloseLogin.addEventListener('click', () =>{
     modalLogin.close();
 })
 
+
 if(btnTurnos){
     btnTurnos.addEventListener('click', () => {
-        if(userLogged = true){
-            if(usuarioSession.usuario == 'paciente'){
-                location.assign('./src/paginas/solicitarTurno.html')
-            }
+        if(usuarioSession && usuarioSession.usuario == 'Martin'){
+            location.assign('./src/paginas/solicitarTurno.html')
         }else{
             Swal.fire({
                 position: "center",
                 icon: "error",
-                title: "Debe estar logueado para acceder",
+                title: "Debe ser un paciente registrado para acceder",
                 showConfirmButton: false,
-                timer: 1000
+                timer: 1500
             })
         }
     })
@@ -51,9 +50,9 @@ if(btnTurnos){
 document.addEventListener('DOMContentLoaded', () => {
     if(usuarioSession != null || usuarioSession != undefined){
         btnRegLogSection.forEach(section => section.innerHTML = `
-            <h4 class="text-dark">Bienvenido ${usuarioSession.usuario}</h4>
-            <div id="btn-salir" class="btn btn-salir btn-danger p-1">
-            </div>
+            <h4 class="text-dark">${usuarioSession.usuario}</h4>
+            <button id="btn-salir" class="btn-salir btn-danger p-1 btn-sm ms-md-5 ms-0">
+            </button>
         `)
         const btnSalir = document.querySelectorAll('.btn-salir');
         btnSalir.forEach(btnSalir => btnSalir.addEventListener('click', () =>{
@@ -82,7 +81,7 @@ btnLoginIngresar.addEventListener('click', (e) =>{
             icon: "success",
             title: "Bienvenido",
             text: `${usuarioLoggeado.usuario}`,
-            timer: 1500
+            timer: 1000
         })
     }
     if(userLogged == true){
@@ -97,7 +96,9 @@ btnLoginIngresar.addEventListener('click', (e) =>{
             }, 1000)
             return
         }else{
-            location.reload()
+            setTimeout(()=>{
+                location.reload()
+            },1000)
             return
         }
     }

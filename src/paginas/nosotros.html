@@ -4,25 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rolling Clinic - Policonsultorios</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/nosotros.css">
-   
-    
+    <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- Link Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <script
-      src="https://kit.fontawesome.com/3a0c1a8233.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/3a0c1a8233.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
+
 <body class="container">
-
-<!-- SECCION 1 - HISTORIA DE LA CLINICA-->   
-
+    <header>
+        <nav class="navbar navbar-expand-md">
+            <div class="navbar-logo col-md-4 d-flex justify-content-md-center justify-content-between col-12">
+                <a class="navbar-brand d-flex justify-content-center align-items-center w-100" href="../../index.html">
+                    <img src="../iconos/health-icon.svg" alt="Logo" width="50" height="40"
+                        class="d-inline-block align-text-center">
+                    Rolling Clínica
+                </a>
+                <button class="navbar-toggler border border-2 border-light" data-bs-theme="light" type="button"
+                    data-bs-target="#navbarNav" id="navbar-toggler" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation" popovertarget="menu-nav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="d-md-flex justify-content-between align-items-center d-none col-md-8 " id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="../../index.html">Inicio</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                      <a class="nav-link" href="#">Servicios</a>
+                  </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="./nosotros.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contacto.html">Contacto</a>
+                    </li>
+                </ul>
+                <div class="btn-reg-log d-flex gap-2 align-items-center justify-content-center mt-md-0 ms-1">
+                    <a role="button" href="./registro.html" class="btn-secundario rounded rounded-sm p-1">Registro</a>
+                    <button class="btn-primario btn-login rounded rounded-sm p-1">Login</button>
+                </div>
+            </div>
+            <!-- MENU POPOVER MOBILE -->
+            <div class="menu-nav d-flex d-md-none flex-column" id="menu-nav" popover role="menu">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../../index.html">Inicio</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                      <a class="nav-link" href="#">Servicios</a>
+                  </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="./nosotros.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contacto.html">Contacto</a>
+                    </li>
+                </ul>
+                <div class="btn-reg-log d-flex gap-2 align-items-center mt-1 mt-md-0">
+                    <a role="button" href="./registro.html" class="btn-secundario rounded rounded-sm p-1">Registro</a>
+                    <button class="btn-primario rounded rounded-sm p-1 btn-login">Login</button>
+                </div>
+            </div>
+            <!-- FIN MENU MOBILE -->
+            <!-- MODAL LOGIN -->
+            <dialog id="modal-login">
+                <form method="dialog" id="form-login">
+                    <button type="button" class="btn-close m-1 border border-2 border-white p-1 bg-light"
+                        id="btn-close-login" aria-label="Close"></button>
+                    <div class="input-group">
+                        <span for="usuario" class="input-group-text">Usuario</span>
+                        <input type="text" name="usuario" id="usuario" class="form-control" autofocus>
+                    </div>
+                    <div class="input-group">
+                        <span for="password" class="input-group-text">Password</span>
+                        <input type="password" name="password" id="password" class="form-control">
+                    </div>
+                    <div class="login-buttons">
+                        <button class="btn-primario rounded rounded-sm p-1" id="btn-login-ingresar">Ingresar</button>
+                        <button class="btn-secundario rounded rounded-sm p-1" id="btn-login-cancelar">Cancelar</button>
+                    </div>
+                    <p class="">Aun no tenes cuenta? <a class="btn-orange btn-sm rounded rounded-sm p-2"
+                            href="./registro.html">Registrarse</a></p>
+                </form>
+            </dialog>
+            <!-- FIN MODAL LOGIN -->
+            <!-- <div class="container-fluid d-flex justify-content-between">
+          </div> -->
+        </nav>
+    </header>
+    <!-- SECCION 1 - HISTORIA DE LA CLINICA-->
     <main class="container">
         <section class="main-container">
             <article class="seccion-servicios">
@@ -32,254 +110,336 @@
                 <div class="card mb-3">
                     <img src="../img/Foto General.png" class="card-img-top w-100" alt="fotoFachada">
                     <div class="card-body">
-                      <p class="card-text">En los años 80, un grupo de recién egresados de la Facultad de Medicina de la UNT funda Rolling Clínica en San Miguel de Tucumán con el objetivo de modernizar la atención médica. Con un enfoque centrado en el paciente, la clínica se destaca por su compromiso con la excelencia desde sus inicios. Con el tiempo, crece y se convierte en líder regional, invirtiendo en tecnología médica avanzada como diagnóstico por imagen y cirugía robótica. Además, se implica en investigación y desarrollo. Hoy en día, es reconocida como una institución médica avanzada y respetada, dedicada a brindar calidad y bienestar a la comunidad, con la visión de ser un referente regional en todos los aspectos de la atención médica.</p>
+                        <p class="card-text">En los años 80, un grupo de recién egresados de la Facultad de Medicina de
+                            la UNT funda Rolling Clínica en San Miguel de Tucumán con el objetivo de modernizar la
+                            atención médica. Con un enfoque centrado en el paciente, la clínica se destaca por su
+                            compromiso con la excelencia desde sus inicios. Con el tiempo, crece y se convierte en líder
+                            regional, invirtiendo en tecnología médica avanzada como diagnóstico por imagen y cirugía
+                            robótica. Además, se implica en investigación y desarrollo. Hoy en día, es reconocida como
+                            una institución médica avanzada y respetada, dedicada a brindar calidad y bienestar a la
+                            comunidad, con la visión de ser un referente regional en todos los aspectos de la atención
+                            médica.</p>
                     </div>
-                  </div>
+                </div>
             </article>
-
-
-
-  
-<!-- SECCION 2 - DIRECTORIO DE LA CLINICA-->
-
+            <!-- SECCION 2 - DIRECTORIO DE LA CLINICA-->
             <article class="seccion-servicios">
-                    <div class="encabezado rounded rounded-sm">
-                        <h4>Directorio de Rolling Clínica</h4>
-                    </div>
-      
-                    <article>
-                        <div class="container">
-                          <div class="row">
-
-                  <!-- CARD 1 -->
-
+                <div class="encabezado rounded rounded-sm">
+                    <h4>Directorio de Rolling Clínica</h4>
+                </div>
+                <article>
+                    <div class="container">
+                        <div class="row">
+                            <!-- CARD 1 -->
                             <div class="col-md-6 col-lg-3 mb-3">
                                 <div class="card" style="width: 100%;">
-                                  <img src="../img/Director.png" class="card-img-top" alt="...">
-                                  <div class="card-body">
-                                    <h5 class="card-title">Dr. Alberto Casanova</h5>
-                                    <p class="card-text">Director General</p>
-                                   
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1">
-                                      Ver más
-                                    </button>
-                                  </div>
+                                    <img src="../img/Director.png" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Dr. Alberto Casanova</h5>
+                                        <p class="card-text">Director General</p>
+                                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                                            data-target="#exampleModal1">
+                                            Ver más
+                                        </button>
+                                    </div>
                                 </div>
-                              </div>
-                              
-                  <!-- MODAL CARD 1 -->
-
-                              <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            </div>
+                            <!-- MODAL CARD 1 -->
+                            <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
                                 <div class="modal-dialog">
-                                  <div class="modal-content">
-                                    <div class="modal-header">
-                                      <h5 class="modal-title" id="exampleModalLabel">Dr. Alberto Casanova - Director general</h5>
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Dr. Alberto Casanova -
+                                                Director general</h5>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>El Dr. Alberto Casanova, destacado médico cirujano, ha alcanzado
+                                                reconocimiento internacional por su
+                                                excelencia y dedicación en el campo de la medicina. Con una destacada
+                                                trayectoria profesional, ha
+                                                sido premiado en múltiples ocasiones por su innovación y contribuciones
+                                                significativas al ámbito
+                                                médico.
+                                                Graduado con honores de una de las principales facultades de medicina
+                                                del país,su formación
+                                                especializándose en cirugía en algunas de las instituciones médicas más
+                                                prestigiosas del mundo. Su
+                                                incansable búsqueda de la excelencia lo llevó a Estados Unidos, donde ha
+                                                sido reconocido como un
+                                                líder en su campo.
+                                                Además de sus logros profesionales, el Dr. Casanova es reconocido por su
+                                                dedicación a la educación
+                                                médica y su labor humanitaria. Su pasión por compartir conocimientos y
+                                                brindar atención médica de
+                                                calidad lo ha convertido en un referente para las generaciones futuras
+                                                de profesionales de la salud.
+                                            </p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary w-100 justify-content-center"
+                                                data-dismiss="modal">Cerrar</button>
+                                        </div>
                                     </div>
-                                    <div class="modal-body">
-
-                                      <p>El Dr. Alberto Casanova, destacado médico cirujano, ha alcanzado reconocimiento internacional por su excelencia y dedicación en el campo de la medicina. Con una destacada trayectoria profesional, ha sido premiado en múltiples ocasiones por su innovación y contribuciones significativas al ámbito médico.
-                                        Graduado con honores de una de las principales facultades de medicina del país,su formación especializándose en cirugía en algunas de las instituciones médicas más prestigiosas del mundo. Su incansable búsqueda de la excelencia lo llevó a Estados Unidos, donde ha sido reconocido como un líder en su campo.       
-                                        Además de sus logros profesionales, el Dr. Casanova es reconocido por su dedicación a la educación médica y su labor humanitaria. Su pasión por compartir conocimientos y brindar atención médica de calidad lo ha convertido en un referente para las generaciones futuras de profesionales de la salud.</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                      <button type="button" class="btn btn-primary w-100 justify-content-center" data-dismiss="modal">Cerrar</button>
-                                    </div>
-                                  </div>
                                 </div>
-                              </div>
-
-                    <!-- CARD 2 -->             
-                              <div class="col-md-6 col-lg-3 mb-3">
+                            </div>
+                            <!-- CARD 2 -->
+                            <div class="col-md-6 col-lg-3 mb-3">
                                 <div class="card" style="width: 100%;">
-                                  <img src="../img/Vicedirectora.png" class="card-img-top" alt="...">
-                                  <div class="card-body">
-                                    <h5 class="card-title">Dra. Elena Salerno</h5>
-                                    <p class="card-text">Vicedirectora</p>
-                                   
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">
-                                      Ver más
-                                    </button>
-                                  </div>
+                                    <img src="../img/Vicedirectora.png" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Dra. Elena Salerno</h5>
+                                        <p class="card-text">Vicedirectora</p>
+                                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                                            data-target="#exampleModal2">
+                                            Ver más
+                                        </button>
+                                    </div>
                                 </div>
-                              </div>
-                              
-                    <!-- MODAL CARD 2 -->
-                              <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            </div>
+                            <!-- MODAL CARD 2 -->
+                            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
                                 <div class="modal-dialog">
-                                  <div class="modal-content">
-                                    <div class="modal-header">
-                                      <h5 class="modal-title" id="exampleModalLabel">Dra. Elena Salerno - Vicedirectora</h5>
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Dra. Elena Salerno -
+                                                Vicedirectora</h5>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>La Dra. Elena Salerno es una destacada médica cardiologa con una
+                                                impresionante trayectoria
+                                                internacional y una pasión innegable por la excelencia en la atención
+                                                médica. Con una sólida
+                                                formación académica respaldada por numerosos diplomados en cardiología,
+                                                ha consolidado su reputación
+                                                como una experta en su campo.
+                                                A lo largo de su carrera, la Dra. Salerno ha demostrado un compromiso
+                                                excepcional con el cuidado de
+                                                sus pacientes, combinando su profundo conocimiento técnico con una
+                                                comprensión compasiva de las
+                                                necesidades individuales de cada uno. Su enfoque centrado en el paciente
+                                                y su habilidad para
+                                                establecer conexiones significativas con quienes atiende son cualidades
+                                                que la distinguen como
+                                                profesional de la salud.</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary w-100 justify-content-center"
+                                                data-dismiss="modal">Cerrar</button>
+                                        </div>
                                     </div>
-                                    <div class="modal-body">
-
-                                      <p>La Dra. Elena Salerno es una destacada médica cardiologa con una impresionante trayectoria internacional y una pasión innegable por la excelencia en la atención médica. Con una sólida formación académica respaldada por numerosos diplomados en cardiología, ha consolidado su reputación como una experta en su campo.
-
-                                        A lo largo de su carrera, la Dra. Salerno ha demostrado un compromiso excepcional con el cuidado de sus pacientes, combinando su profundo conocimiento técnico con una comprensión compasiva de las necesidades individuales de cada uno. Su enfoque centrado en el paciente y su habilidad para establecer conexiones significativas con quienes atiende son cualidades que la distinguen como profesional de la salud.</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                      <button type="button" class="btn btn-primary w-100 justify-content-center" data-dismiss="modal">Cerrar</button>
-                                    </div>
-                                  </div>
                                 </div>
-                              </div>
-
-                    <!-- CARD 3 --> 
-
+                            </div>
+                            <!-- CARD 3 -->
                             <div class="col-md-6 col-lg-3 mb-3">
-                            <div class="card" style="width: 100%;">
-                            <img src="../img/Gerente Com.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                            <h5 class="card-title">Lic. Ana Martínez</h5>
-                            <p class="card-text">Gerente Comercial</p>
-                       
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal3">
-                            Ver más
-                              </button>
+                                <div class="card" style="width: 100%;">
+                                    <img src="../img/Gerente Com.png" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Lic. Ana Martínez</h5>
+                                        <p class="card-text">Gerente Comercial</p>
+                                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                                            data-target="#exampleModal3">
+                                            Ver más
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
-                          </div>
-                        </div>
-                  
-                    <!-- MODAL CARD 3 -->
-
-                            <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                            <div class="modal-content">
-                            <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Lic. Ana Martínez - Gerente comercial</h5>
+                            <!-- MODAL CARD 3 -->
+                            <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Lic. Ana Martínez - Gerente
+                                                comercial</h5>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Destacada Licenciada en Administración de Empresas, ocupa el rol de
+                                                Gerenta Comercial en Rolling Clínica, donde su liderazgo y experiencia
+                                                han dejado una marca significativa en el éxito y crecimiento de la
+                                                institución. Con una trayectoria profesional notable, Ana ha acumulado
+                                                experiencia tanto en el ámbito nacional como internacional, colaborando
+                                                con empresas de renombre como Techint y Bago, entre otras.
+                                                Su perspicacia empresarial y su capacidad para identificar oportunidades
+                                                estratégicas han sido pilares fundamentales en el desarrollo de Rolling
+                                                Clínica como una institución líder en su sector. Gracias a su visión
+                                                estratégica y su habilidad para establecer relaciones comerciales
+                                                sólidas, Ana ha contribuido de manera significativa al posicionamiento
+                                                de la clínica en el mercado, así como a su expansión y crecimiento
+                                                continuo.
+                                                Además de su destacada carrera profesional, Ana se distingue por su
+                                                compromiso con la excelencia y la ética en los negocios. Su enfoque
+                                                orientado al cliente y su capacidad para adaptarse a entornos dinámicos
+                                                han sido clave en la consecución de resultados exitosos tanto a nivel
+                                                nacional como internacional.</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary w-100 justify-content-center"
+                                                data-dismiss="modal">Cerrar</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="modal-body">
-
-                            <p>Destacada Licenciada en Administración de Empresas, ocupa el rol de Gerenta Comercial en Rolling Clínica, donde su liderazgo y experiencia han dejado una marca significativa en el éxito y crecimiento de la institución. Con una trayectoria profesional notable, Ana ha acumulado experiencia tanto en el ámbito nacional como internacional, colaborando con empresas de renombre como Techint y Bago, entre otras.
-
-                            Su perspicacia empresarial y su capacidad para identificar oportunidades estratégicas han sido pilares fundamentales en el desarrollo de Rolling Clínica como una institución líder en su sector. Gracias a su visión estratégica y su habilidad para establecer relaciones comerciales sólidas, Ana ha contribuido de manera significativa al posicionamiento de la clínica en el mercado, así como a su expansión y crecimiento continuo.
-                            
-                            Además de su destacada carrera profesional, Ana se distingue por su compromiso con la excelencia y la ética en los negocios. Su enfoque orientado al cliente y su capacidad para adaptarse a entornos dinámicos han sido clave en la consecución de resultados exitosos tanto a nivel nacional como internacional.</p>
+                            <!-- CARD 4 -->
+                            <div class="col-md-6 col-lg-3 mb-3">
+                                <div class="card" style="width: 100%;">
+                                    <img src="../img/GerenteFin.png" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">CPN Luis Mendoza</h5>
+                                        <p class="card-text">Gerente Financiero</p>
+                                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                                            data-target="#exampleModal4">
+                                            Ver más
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="modal-footer">
-                          <button type="button" class="btn btn-primary w-100 justify-content-center" data-dismiss="modal">Cerrar</button>
-                        </div>
-                      </div>
+                            <!-- MODAL CARD 4 -->
+                            <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">CPN. Luis Mendoza - Gerente
+                                                financiero</h5>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Luis Mendoza es un Contador Público Nacional reconocido por su destacada
+                                                labor como financista en el país. Con una sólida formación académica y
+                                                una amplia experiencia en el campo de las finanzas, se ha consolidado
+                                                como una figura prominente en el ámbito económico.
+                                                Su habilidad para analizar datos financieros, desarrollar estrategias
+                                                efectivas y tomar decisiones informadas ha sido fundamental en la
+                                                gestión y dirección de importantes proyectos financieros a nivel
+                                                nacional. Su enfoque meticuloso y su capacidad para identificar
+                                                oportunidades de crecimiento y optimización han contribuido
+                                                significativamente al éxito y la estabilidad económica de diversas
+                                                organizaciones.
+                                                Además de su destacada labor profesional, Luis Mendoza se distingue por
+                                                su integridad y ética en el ejercicio de su profesión, lo que lo ha
+                                                convertido en un referente de confianza en el mundo financiero. Su
+                                                compromiso con la transparencia y la responsabilidad financiera lo ha
+                                                posicionado como un líder respetado y admirado en su campo.</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary w-100 justify-content-center"
+                                                data-dismiss="modal">Cerrar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                </article>
+            </article>
+            <!-- SECCION 3 - NUESTRAS INSTALACIONES (CARROUSEL)-->
+            <article>
+                <div class="encabezado rounded rounded-sm">
+                    <h4>Nuestras instalaciones</h4>
+                </div>
+            </article>
+            <br>
+            <article>
+                <div id="carouselExampleCaptions" class="carousel slide">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
                     </div>
-                  </div>            
-
-                  <!-- CARD 4 --> 
-
-                            <div class="col-md-6 col-lg-3 mb-3">
-                            <div class="card" style="width: 100%;">
-                            <img src="../img/GerenteFin.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                            <h5 class="card-title">CPN Luis Mendoza</h5>
-                            <p class="card-text">Gerente Financiero</p>
-       
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal4">
-                            Ver más
-                            </button>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../img/Consultorio1.png" class="img d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5 class="carrousel-text">Consultorios de última generación</h5>
+                                <p class="carrousel-text">Tecnología de vanguardia, sistemas de diagnóstico avanzados,
+                                    equipos médicos de última generación y soluciones digitales.</p>
                             </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../img/Consultorio2.png" class="img d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5 class="carrousel-text">Salas de operaciones computarizadas</h5>
+                                <p class="carrousel-text">Sistemas avanzados de monitoreo, imagenología y navegación
+                                    quirúrgica, que permiten procedimientos con precisión milimétrica.</p>
                             </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../img/Consultorio3.png" class="img d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5 class="carrousel-text">Diagnóstico por imágenes con IA</h5>
+                                <p class="carrousel-text">Permite la precisión diagnóstica, reducción de procedimientos
+                                    invasivos y optimiza el seguimiento de los pacientes.</p>
                             </div>
-  
-                  <!-- MODAL CARD 4 -->
-                          <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                          <div class="modal-dialog">
-                          <div class="modal-content">
-                          <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">CPN. Luis Mendoza - Gerente financiero</h5>
-                          </div>
-                          <div class="modal-body">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </article>
+            <!-- SECCION 4 - MAS INFO-->
+            <article>
+                <div class="encabezado rounded rounded-sm">
+                    <h4>+ Info</h4>
+                </div>
+            </article>
+            <article>
+                <div class="container-info">
+                    <div class="container-button justify-content-between align-items-center">
+                        <a href="./certificaciones.html" class="button-info btn-orange">Certificaciones Rolling</a>
+                        <a href="./pregFrecuentes.html" class="button-info btn-orange">Preguntas frecuentes</a>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
 
-                          <p>Luis Mendoza es un Contador Público Nacional reconocido por su destacada labor como financista en el país. Con una sólida formación académica y una amplia experiencia en el campo de las finanzas, se ha consolidado como una figura prominente en el ámbito económico.
-                          Su habilidad para analizar datos financieros, desarrollar estrategias efectivas y tomar decisiones informadas ha sido fundamental en la gestión y dirección de importantes proyectos financieros a nivel nacional. Su enfoque meticuloso y su capacidad para identificar oportunidades de crecimiento y optimización han contribuido significativamente al éxito y la estabilidad económica de diversas organizaciones.
-                          Además de su destacada labor profesional, Luis Mendoza se distingue por su integridad y ética en el ejercicio de su profesión, lo que lo ha convertido en un referente de confianza en el mundo financiero. Su compromiso con la transparencia y la responsabilidad financiera lo ha posicionado como un líder respetado y admirado en su campo.</p>
-                          </div>
-                          <div class="modal-footer">
-                          <button type="button" class="btn btn-primary w-100 justify-content-center" data-dismiss="modal">Cerrar</button>
-                          </div>
-                          </div>
-                          </div>
-                          </div>      
-  <!-- SECCION 3 - NUESTRAS INSTALACIONES (CARROUSEL)-->
+    <!-- FOOTER-->
+    <footer class="container">
+        <article class="d-flex flex-column-reverse align-items-center justify-content-center w-100 gap-2 flex-sm-row flex-wrap justify-content-sm-between">
+            <div class="col-lg-4 d-flex col-12 col-sm-3 justify-content-center align-items-center bordesFooter align-self-stretch" >
+                <h3><i class="fa-solid fa-truck-medical fa-fade fa-2xl"> </i>           </h3>    
+                <div class="m-3"><img src="../img/ministerioSalud.jpg" alt="logo ministerio de salud de la nacion" srcset=""> </div>
+            </div>
+            <div class="col-lg-4 d-flex col-12 col-sm-3 align-items-stretch justify-content-center bordesFooter"> 
+                <ul class="d-flex flex-column justify-content-around align-items-center gap-4 p-3 w-100 h-100 text-center text-sm-start">
+                    <li class="list-group-item w-100"><a class="footer-links" href="#" target="_blank">Mis turnos</a></li>
+                    <li class="list-group-item w-100"><a class="footer-links" href="#" target="_blank">Contacto</a></li>
+                    <li class="list-group-item w-100"><a class="footer-links" href="#" target="_blank">Politicas de Privacidad</a></li>
+                    <li class="list-group-item w-100"><a class="footer-links" href="#" target="_blank">Ministerio de salud</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 d-flex col-12 col-sm-6 justify-content-center align-items-stretch bordesFooter p-3" > 
+                <div class="container d-flex justify-content-between flex-column align-items-center" id="redesSocialesFooter">
+                    <p class="row">Nuestras redes sociales</p>
+                    <div class="d-flex mb-1 justify-content-between w-100 align-items-start flex-column footer-icons gap-2">
+                        <a class="d-flex justify-content-start align-items-center ps-2 gap-2" href="#" target="_blank"><i class="fa-brands fa-x-twitter fa-lg"></i> Twitter</a>
+                        <a class="d-flex justify-content-start align-items-center ps-2 gap-2" href="#" target="_blank"><i class="fa-brands fa-facebook fa-lg"></i> Facebook</a>
+                        <a class="d-flex justify-content-start align-items-center ps-2 gap-2" href="#" target="_blank"><i class="fa-brands fa-instagram fa-lg"></i> Instagram</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </footer>
+    <!-- SCRIPTS -->
+    <script src="../js/nosotros.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Script bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
 
-<article>  
-  <div class="encabezado rounded rounded-sm">
-  <h4>Nuestras instalaciones</h4>
-  </div>
-  </article>
-  <br>
-  <article>
-  <div id="carouselExampleCaptions" class="carousel slide">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="../img/Consultorio1.png" class="img d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 class="carrousel-text">Consultorios de última generación</h5>
-            <p class="carrousel-text">Tecnología de vanguardia, sistemas de diagnóstico avanzados, equipos médicos de última generación y soluciones digitales.</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="../img/Consultorio2.png" class="img d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 class="carrousel-text" >Salas de operaciones computarizadas</h5>
-            <p class="carrousel-text">Sistemas avanzados de monitoreo, imagenología y navegación quirúrgica, que permiten procedimientos con precisión milimétrica.</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="../img/Consultorio3.png" class="img d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 class="carrousel-text">Diagnóstico por imágenes con IA</h5>
-            <p class="carrousel-text">Permite la precisión diagnóstica, reducción de procedimientos invasivos y optimiza el seguimiento de los pacientes.</p>
-          </div>
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-  </article> 
-  </article>
-  </article> 
-                     
-<!-- SECCION 4 - MAS INFO-->
-
-<article>
-  <div class="encabezado rounded rounded-sm">
-      <h4>+ Info</h4>
-  </div>
-</article>
-<article>
-    <div class="container-info">
-      <div class="container-button justify-content-between align-items-center">
-          <a href="http://127.0.0.1:5501/certificaciones.html" class="button-info">Certificaciones Rolling</a>
-          <a href="http://127.0.0.1:5501/pregFrecuentes.html" class="button-info">Preguntas frecuentes</a>
-      </div>
-  </div>
-</article>
-
-
-
-
-</section>
-</main>
-
-<!-- FOOTER-->
-  
-        <!-- SCRIPTS -->
-        <script src="../js/nosotros.js"></script>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <!-- Script bootstrap -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-      
-    </body>
-    
-    </html>      
+</html>

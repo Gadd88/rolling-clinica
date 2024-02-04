@@ -39,6 +39,7 @@
     background-color: var(--main-highlighted-text);
     text-align: center;
     color: var(--main-highlighted-bg);
+    padding: 1rem;
 }
 .card {
     background-color: var(--main-highlighted-bg);

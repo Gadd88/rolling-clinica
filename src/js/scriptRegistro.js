@@ -10,7 +10,7 @@
   // let codigoPostal = document.getElementById('postal-code');
   // let telefono = document.getElementById('phone');
   const btnSubmit = document.getElementById('btn-submit')
-  
+  let listaUsuarios = []
   
   formularioRegistro.addEventListener('submit', function(evento){
     evento.preventDefault();
@@ -46,9 +46,12 @@
     // Crea un objeto de usuario
     const datosUsuario = {
       usuario: nombre,
+      paciente_dni: dni,
       password: pass
     };
+    listaUsuarios.push(datosUsuario);
     // Guarda los datos en el almacenamiento local
+    localStorage.setItem('usuariosRegistrados', JSON.stringify(listaUsuarios))
     sessionStorage.setItem('usuario', JSON.stringify(datosUsuario));
     // Redireccion de la pagina
     if(tipoUsuario == 'medico'){

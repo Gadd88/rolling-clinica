@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/global.css">
 </head>
-<body>
+<body class="container container-fluid">
     <header>
         <nav class="navbar navbar-expand-md">
             <div class="navbar-logo col-md-4 d-flex justify-content-md-center justify-content-between col-12">
@@ -92,47 +92,47 @@
         </nav>
     </header>
     <main class="container solicitarTurno">
-        <section class="main-container">
-            <h3 class="text-center mb-4"id="solicitar">Agendar Turno</h3>
-            <form class="container d-flex flex-column align-items-stretch col-12 justify-content-around">
-                <div class="row mb-3">
-                    <label for="nombre" class="col-sm-4 col-form-label">Nombre Completo</label>
-                    <div class="col-sm-7">
+        <section class="main-container d-flex flex-colmun flex-md-row">
+            <form class="container d-flex flex-column align-items-center p-2 col-md-6 justify-content-around">
+                <h3 class="text-center mb-4"id="solicitar">Agendar Nuevo Turno</h3>
+                <div class="row mb-3 d-flex flex-column col-12">
+                    <label for="nombre" class="col-12 col-form-label">Nombre Completo</label>
+                    <div class="col-12 col-md-10">
                         <input type="text" class="form-control" id="inputNombre">
                     </div>
                 </div>
-                <div class="row mb-3">
-                    <label for="dni" class="col-sm-4 col-form-label">DNI</label>
-                    <div class="col-sm-7">
+                <div class="row mb-3 d-flex flex-column col-12">
+                    <label for="dni" class="col-12 col-form-label">DNI</label>
+                    <div class="col-12 col-md-10">
                         <input type="number" class="form-control" id="inputDni">
                     </div>
                 </div>
-                <div class="row mb-3">
-                    <label for="telefono" class="col-sm-4 col-form-label">Teléfono</label>
-                    <div class="col-sm-7">
+                <div class="row mb-3 d-flex flex-column col-12">
+                    <label for="telefono" class="col-12 col-form-label">Teléfono</label>
+                    <div class="col-12 col-md-10">
                         <input type="tel" class="form-control" id="inputTelefono">
                     </div>
                 </div>
-                <div class="row mb-3">
-                    <label for="fecha" class="col-sm-4 col-form-label">Fecha</label>
-                    <div class="col-sm-7">
+                <div class="row mb-3 d-flex flex-column col-12">
+                    <label for="fecha" class="col-12 col-form-label">Fecha</label>
+                    <div class="col-12 col-md-10">
                         <input type="date" class="form-control" id="inputFecha">
                     </div>
                 </div>
                 
-                <div class="row mb-3">
-                    <label for="hora" class="col-sm-4 col-form-label">Horario</label>
-                    <div class="col-sm-7">
+                <div class="row mb-3 d-flex flex-column col-12">
+                    <label for="hora" class="col-12 col-form-label">Horario</label>
+                    <div class="col-12 col-md-10">
                         <input type="time" class="form-control" id="inputHora" min="10:00:00" max="18:30:00">
                     </div> 
                 </div>
                 <div class="row mb-1">
-                    <p class="col-sm-4 col-form-label"></p>
-                    <p class="text-center col-sm-7 p-2 rounded-2 bg-warning-subtle">El rango horario aceptado es entre 10:00HS a 18:00HS</p>
+                    <p class="col-12 col-form-label"></p>
+                    <p class="text-center col-12 col-md-10 p-2 rounded-2 bg-warning-subtle">El rango horario aceptado es entre 10:00HS a 18:00HS</p>
                 </div>
-                <div class="row mb-3">
-                    <label for="especialidad" class="col-sm-4 col-form-label">Especialidad</label>
-                    <div class="col-sm-7">
+                <div class="row mb-3 d-flex flex-column col-12">
+                    <label for="especialidad" class="col-12 col-form-label">Especialidad</label>
+                    <div class="col-12 col-md-10">
                         <select class="form-select" id="inputEspecialidad">
                             <option value='' selected>--</option>
                             <option value="cardiologia">Cardiología</option>
@@ -146,17 +146,21 @@
                         </select>
                     </div>
                 </div>
-                <div class="row mb-3">
-                    <label for="motivo" class="col-sm-4 col-form-label">Motivo</label>
-                    <textarea class="col-sm-7 border border-1 rounded-2 p-2" rows="5" cols="7" id="inputMotivo"></textarea>
+                <div class="row mb-3 d-flex flex-column col-12">
+                    <label for="motivo" class="col-12 col-form-label">Motivo</label>
+                    <textarea class="col-12 col-md-10 border border-1 rounded-2 p-2" rows="5" cols="8" id="inputMotivo"></textarea>
                 </div>
                 <p id="errorText"></p>
-                <div class="botonesTurno d-flex flex-column align-items-center justify-content-center gap-2">
-                    <button type="submit" class="btn mt-3 btn-primario" id="btnAgendar">Agendar</button>
-                    <a class="btn btn-orange p-1 rounded rounded-1 m-auto" href="../../index.html" role="button">Volver a la página principal</a>
+                <div class="botonesTurno d-flex flex-column align-items-start container justify-content-center gap-2 col-12">
+                    <button type="submit" class="btn btn-primario col-12 col-md-10" id="btnAgendar">Agendar</button>
+                    <a class="btn btn-orange p-1 rounded-1 col-12 col-md-10" href="../../index.html" role="button">Volver a la página principal</a>
                 </div>
             </form>
-
+            <article class="col-md-6 container p-2">
+                <h3 class="mb-5">Ultimos turnos agendados</h3>
+                <ul class=" d-flex flex-wrap container gap-2 justify-content-center justify-content-md-start align-items-center p-2" id="listaTurnos">
+                </ul>
+            </article>
         </section>
     </main>
     <footer class="container">

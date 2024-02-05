@@ -22,6 +22,8 @@ const consultaApi = async () => {
     localStorage.setItem('turnos', JSON.stringify(data))
 }
 
+let turnosPaciente = []
+
 const agregarTurno = () => {
     if(inputNombre.value == '' || inputFecha.value == '' || inputDni.value == '' || inputMotivo.value == '' || inputEspecialidad.value == '' || inputHora.value == ''){
         // errorText.classList.add('p-3','rounded-3', 'border', 'border-2' ,'col-sm-7', 'text-center', 'bg-danger', 'text-white', 'fw-bold')
@@ -48,49 +50,67 @@ const agregarTurno = () => {
         fechaTurno: inputFecha.value,
         horaTurno: inputHora.value,
     }
-    setTimeout(()=>{
-        fetch('http://localhost:3000/turnos', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(turno)
-        })
-    },1000)
+    turnosPaciente.push(turno)
+    fetch('http://localhost:3000/turnos', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(turno)
+    })
     Swal.fire({
         position: "center",
         icon: "success",
         title: "Turno Agendado",
         showConfirmButton: false,
         timer: 1000
-    });
+    })
+    localStorage.setItem('turnosPaciente', JSON.stringify(turnosPaciente))
 }
+
 btnAgendar.addEventListener('click', (e) => {
     e.preventDefault()
     agregarTurno()
     // limpiar()
-    // mostrarTurnos()
+    mostrarTurnos()
 })
 
 const mostrarTurnos = () => {
-    consultaApi()
-    let turnos = JSON.parse(localStorage.getItem('turnos'))
-    const listaTurnos = document.getElementById('listaTurnos')
-    listaTurnos.innerHTML = ''
-    if(turnos.length<1) return listaTurnos.innerHTML = '<h3>No hay turnos agendados</h3>' 
-    turnos.forEach(turno => {
-        const { paciente, especialidad, fechaTurno, horaTurno, id } = turno
-        listaTurnos.innerHTML +=
-        `<li class="card" style="width: 18rem;" id=${id}>
-            <div class="card-body">
-                <p class="card-text">Turno ID: <strong>${id}</strong> </p>
-                <h4 class="card-text"> ${paciente} </h4>
-                <p class="card-title">Especialidad: ${especialidad}</p>
-                <h5 class="card-subtitle mb-2 text-body-secondary">Fecha: ${new Date(fechaTurno).toLocaleDateString('es-AR')} </h5>
-                <h6 class="card-subtitle mb-2 text-body-secondary">Hora: ${horaTurno.toLocaleString()} </h6>
-                <br/>
-                <button class="btn btn-outline-danger eliminarTurno">Eliminar</button>
-            </div>
-        </li>`
+    const promesaDatos = new Promise( resolve => {
+        resolve(consultaApi())
+    })
+    promesaDatos.then( () => {
+        let turnosAgendados = JSON.parse(localStorage.getItem('turnos'))
+        let pacienteData = JSON.parse(sessionStorage.getItem('usuario'))
+        let turnosPaciente = turnosAgendados.filter(turno => turno.paciente_dni == (pacienteData.length>0 ? pacienteData[0].paciente_dni : pacienteData.paciente_dni))
+        const listaTurnos = document.getElementById('listaTurnos')
+        listaTurnos.innerHTML = ''
+        if(turnosPaciente.length<1) return listaTurnos.innerHTML = '<p>No hay turnos agendados</p>' 
+        turnosPaciente.forEach(turno => {
+            const { especialidad, fechaTurno, horaTurno, id } = turno
+            listaTurnos.innerHTML +=
+            `<li class="card" id=${id}>
+                <div class="card-body card-body-turnos">
+                    <p class="card-title">Turno ID: <strong>${id}</strong> </p>
+                    <p class="card-title">Especialidad: ${especialidad}</p>
+                    <p class="card-text text-body-secondary">Fecha: ${new Date(fechaTurno).toLocaleDateString('es')} | Hora: ${horaTurno.toLocaleString()} </p>
+                    <button class="btn btn-outline-danger eliminarTurno">Eliminar</button>
+                </div>
+            </li>`
+            const btnEliminar = document.querySelectorAll('.eliminarTurno')
+            if(btnEliminar){
+                btnEliminar.forEach(btnEliminar => btnEliminar.addEventListener('click', () => {
+                    fetch(`http://localhost:3000/turnos/${id}`, {
+                        method: 'DELETE',
+                    }).then(() => {
+                        mostrarTurnos()
+                    })
+                }))
+            }
+        })
     })
 }
+
+document.addEventListener('DOMContentLoaded', () =>{
+    mostrarTurnos()
+})

@@ -1,7 +1,12 @@
-
-#btnAgendar{
-    max-width: 200px;
-    margin:auto;
+.card-body-turnos{
     width: 200px;
-    height: 50px;
+    max-height: 220px;
+}
+
+#inputMotivo{
+    resize: none;
+}
+
+form div label {
+    font-weight: bold;
 }

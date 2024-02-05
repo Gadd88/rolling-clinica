@@ -92,7 +92,7 @@ btnLoginIngresar.addEventListener("click", (e) => {
   };
   const usuarioFiltrado = listaUsuarios.filter(usuario => usuario.password == usuarioLoggeado.password)
   console.log(usuarioFiltrado);
-  //podemos comparar pasando los objetos a string con JSON.stringify o con lodash usando _.isEqual(usuarioLoggeado, paciente)
+  
   if(usuarioFiltrado.length>0){
     userLogged = true
     sessionStorage.setItem("usuario", JSON.stringify(usuarioFiltrado))

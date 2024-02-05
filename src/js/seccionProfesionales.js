@@ -1,11 +1,11 @@
-import listaProfesionales from './medicos.json' assert { type: 'json' }
+import listaProfesionales from "./medicos.json" assert { type: "json" };
 
-const sliderProfesionales = document.getElementById('sliderProfesionales')
+const sliderProfesionales = document.getElementById("sliderProfesionales");
 
-const swiper = new Swiper('.swiper', {
+const swiper = new Swiper(".swiper", {
   slidesPerView: 1,
   spaceBetween: 0,
-  direction: 'horizontal',
+  direction: "horizontal",
   loop: true,
   breakpoints: {
     480: {
@@ -19,16 +19,15 @@ const swiper = new Swiper('.swiper', {
     991: {
       slidesPerView: 4,
       spaceBetween: 10,
-    }
+    },
   },
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
   },
-
 });
 
-listaProfesionales.forEach(doctor => {
+listaProfesionales.forEach((doctor) => {
   sliderProfesionales.innerHTML += `<div class="swiper-slide">
   <div class="card cardProfesionales">
     <img src="${doctor.imagen}"
@@ -39,5 +38,5 @@ listaProfesionales.forEach(doctor => {
       <a href="#" class="btn botonTurno">Solicitar turno</a>
     </div>
   </div>
-</div>`
-})
+</div>`;
+});

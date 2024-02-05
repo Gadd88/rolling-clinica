@@ -100,7 +100,7 @@ btnLoginIngresar.addEventListener('click', (e) =>{
                 location.assign('../../src/paginas/admin.html')
             },1000)
             return
-        }else if(usuarioLoggeado.usuario == 'doctor'){
+        }else if(usuarioLoggeado.usuario == 'Dr.Rossi'){
             setTimeout(() => {
                 location.assign('../../src/paginas/medicos.html')
             }, 1000)

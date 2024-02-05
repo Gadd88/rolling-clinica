@@ -1,0 +1,61 @@
+
+  
+  /* Tabla de consulta */
+  
+    .contacto-style {
+      padding: 2% 0% 1% 0%;
+      background-color: var(--primary-light);
+    }
+    
+    .encabezado{
+      background-color: var(--adds-line);
+      padding: 1rem;
+      color: var(--main-highlighted-bg);
+      border-radius: 5px;
+    }
+    
+    h5 {
+      margin-bottom: 10px;
+      font-weight: 500;
+      color: var(--white);
+    }
+    
+    .btn {
+      background-color: var(--button);
+      border: 2px solid var(--white);
+      color: var(--white);
+    }
+   
+    @media (max-width: 500px) {
+      #consultas thead tr th {
+        display: none; 
+      }
+    
+      #consultas tbody tr {
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+      }
+    
+      #consultas tbody tr:last-child {
+        margin-bottom: 0;
+      }
+    
+      #consultas thead tr:first-child {
+        display: table-row; 
+      }
+    
+    }
+     
+  .btn-orange{
+      background-color: var(--main-highlighted-text);
+      color: var(--main-highlighted-bg);
+      transition: .3s;
+      text-decoration: none;
+  }
+  .btn-orange:hover{
+      background-color: var(--main-highlighted-bg);
+      color: var(--main-highlighted-text);
+      border: 1px solid var(--main-highlighted-text);
+  }
+  

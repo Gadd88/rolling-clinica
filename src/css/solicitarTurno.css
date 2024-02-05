@@ -1,0 +1,12 @@
+.card-body-turnos{
+    width: 200px;
+    max-height: 220px;
+}
+
+#inputMotivo{
+    resize: none;
+}
+
+form div label {
+    font-weight: bold;
+}

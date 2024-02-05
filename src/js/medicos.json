@@ -1,0 +1,65 @@
+[
+  {
+    "nombre": "Dr. Juan Pérez",
+    "especialidad": "Cardiología",
+    "telefono": "555-1234",
+    "correo": "juan.perez@example.com",
+    "imagen": "https://he.amr.org.ar/wp-content/uploads/sites/14/2022/01/CELENTANO_ANDRES-367x367.jpg"
+  },
+  {
+    "nombre": "Dra. Laura Fernández",
+    "especialidad": "Oftalmología",
+    "telefono": "555-3456",
+    "correo": "laura.fernandez@example.com",
+    "imagen": "https://he.amr.org.ar/wp-content/uploads/sites/14/2022/03/ARGUELLO_MARIA-367x367.jpg"
+  },
+  {
+    "nombre": "Dra. Ana Sánchez",
+    "especialidad": "Ginecología",
+    "telefono": "555-2345",
+    "correo": "ana.sanchez@example.com",
+    "imagen": "https://he.amr.org.ar/wp-content/uploads/sites/14/2022/01/ACOSTA_MIRIAN-367x367.jpg"
+  },
+  {
+    "nombre": "Dr. Jorge Ramírez",
+    "especialidad": "Neurología",
+    "telefono": "555-6789",
+    "correo": "jorge.ramirez@example.com",
+    "imagen": "https://he.amr.org.ar/wp-content/uploads/sites/14/2022/01/MONTEDORO_HECTOR-367x367.jpg"
+  },
+  {
+    "nombre": "Dr. Carlos Rodríguez",
+    "especialidad": "Pediatría",
+    "telefono": "555-9012",
+    "correo": "carlos.rodriguez@example.com",
+    "imagen": "https://he.amr.org.ar/wp-content/uploads/sites/14/2022/01/ZEBALLOS-PABLO-367x367.jpg"
+  },
+  {
+    "nombre": "Dr. Andrés Martínez",
+    "especialidad": "Ortopedia",
+    "telefono": "555-7890",
+    "correo": "andres.martinez@example.com",
+    "imagen": "https://he.amr.org.ar/wp-content/uploads/sites/14/2021/12/PRAVATO_ANGEL-367x367.jpg"
+  },
+  {
+    "nombre": "Dra. Julia Torres",
+    "especialidad": "Psiquiatría",
+    "telefono": "555-8901",
+    "correo": "julia.torres@example.com",
+    "imagen": "https://he.amr.org.ar/wp-content/uploads/sites/14/2022/03/BENEGAS_LILIANA-367x367.jpg"
+  },
+  {
+    "nombre": "Dra. Patricia Vargas",
+    "especialidad": "Endocrinología",
+    "telefono": "555-0123",
+    "correo": "patricia.vargas@example.com",
+    "imagen": "https://he.amr.org.ar/wp-content/uploads/sites/14/2022/01/ALTAMIRANO_AGUSTINA-367x367.jpg"
+  },
+  {
+    "nombre": "Dr. Marcos Sánchez",
+    "especialidad": "Gastroenterología",
+    "telefono": "555-4518",
+    "correo": "marcos.sanchez@example.com",
+    "imagen": "https://he.amr.org.ar/wp-content/uploads/sites/14/2022/01/Bruno-Paradiso-367x367.jpg"
+  }
+]

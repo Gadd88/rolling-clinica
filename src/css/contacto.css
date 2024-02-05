@@ -1,0 +1,41 @@
+/* SECCION 1 */
+.encabezado{
+    background-color: var(--main-highlighted-text);
+    text-align: center;
+    color: var(--main-highlighted-bg);
+    margin: 3rem auto;
+    padding: 1rem;
+}
+.mapa-fluid {
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    height: 17rem;
+}
+.info-contacto{
+    background-color: var(--main-highlighted-bg);
+    border-radius: 10px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.img-fluid {
+    background-color: var(--main-highlighted-bg);
+    display: inline-block;
+    border: none;
+    width: 60%;   
+}
+
+.img-contacto {
+    width: 100%;
+}
+.bi {
+    color: var(--main-highlighted-text);
+}
+
+.seccion-contacto{
+    min-height: 300px;
+    padding: 1rem;
+    padding-bottom: 3rem;
+    position: relative;
+}

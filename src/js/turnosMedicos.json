@@ -1,0 +1,40 @@
+{
+  "turnos": [
+    {
+      "id": "52ec",
+      "paciente": "Fernando fernando",
+      "paciente_dni": "65656565",
+      "especialidad": "pediatria",
+      "motivo_consulta": "laidoainsdoasid",
+      "fechaTurno": "2024-02-20",
+      "horaTurno": "20:15"
+    },
+    {
+      "id": "0be4",
+      "paciente": "german arias",
+      "paciente_dni": "651651651",
+      "especialidad": "pediatria",
+      "motivo_consulta": "alsndaosdif",
+      "fechaTurno": "0005-02-15",
+      "horaTurno": "03:51"
+    },
+    {
+      "id": "0b93",
+      "paciente": "Martin Gimenez",
+      "paciente_dni": "33151515",
+      "especialidad": "traumatologia",
+      "motivo_consulta": "Dolor de rodilla",
+      "fechaTurno": "2024-02-10",
+      "horaTurno": "10:30"
+    },
+    {
+      "id": "d43e",
+      "paciente": "Hernan Rodriguez",
+      "paciente_dni": "36744744",
+      "especialidad": "traumatologia",
+      "motivo_consulta": "asdfsadfasdf",
+      "fechaTurno": "2024-02-20",
+      "horaTurno": "15:15"
+    }
+  ]
+}

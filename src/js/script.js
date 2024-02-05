@@ -91,7 +91,6 @@ btnLoginIngresar.addEventListener("click", (e) => {
     password: inputPassword,
   };
   const usuarioFiltrado = listaUsuarios.filter(usuario => usuario.password == usuarioLoggeado.password)
-  console.log(usuarioFiltrado);
   
   if(usuarioFiltrado.length>0){
     userLogged = true

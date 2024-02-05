@@ -35,7 +35,7 @@ listaProfesionales.forEach((doctor) => {
     <div class="card-body d-flex flex-column align-items-center justify-content-between">
       <h5 class="card-title">${doctor.nombre}</h5>
       <p class="card-text text-center">${doctor.especialidad}</p>
-      <a href="#" class="btn botonTurno">Solicitar turno</a>
+      <a href="./src/paginas/error404.html" class="btn botonTurno">Solicitar turno</a>
     </div>
   </div>
 </div>`;

@@ -18,6 +18,7 @@ formTurnos.addEventListener('submit', (e) => {
     "fecha": fecha.value,
     "motivo": motivo.value,
     "medico": medico.value
+    
   }
   listaTurnos.push(turno)
   formTurnos.reset()
